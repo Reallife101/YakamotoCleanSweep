@@ -10,7 +10,7 @@ public class healthbar : MonoBehaviour
     
     [SerializeField] private Image foreground;
     public void sethealth(int maxhealth, int health){
-        foreground.fillAmount = (float)health/(float)maxhealth;
+        foreground.fillAmount = ((float)maxhealth-(float)health)/(float)maxhealth;
         Debug.Log(health);
     }
 }

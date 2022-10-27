@@ -6,31 +6,45 @@ using UnityEngine;
 public class health : MonoBehaviour
 {
     // Start is called before the first frame update
+     //private PropManager propManager;
+    [SerializeField] private GameObject cleanModel;
     [SerializeField] private int MaxHealth;
-    [SerializeField] private int currenthealth;
     [SerializeField] private healthbar bar;
+    private int currentHealth;
+
     void Start()
     {
-        currenthealth = MaxHealth;
-        
+        //propManager = GameObject.FindGameObjectWithTag("Prop Manager").GetComponent<PropManager>();      
+        currentHealth = MaxHealth;
     }
-    public void takedamage(int pts){
+    void Awake(){
+        gameObject.SetActive(true);
+        cleanModel.SetActive(false);
+    }
+
+    public void TakeDamage(int healthPTS){
        
-        if(currenthealth >0){
-             currenthealth -= pts;
-        bar.sethealth(MaxHealth,currenthealth);
+        if(currentHealth >0){
+             currentHealth -= healthPTS;
+        bar.sethealth(MaxHealth,currentHealth);
         }
         else{
-            reportdeath();
+            ReportDeath();
         }
 
     }
-    public void reportdeath(){
+    private void ReportDeath(){
+       
+        //propManager.IncreaseCount();
+        gameObject.SetActive(false);
+        cleanModel.SetActive(true);
+        Debug.Log("Dead");
 
-        if(currenthealth == 0){
-           Debug.Log("Dead");
-        }
+  
 
+    }
+    public int GetHealth(){
+        return currentHealth;
     }
    /* 
     void Update(){
@@ -43,7 +57,7 @@ public class health : MonoBehaviour
 
 void OnMouseDown(){
     Debug.Log("-1");
-    takedamage(1);
+    TakeDamage(1);
 }
 
 
