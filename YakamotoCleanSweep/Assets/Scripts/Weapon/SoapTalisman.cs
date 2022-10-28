@@ -1,45 +1,23 @@
-using System.Collections;
 using UnityEngine;
 
-public class SoapTalisman : Weapon
+public class SoapTalisman : Ranged
 {
-    [SerializeField] private float reloadTime = 1f;
-    [SerializeField] private int clipSize = 1;
-
-    private int bulletsRemaining = 1;
-
-    private void Start()
-    {
-        bulletsRemaining = clipSize;
-    }
-
-    private void Update()
-    {
-        UpdateAttack();
-    }
-
     protected override void Attack()
     {
-        bool hitDetection = Physics.Raycast(attackPoint.position, transform.forward, out hit, range);
+        // For creating a puddle, either draw a separate raycast for the ground layer,
+        // then create an object with the effect at the hit position
+
+        bool hitDetection = Physics.Raycast(eye.position, eye.forward, out hit, range, enemyLayer);
+        DrawRaycast(eye.forward);
         if (hitDetection)
         {
             print("Take Damage");
         }
-        Reload();
+        UpdateAmmo();
     }
 
-    private void Reload()
+    private void MakePuddle()
     {
-        bulletsRemaining --;
-        if (bulletsRemaining <= 0)
-        {
-            StartCoroutine(ReloadRoutine());
-        }
-    }
-
-    private IEnumerator ReloadRoutine()
-    {
-        yield return new WaitForSeconds(reloadTime);
-        bulletsRemaining = clipSize;
+        
     }
 }
