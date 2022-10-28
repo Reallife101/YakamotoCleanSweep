@@ -23,7 +23,8 @@ public class Broom : Weapon
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.green;
-        Gizmos.DrawLine(Camera.main.transform.position, Camera.main.transform.position + Camera.main.transform.forward * range);
-        Gizmos.DrawWireCube(Camera.main.transform.position, hitSize.normalized);
+        Vector3 end = Camera.main.transform.position + Camera.main.transform.forward * range;
+        Gizmos.DrawLine(Camera.main.transform.position, end);
+        Gizmos.DrawWireCube(end, hitSize.normalized);
     }
 }
