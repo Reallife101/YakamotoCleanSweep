@@ -1,66 +1,65 @@
 using System.Collections;
 using System.Collections.Generic;
-
+using System;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class health : MonoBehaviour
 {
-    // Start is called before the first frame update
-     //private PropManager propManager;
-    [SerializeField] private GameObject cleanModel;
     [SerializeField] private int MaxHealth;
-    [SerializeField] private healthbar bar;
     private int currentHealth;
+    private bool isAlive;
+
+    public static event Action OnDeath;
 
     void Start()
     {
-        //propManager = GameObject.FindGameObjectWithTag("Prop Manager").GetComponent<PropManager>();      
         currentHealth = MaxHealth;
-    }
-    void Awake(){
-        gameObject.SetActive(true);
-        cleanModel.SetActive(false);
+        isAlive = true;
     }
 
-    public void TakeDamage(int healthPTS){
-       
-        if(currentHealth >0){
-             currentHealth -= healthPTS;
-        bar.sethealth(MaxHealth,currentHealth);
-        }
-        else{
+    private void Update()
+    {
+        if (currentHealth <= 0 && isAlive)
+        {
             ReportDeath();
         }
+    }
+
+    public void TakeDamage(int healthPTS)
+    {
+
+        currentHealth -= healthPTS;
 
     }
-    private void ReportDeath(){
-       
-        //propManager.IncreaseCount();
-        gameObject.SetActive(false);
-        cleanModel.SetActive(true);
-        Debug.Log("Dead");
 
-  
-
+    public void ReportDeath()
+    {
+        currentHealth = 0;
+        isAlive = false;
+        OnDeath?.Invoke();
     }
-    public int GetHealth(){
+
+    public int GetCurrentHealth()
+    {
         return currentHealth;
     }
-   /* 
-    void Update(){
-        if (Input.GetMouseButton(0))
-{    
-    takedamage(1);
-}
-    }
-*/
 
-void OnMouseDown(){
-    Debug.Log("-1");
+    public int GetMaxHealth()
+    {
+        return MaxHealth;
+    }
+
+    /*void Update(){
+        if (Input.GetMouseButtonDown(0))
+{    
     TakeDamage(1);
 }
+    }*/
 
 
-    
-   
+    /*void OnMouseDown(){
+        Debug.Log("-1");
+        TakeDamage(1);
+    }*/
 }
