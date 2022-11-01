@@ -34,10 +34,10 @@ public class PropManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        CheckCount(); 
+        //CheckCount(); 
     }
 
-    private bool CheckCount()
+    public bool CheckCount()
     {
 
         if (PROPS_CLEANED_COUNT == props.Length)
