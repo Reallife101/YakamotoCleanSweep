@@ -6,8 +6,7 @@ public class PropManager : MonoBehaviour
 {
 
     // TODO: Add door object
-    [SerializeField]
-    public GameObject elevator_door; 
+    [SerializeField] private GameObject elevator_door; 
 
 
     private int PROPS_CLEANED_COUNT = 0;
@@ -15,11 +14,13 @@ public class PropManager : MonoBehaviour
     private static PropManager prop_manager;
 
     [SerializeField]
-    private static GameObject [] props;  
+    private static GameObject[] props;  
 
     // Start is called before the first frame update
     void Awake()
     {
+        props = new GameObject[0];
+        
         if (prop_manager == null)
         {
             prop_manager = this;
@@ -27,8 +28,8 @@ public class PropManager : MonoBehaviour
         }
 
         props = GameObject.FindGameObjectsWithTag("Prop");
-        Debug.Log(props.Length + " props");
 
+        PROPS_CLEANED_COUNT = 0;
     }
 
     // Update is called once per frame
@@ -53,7 +54,6 @@ public class PropManager : MonoBehaviour
     public void IncreaseCount()
     {
         PROPS_CLEANED_COUNT += 1;
-        Debug.Log(PROPS_CLEANED_COUNT);
     } 
 
     public int RemainingProps()

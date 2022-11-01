@@ -23,6 +23,5 @@ public class healthbar : MonoBehaviour
     
     public void sethealth(int maxhealth, int health){
         foreground.fillAmount = ((float)maxhealth-(float)health)/(float)maxhealth;
-        Debug.Log(health);
     }
 }
