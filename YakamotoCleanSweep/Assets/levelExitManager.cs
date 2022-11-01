@@ -5,18 +5,21 @@ using UnityEngine;
 public class levelExitManager : MonoBehaviour
 {
     public PropManager pm;
+    public GameObject exit;
+
+    public bool forceExit;
     // Start is called before the first frame update
     void Start()
     {
-        
+        forceExit = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-       if(pm.CheckCount())
+       if(pm.CheckCount() || forceExit)
         {
-            Debug.Log("Everything is Clean!");
+            exit.SetActive(true);
         }
     }
 }
