@@ -19,7 +19,6 @@ public class PropManager : MonoBehaviour
     private void Start()
     {
         propsCleanedCount = 0;
-        //props = new GameObject[0];
     }
 
     // Start is called before the first frame update
@@ -34,23 +33,9 @@ public class PropManager : MonoBehaviour
         props = GameObject.FindGameObjectsWithTag("Prop");
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        CheckCount();
-    }
-
     public bool CheckCount()
     {
-
-        if (propsCleanedCount == props.Length)
-        {
-            return true;
-        }
-        else
-        {
-            return false;
-        }    
+        return propsCleanedCount == props.Length;
     }
 
     public void IncreaseCount()
