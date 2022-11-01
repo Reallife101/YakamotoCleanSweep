@@ -4,17 +4,19 @@ using UnityEngine;
 
 public class PropManager : MonoBehaviour
 {
-
-    // TODO: Add door object
     [SerializeField]
-    public GameObject elevator_door; 
+    public Animator left_door_animator;
 
+    [SerializeField]
+    public Animator right_door_animator;
+
+    [SerializeField]
+    private bool test_doors = false;
 
     private int PROPS_CLEANED_COUNT = 0;
 
     private static PropManager prop_manager;
 
-    [SerializeField]
     private static GameObject [] props;  
 
     // Start is called before the first frame update
@@ -26,19 +28,23 @@ public class PropManager : MonoBehaviour
             DontDestroyOnLoad(prop_manager);
         }
 
-        props = GameObject.FindGameObjectsWithTag("Prop");
+        //props = GameObject.FindGameObjectsWithTag("Prop");
 
     }
 
     // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        CheckCount(); 
+       if (test_doors)
+        {
+            right_door_animator.SetBool("Open", true);
+            left_door_animator.SetBool("Open", true);
+        } 
     }
 
     private bool CheckCount()
     {
-        if (PROPS_CLEANED_COUNT == props.Length)
+        if (PROPS_CLEANED_COUNT == props.Length + 1)
             return true;
 
         return false;
