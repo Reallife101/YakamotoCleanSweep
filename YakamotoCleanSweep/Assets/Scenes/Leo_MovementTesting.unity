@@ -568,7 +568,7 @@ GameObject:
   - component: {fileID: 415911790}
   m_Layer: 0
   m_Name: PropManager
-  m_TagString: Untagged
+  m_TagString: PropManager
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -857,7 +857,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh24842
+  m_Name: pb_Mesh37010
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -1025,6 +1025,10 @@ PrefabInstance:
     - target: {fileID: 747026033041960369, guid: 7061b8efe5dac8448a33cb93242b24ec, type: 3}
       propertyPath: m_Name
       value: DirtyObject (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 747026033041960369, guid: 7061b8efe5dac8448a33cb93242b24ec, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 747026033041960397, guid: 7061b8efe5dac8448a33cb93242b24ec, type: 3}
       propertyPath: m_RootOrder
@@ -1563,7 +1567,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh24882
+  m_Name: pb_Mesh37058
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2

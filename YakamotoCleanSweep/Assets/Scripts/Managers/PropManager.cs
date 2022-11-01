@@ -9,18 +9,22 @@ public class PropManager : MonoBehaviour
     [SerializeField] private GameObject elevator_door; 
 
 
-    private int PROPS_CLEANED_COUNT = 0;
+    private int propsCleanedCount;
 
     private static PropManager prop_manager;
 
     [SerializeField]
-    private static GameObject[] props;  
+    private static GameObject[] props;
+
+    private void Start()
+    {
+        propsCleanedCount = 0;
+        //props = new GameObject[0];
+    }
 
     // Start is called before the first frame update
     void Awake()
     {
-        props = new GameObject[0];
-        
         if (prop_manager == null)
         {
             prop_manager = this;
@@ -28,20 +32,18 @@ public class PropManager : MonoBehaviour
         }
 
         props = GameObject.FindGameObjectsWithTag("Prop");
-
-        PROPS_CLEANED_COUNT = 0;
     }
 
     // Update is called once per frame
     void Update()
     {
-        CheckCount(); 
+        CheckCount();
     }
 
-    private bool CheckCount()
+    public bool CheckCount()
     {
 
-        if (PROPS_CLEANED_COUNT == props.Length)
+        if (propsCleanedCount == props.Length)
         {
             return true;
         }
@@ -53,11 +55,11 @@ public class PropManager : MonoBehaviour
 
     public void IncreaseCount()
     {
-        PROPS_CLEANED_COUNT += 1;
+        propsCleanedCount += 1;
     } 
 
     public int RemainingProps()
     {
-        return props.Length - PROPS_CLEANED_COUNT;
+        return props.Length - propsCleanedCount;
     }
 }

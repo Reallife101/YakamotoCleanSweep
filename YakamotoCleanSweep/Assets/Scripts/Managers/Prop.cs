@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Prop : PropManager
+public class Prop : MonoBehaviour
 {
     // Start is called before the first frame update
     [SerializeField] private GameObject cleanModel;
@@ -12,6 +12,8 @@ public class Prop : PropManager
     [SerializeField] private MeshRenderer dirtyMesh;
     [SerializeField] private MeshRenderer cleanMesh;
     [SerializeField] private Canvas healthBarCanvas;
+    private GameObject propManager;
+    private bool isClean;
 
     void Start()
     {
@@ -23,11 +25,13 @@ public class Prop : PropManager
         dirtyMesh.enabled = true;
         cleanMesh.enabled = false;
         healthBarCanvas.enabled = true;
+        isClean = false;
     }
 
-    public Prop()
+    private void Awake()
     {
         health.OnDeath += MakeClean;
+        propManager = GameObject.FindGameObjectWithTag("PropManager");
     }
 
     void Update()
@@ -41,10 +45,14 @@ public class Prop : PropManager
 
     private void MakeClean()
     {
-        dirtyMesh.enabled = false;
-        cleanMesh.enabled = true;
-        healthBarCanvas.enabled = false;
-        base.IncreaseCount();
+        if (!isClean)
+        {
+            propManager.GetComponent<PropManager>().IncreaseCount();
+            dirtyMesh.enabled = false;
+            cleanMesh.enabled = true;
+            healthBarCanvas.enabled = false;
+            isClean = true;
+        }
     }
 
 
