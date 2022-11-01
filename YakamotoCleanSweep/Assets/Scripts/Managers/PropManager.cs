@@ -27,7 +27,7 @@ public class PropManager : MonoBehaviour
         }
 
         props = GameObject.FindGameObjectsWithTag("Prop");
-        Debug.Log(props.Length + " props");
+        //Debug.Log(props.Length + " props");
 
     }
 
@@ -53,7 +53,7 @@ public class PropManager : MonoBehaviour
     public void IncreaseCount()
     {
         PROPS_CLEANED_COUNT += 1;
-        Debug.Log(PROPS_CLEANED_COUNT);
+        //Debug.Log(PROPS_CLEANED_COUNT);
     } 
 
     public int RemainingProps()
