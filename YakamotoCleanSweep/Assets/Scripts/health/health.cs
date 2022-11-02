@@ -35,9 +35,9 @@ public class health : MonoBehaviour
 
     public void ReportDeath()
     {
-        currentHealth = 0;
         isAlive = false;
         OnDeath?.Invoke();
+        currentHealth = 0;
     }
 
     public int GetCurrentHealth()
