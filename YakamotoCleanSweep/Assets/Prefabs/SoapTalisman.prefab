@@ -114,12 +114,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 1
   fireRate: 0.25
-  range: 100
+  range: 1000
   enemyLayer:
     serializedVersion: 2
     m_Bits: 128
   reloadTime: 1.5
   clipSize: 25
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 64
+  puddle: {fileID: 8385443726673739258, guid: 2400e64f796a548418cd1ad0f281b2eb, type: 3}
 --- !u!95 &1454129100267434443
 Animator:
   serializedVersion: 4

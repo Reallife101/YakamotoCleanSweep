@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 2006382034441149474}
   - component: {fileID: 7576119536131640191}
   - component: {fileID: 202669382390969638}
+  - component: {fileID: 8115071111994933700}
   m_Layer: 0
   m_Name: Broom
   m_TagString: Untagged
@@ -104,7 +105,7 @@ MonoBehaviour:
   enemyLayer:
     serializedVersion: 2
     m_Bits: 128
-  hitSize: {x: 1, y: 1, z: 1}
+  col: {fileID: 8115071111994933700}
 --- !u!95 &7576119536131640191
 Animator:
   serializedVersion: 4
@@ -139,3 +140,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   host: {fileID: 2006382034441149474}
   anim: {fileID: 7576119536131640191}
+--- !u!65 &8115071111994933700
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4862565543342571118}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 0
+  serializedVersion: 2
+  m_Size: {x: 0.10000001, y: 0.10000001, z: 0.15}
+  m_Center: {x: 0, y: 0, z: 0.05}
