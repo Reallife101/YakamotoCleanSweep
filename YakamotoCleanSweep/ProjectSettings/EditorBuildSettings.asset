@@ -4,5 +4,8 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/Leo_MovementTesting.unity
+    guid: 17706d90e4b98d8448c535fbba5b1eaa
   m_configObjects: {}
