@@ -12,6 +12,8 @@ GameObject:
   - component: {fileID: 9196146619794566001}
   - component: {fileID: 6375885313726963643}
   - component: {fileID: 2006382034441149474}
+  - component: {fileID: 7576119536131640191}
+  - component: {fileID: 202669382390969638}
   m_Layer: 0
   m_Name: Broom
   m_TagString: Untagged
@@ -28,8 +30,8 @@ Transform:
   m_GameObject: {fileID: 4862565543342571118}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 10, y: 10, z: 10}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 6, y: 6, z: 6}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -103,3 +105,37 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 128
   hitSize: {x: 1, y: 1, z: 1}
+--- !u!95 &7576119536131640191
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4862565543342571118}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 22100000, guid: 5b0ea8e16cd0a9445b9c4d69332748a5, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &202669382390969638
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4862565543342571118}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d454762d714afc488f102fa0024a0ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  host: {fileID: 2006382034441149474}
+  anim: {fileID: 7576119536131640191}

@@ -25,8 +25,8 @@ public abstract class Weapon : MonoBehaviour
 
         if (Input.GetButton("Fire1") && attackTimer <= 0)
         {
-            Attack();
             OnAttack?.Invoke();
+            Attack();
             attackTimer = fireRate;
         }
     }
