@@ -38,9 +38,12 @@ public class WallRun : MonoBehaviour
 
     private Rigidbody rb;
 
+    private bool isWallRunning;
+
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
+        isWallRunning = false;
     }
 
     private void Update()
@@ -58,7 +61,7 @@ public class WallRun : MonoBehaviour
                 StopWallRun();
             }
         }
-        else
+        else if (!CanWallRun() && isWallRunning)
         {
             StopWallRun();
         }
@@ -78,6 +81,7 @@ public class WallRun : MonoBehaviour
     private void StartWallRun()
     {
         rb.useGravity = false;
+        isWallRunning = true;
 
         rb.AddForce(Vector3.down * wallRunGravity, ForceMode.Force);
 
@@ -108,12 +112,12 @@ public class WallRun : MonoBehaviour
             }
         }
 
-        movement.canDoubleJump = true;
     }
 
     private void StopWallRun()
     {
         rb.useGravity = true;
+        isWallRunning = false;
 
         cam.fieldOfView = Mathf.Lerp(cam.fieldOfView, fov, wallRunfovTime * Time.deltaTime);
         tilt = Mathf.Lerp(tilt, 0, camTiltTime * Time.deltaTime);
