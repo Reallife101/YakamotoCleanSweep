@@ -32,4 +32,9 @@ public abstract class Weapon : MonoBehaviour
     }
 
     protected abstract void Attack();
+
+    protected void DealDamage()
+    {
+        hit.collider.gameObject.GetComponent<health>().TakeDamage(damage);
+    }
 }
