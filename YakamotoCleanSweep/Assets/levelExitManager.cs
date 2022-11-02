@@ -12,6 +12,7 @@ public class levelExitManager : MonoBehaviour
     void Start()
     {
         forceExit = false;
+        exit.SetActive(false);
     }
 
     // Update is called once per frame

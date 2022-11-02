@@ -6,10 +6,6 @@ using UnityEngine;
 public class PropManager : MonoBehaviour
 {
 
-    // TODO: Add door object
-    [SerializeField] private GameObject elevator_door; 
-
-
     private int propsCleanedCount;
 
     private static PropManager prop_manager;
@@ -28,7 +24,7 @@ public class PropManager : MonoBehaviour
         if (prop_manager == null)
         {
             prop_manager = this;
-            DontDestroyOnLoad(prop_manager);
+            //DontDestroyOnLoad(prop_manager);
         }
 
         props = GameObject.FindGameObjectsWithTag("Prop");
