@@ -16,7 +16,7 @@ public class Broom : Weapon
                                             out hit, Quaternion.identity, range, enemyLayer);
         if (hitDetection)
         {
-            print("Take damage");
+            DealDamage();
         }
     }
 
