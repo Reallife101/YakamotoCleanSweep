@@ -852,6 +852,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+
 --- !u!114 &1268490340
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -895,6 +896,7 @@ PrefabInstance:
     - target: {fileID: 8426099797160277185, guid: 0d419ef40b2b7ab4aaee2940fc44df06, type: 3}
       propertyPath: m_IsActive
       value: 0
+
       objectReference: {fileID: 0}
     - target: {fileID: 9197570569926274683, guid: 0d419ef40b2b7ab4aaee2940fc44df06, type: 3}
       propertyPath: m_RootOrder
