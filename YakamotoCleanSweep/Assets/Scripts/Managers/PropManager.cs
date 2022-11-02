@@ -1,13 +1,10 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class PropManager : MonoBehaviour
 {
-
-    // TODO: Add door object
-    [SerializeField] private GameObject elevator_door; 
-
 
     private int propsCleanedCount;
 
@@ -27,7 +24,7 @@ public class PropManager : MonoBehaviour
         if (prop_manager == null)
         {
             prop_manager = this;
-            DontDestroyOnLoad(prop_manager);
+            //DontDestroyOnLoad(prop_manager);
         }
 
         props = GameObject.FindGameObjectsWithTag("Prop");
@@ -35,7 +32,7 @@ public class PropManager : MonoBehaviour
 
     public bool CheckCount()
     {
-        return propsCleanedCount == props.Length;
+        return propsCleanedCount >= props.Length;
     }
 
     public void IncreaseCount()
