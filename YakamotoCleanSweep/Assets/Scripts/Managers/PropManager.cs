@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,17 +6,17 @@ using UnityEngine;
 public class PropManager : MonoBehaviour
 {
 
-    // TODO: Add door object
-    [SerializeField]
-    public GameObject elevator_door; 
-
-
-    private int PROPS_CLEANED_COUNT = 0;
+    private int propsCleanedCount;
 
     private static PropManager prop_manager;
 
     [SerializeField]
-    private static GameObject [] props;  
+    private static GameObject[] props;
+
+    private void Start()
+    {
+        propsCleanedCount = 0;
+    }
 
     // Start is called before the first frame update
     void Awake()
@@ -23,41 +24,24 @@ public class PropManager : MonoBehaviour
         if (prop_manager == null)
         {
             prop_manager = this;
-            DontDestroyOnLoad(prop_manager);
+            //DontDestroyOnLoad(prop_manager);
         }
 
         props = GameObject.FindGameObjectsWithTag("Prop");
-        Debug.Log(props.Length + " props");
-
     }
 
-    // Update is called once per frame
-    void Update()
+    public bool CheckCount()
     {
-        CheckCount(); 
-    }
-
-    private bool CheckCount()
-    {
-
-        if (PROPS_CLEANED_COUNT == props.Length)
-        {
-            return true;
-        }
-        else
-        {
-            return false;
-        }    
+        return propsCleanedCount >= props.Length;
     }
 
     public void IncreaseCount()
     {
-        PROPS_CLEANED_COUNT += 1;
-        Debug.Log(PROPS_CLEANED_COUNT);
+        propsCleanedCount += 1;
     } 
 
     public int RemainingProps()
     {
-        return props.Length - PROPS_CLEANED_COUNT;
+        return props.Length - propsCleanedCount;
     }
 }
