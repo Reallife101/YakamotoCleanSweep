@@ -766,6 +766,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 511766743}
     m_Modifications:
+    - target: {fileID: 200667650983430780, guid: 69bcdf7e2de04d14f989ccef62d0da30, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1567732767146548020, guid: 69bcdf7e2de04d14f989ccef62d0da30, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -919,7 +923,7 @@ MonoBehaviour:
   cleanModel: {fileID: 1519830211}
   bar: {fileID: 511766746}
   dirtyMesh: {fileID: 511766749}
-  cleanMesh: {fileID: 1519830212}
+  cleanMesh: {fileID: 540844316}
   healthBarCanvas: {fileID: 1597640692}
 --- !u!114 &511766746
 MonoBehaviour:
@@ -938,6 +942,11 @@ MonoBehaviour:
 MeshRenderer:
   m_CorrespondingSourceObject: {fileID: 6270599520803183493, guid: fb2ebeb9f6c74ac409704d4e4fd58905, type: 3}
   m_PrefabInstance: {fileID: 1200440507}
+  m_PrefabAsset: {fileID: 0}
+--- !u!23 &540844316 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 200667650983430780, guid: 69bcdf7e2de04d14f989ccef62d0da30, type: 3}
+  m_PrefabInstance: {fileID: 394168921}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &548916419
 PrefabInstance:
@@ -1677,7 +1686,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b0f268402894ab74e9b9241ac5c7dc01, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  level: 0
+  level: 1
 --- !u!135 &964435865
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -1880,6 +1889,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7860464168464041811, guid: 79803718d2006dc4295d416decda0fe0, type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     - target: {fileID: 7860464168464041836, guid: 79803718d2006dc4295d416decda0fe0, type: 3}
       propertyPath: sensX
       value: 700
@@ -1972,6 +1985,10 @@ PrefabInstance:
       propertyPath: m_Material
       value: 
       objectReference: {fileID: 13400000, guid: 884b59033a8d20144a6fc28afb673ecd, type: 2}
+    - target: {fileID: 7860464168766041171, guid: 79803718d2006dc4295d416decda0fe0, type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     - target: {fileID: 7860464168766041197, guid: 79803718d2006dc4295d416decda0fe0, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -2249,11 +2266,6 @@ PrefabInstance:
 --- !u!1 &1519830211 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2833951713912223619, guid: 7061b8efe5dac8448a33cb93242b24ec, type: 3}
-  m_PrefabInstance: {fileID: 465159704}
-  m_PrefabAsset: {fileID: 0}
---- !u!23 &1519830212 stripped
-MeshRenderer:
-  m_CorrespondingSourceObject: {fileID: 462778746384050992, guid: 7061b8efe5dac8448a33cb93242b24ec, type: 3}
   m_PrefabInstance: {fileID: 465159704}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1576192576
