@@ -1,19 +1,22 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using System;
 using TMPro;
 
 public class Timer : MonoBehaviour
 {
     float currentTime;
-    
+  
     private TextMeshProUGUI textMesh;
+
+    [SerializeField]
+    private loadLevel loadLevel; 
 
     // Start is called before the first frame update
     void Start()
     {
         textMesh = GetComponent<TextMeshProUGUI>();
         currentTime = 0f;
+        loadLevel.OnLevelFinished += sendTime;
     }
 
     private static string format2Digit (int t) {
@@ -40,5 +43,10 @@ public class Timer : MonoBehaviour
     {
         currentTime += 1f * Time.deltaTime;
         textMesh.text = format(currentTime);
+    }
+
+    public void sendTime()
+    {
+        Debug.Log($"The time is {currentTime}");
     }
 }
