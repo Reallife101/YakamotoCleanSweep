@@ -5,33 +5,35 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     [Header("Movement")]
-    [SerializeField] private float moveSpeed = 6f;
-    [SerializeField] private float movementMultiplier = 10f;
-    [SerializeField] private float airMultiplier = 0.4f;
-    [SerializeField] private Transform orientation;
-    private bool canStrafe;
+    [SerializeField] private float moveSpeed = 6f; //for debug: shows the current movem speed of the player
+    [SerializeField] private float movementMultiplier = 10f; //purely for rigidbody physics
+    [SerializeField] private float airMultiplier = 0.4f; //rigidbody physics in the air
+    [SerializeField] private Transform orientation; //keeps track of where the player is looking
+    private bool canStrafe; //whether or not the player can move side-to-side
  
     [Header("Camera")]
     [SerializeField] private Camera cam;
     [SerializeField] private Transform cameraPosition;
+    //Fields of View for the camera
     [SerializeField] private float crouchFOV = 50f;
     [SerializeField] private float normalFOV = 60f;
     [SerializeField] private float sprintFOV = 70f;
     [SerializeField] private float slideFOV = 75f;
+    //for lerp time to transition between FOVs
     [SerializeField] private float fovTime = 1f;
 
     [Header("Sprinting")]
     [SerializeField] private float walkSpeed = 4f;
     [SerializeField] private float sprintSpeed = 6f;
-    [SerializeField] private float sprintAcceleration = 10f;
-    [SerializeField] private bool toggleSprint;
+    [SerializeField] private float sprintAcceleration = 10f; //how long it takes to get up to sprint speed
+    [SerializeField] private bool toggleSprint; //whether or not the sprint button is toggle or hold
 
     [Header("Jumping")]
     [SerializeField] private float groundJumpForce = 5f;
     //[SerializeField] private AudioClip jumpSound;
 
     [Header("Crouching")]
-    [SerializeField] private float crouchHeightScale = 0.5f;
+    [SerializeField] private float crouchHeightScale = 0.5f; //height of the player when crouching
     [SerializeField] private float crouchSpeed = 3f;
     [SerializeField] private float crouchAcceleration = 4f;
     //[SerializeField] private float ceilingDistance = 0.1f;
@@ -40,10 +42,10 @@ public class PlayerMovement : MonoBehaviour
 
     [Header("Sliding")]
     [SerializeField] private float slideSpeed = 12f;
-    [SerializeField] private float slideTime = 1f;
-    [SerializeField] private float velocityToSlide = 11f;
+    [SerializeField] private float slideTime = 1f; //max time slide can last
+    [SerializeField] private float velocityToSlide = 11f; //required velocity of player to initiate a slide
     //[SerializeField] private AudioClip slideSound;
-    private Vector3 slideDirection;
+    private Vector3 slideDirection; //tracks the direction a player initiated a slide so they stay sliding in that direction
 
     [Header("Keybinds")]
     [SerializeField] KeyCode jumpKey = KeyCode.Space;
@@ -52,14 +54,15 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] KeyCode holdCrouchKey = KeyCode.LeftControl;
 
     [Header("Drag")]
+    //rigidbody drag
     [SerializeField] private float groundDrag = 6f;
     [SerializeField] private float airDrag = 2f;
 
     [Header("Ground Detection")]
-    [SerializeField] private Transform groundCheck;
-    [SerializeField] private float groundDistance = 0.4f;
+    [SerializeField] private Transform groundCheck; //game object on the bottom of the player
+    [SerializeField] private float groundDistance = 0.4f; //distance the player has to be from the ground to determine ifGrounded
     [SerializeField] private LayerMask groundMask;
-    private bool isGrounded;
+    public bool isGrounded { get; private set; }
     private RaycastHit slopeHit;
 
     [Header("Physical Attributes")]
@@ -81,6 +84,7 @@ public class PlayerMovement : MonoBehaviour
     private bool isSliding;
     AudioSource m_AudioSource;
 
+    //relies on toggleSprint
     private delegate void CrouchDelegate();
     private CrouchDelegate crouchMethod;
     private delegate void SprintDelegate();
@@ -102,7 +106,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
-        isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
+        isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask); //performs sphereCheck to see if the player is close enough to the ground to be considered grounded
         //ceilingContest = Physics.CheckSphere(ceilingCheck.position, ceilingDistance);
 
         DelegateToggles();
@@ -238,6 +242,7 @@ public class PlayerMovement : MonoBehaviour
         
         else if (!isSprinting)
         {
+            isSprinting = false;
             moveSpeed = Mathf.Lerp(moveSpeed, walkSpeed, crouchAcceleration * Time.deltaTime);
             cam.fieldOfView = Mathf.Lerp(cam.fieldOfView, normalFOV, fovTime * Time.deltaTime);
         }
@@ -254,7 +259,7 @@ public class PlayerMovement : MonoBehaviour
             cam.fieldOfView = sprintFOV;
             //cam.fieldOfView = Mathf.Lerp(cam.fieldOfView, sprintFOV, fovTime * Time.deltaTime);
         }
-        else if (Input.GetKeyDown(sprintKey) && isGrounded && !isCrouching && isSprinting) 
+        else if ((Input.GetKeyDown(sprintKey) && isGrounded && !isCrouching && isSprinting) || verticalMovement == 0 || !isGrounded) 
         {
             isSprinting = false;
             moveSpeed = walkSpeed;
@@ -284,6 +289,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void ControlPhysical()
     {
+        //changes the player capsule height depending on if crouched or not
         playerCapsule.height = currentPlayerHeight;
         groundCheck.localPosition = new Vector3(0, -capsuleSize.transform.localScale.y, 0);
     }
@@ -300,7 +306,7 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    private bool OnSlope()
+    private bool OnSlope() //stops player from sliding down on slopes
     {
         if (Physics.Raycast(transform.position, Vector3.down, out slopeHit, currentPlayerHeight / 2 + 0.5f))
         {

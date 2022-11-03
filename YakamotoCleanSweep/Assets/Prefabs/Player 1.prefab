@@ -46,7 +46,7 @@ GameObject:
   - component: {fileID: 7860464168464041810}
   m_Layer: 0
   m_Name: Player 1
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -79,7 +79,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7860464168464041811}
   serializedVersion: 2
-  m_Mass: 10
+  m_Mass: 100
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 1
@@ -118,30 +118,32 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 6
   movementMultiplier: 10
-  airMultiplier: 0.4
+  airMultiplier: 0.11
   orientation: {fileID: 7860464169124964692}
   cam: {fileID: 7860464169090707108}
   cameraPosition: {fileID: 7860464168001807295}
-  crouchFOV: 50
-  normalFOV: 60
-  sprintFOV: 70
-  slideFOV: 75
-  fovTime: 1
-  walkSpeed: 4
-  sprintSpeed: 6
+  crouchFOV: 80
+  normalFOV: 90
+  sprintFOV: 100
+  slideFOV: 110
+  fovTime: 15
+  walkSpeed: 3
+  sprintSpeed: 5
   sprintAcceleration: 10
-  groundJumpForce: 100000
-  airJumpForce: 100000
-  crouchHeightScale: 0.5
-  crouchSpeed: 3
-  crouchAcceleration: 4
-  slideSpeed: 12
+  toggleSprint: 1
+  groundJumpForce: 800
+  crouchHeightScale: 0.7
+  crouchSpeed: 2
+  crouchAcceleration: 2
+  slideSpeed: 10
   slideTime: 1
+  velocityToSlide: 11
   jumpKey: 32
   sprintKey: 304
-  crouchKey: 99
-  groundDrag: 6
-  airDrag: 2
+  toggleCrouchKey: 99
+  holdCrouchKey: 306
+  groundDrag: 4
+  airDrag: 0.1
   groundCheck: {fileID: 7860464168973304646}
   groundDistance: 0.4
   groundMask:
@@ -150,7 +152,6 @@ MonoBehaviour:
   rb: {fileID: 7860464168464041839}
   capsuleSize: {fileID: 7860464168766041199}
   playerCapsule: {fileID: 7860464168766041170}
-  canDoubleJump: 0
 --- !u!114 &7860464168464041810
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -166,17 +167,17 @@ MonoBehaviour:
   movement: {fileID: 7860464168464041837}
   orientation: {fileID: 7860464169124964692}
   jumpKey: 32
-  wallDistance: 0.5
-  minimumJumpHeight: 1.5
-  wallRunGravity: 0
-  wallRunJumpForce: 0
+  wallDistance: 0.75
+  minimumJumpHeight: 1.2
+  wallRunGravity: 0.5
+  wallRunJumpForce: 250
   requiredForwardVelocity: 1
   cam: {fileID: 7860464169090707108}
-  fov: 0
-  wallRunfov: 0
-  wallRunfovTime: 0
-  camTilt: 0
-  camTiltTime: 0
+  fov: 90
+  wallRunfov: 110
+  wallRunfovTime: 10
+  camTilt: 10
+  camTiltTime: 10
 --- !u!1 &7860464168766041171
 GameObject:
   m_ObjectHideFlags: 0
@@ -191,7 +192,7 @@ GameObject:
   - component: {fileID: 7860464168766041170}
   m_Layer: 0
   m_Name: Capsule
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -268,7 +269,7 @@ CapsuleCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7860464168766041171}
-  m_Material: {fileID: 13400000, guid: 3db0ec97a1b0c3749b8697a939710920, type: 2}
+  m_Material: {fileID: 13400000, guid: 884b59033a8d20144a6fc28afb673ecd, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.5
