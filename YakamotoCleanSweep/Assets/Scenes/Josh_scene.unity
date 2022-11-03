@@ -517,7 +517,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh25176
+  m_Name: pb_Mesh26082
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -831,7 +831,6 @@ GameObject:
   - component: {fileID: 442284349}
   - component: {fileID: 442284352}
   - component: {fileID: 442284351}
-  - component: {fileID: 442284350}
   - component: {fileID: 442284353}
   m_Layer: 5
   m_Name: Timer
@@ -860,19 +859,6 @@ RectTransform:
   m_AnchoredPosition: {x: -1554, y: -60.6}
   m_SizeDelta: {x: 700, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &442284350
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 442284348}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7d6c6be5cfe122045b729db62e78588f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  loadLevel: {fileID: 964435864}
 --- !u!114 &442284351
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -895,8 +881,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 0:00.00
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 02875a3a189d381409f26a2094756c30, type: 2}
-  m_sharedMaterial: {fileID: 7015397252326954452, guid: 02875a3a189d381409f26a2094756c30, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -979,7 +965,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 442284348}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7db8f21d400616245a83f37d6aced843, type: 3}
+  m_Script: {fileID: 11500000, guid: 2878ee6d0e9f5d2488d9cf00d0f8bc4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   loadLevel: {fileID: 964435864}
