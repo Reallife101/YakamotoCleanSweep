@@ -5,32 +5,35 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     [Header("Movement")]
-    [SerializeField] private float moveSpeed = 6f;
-    [SerializeField] private float movementMultiplier = 10f;
-    [SerializeField] private float airMultiplier = 0.4f;
-    [SerializeField] private Transform orientation;
-
+    [SerializeField] private float moveSpeed = 6f; //for debug: shows the current movem speed of the player
+    [SerializeField] private float movementMultiplier = 10f; //purely for rigidbody physics
+    [SerializeField] private float airMultiplier = 0.4f; //rigidbody physics in the air
+    [SerializeField] private Transform orientation; //keeps track of where the player is looking
+    private bool canStrafe; //whether or not the player can move side-to-side
+ 
     [Header("Camera")]
     [SerializeField] private Camera cam;
     [SerializeField] private Transform cameraPosition;
+    //Fields of View for the camera
     [SerializeField] private float crouchFOV = 50f;
     [SerializeField] private float normalFOV = 60f;
     [SerializeField] private float sprintFOV = 70f;
     [SerializeField] private float slideFOV = 75f;
+    //for lerp time to transition between FOVs
     [SerializeField] private float fovTime = 1f;
 
     [Header("Sprinting")]
     [SerializeField] private float walkSpeed = 4f;
     [SerializeField] private float sprintSpeed = 6f;
-    [SerializeField] private float sprintAcceleration = 10f;
+    [SerializeField] private float sprintAcceleration = 10f; //how long it takes to get up to sprint speed
+    [SerializeField] private bool toggleSprint; //whether or not the sprint button is toggle or hold
 
     [Header("Jumping")]
     [SerializeField] private float groundJumpForce = 5f;
-    [SerializeField] private float airJumpForce = 5f;
     //[SerializeField] private AudioClip jumpSound;
 
     [Header("Crouching")]
-    [SerializeField] private float crouchHeightScale = 0.5f;
+    [SerializeField] private float crouchHeightScale = 0.5f; //height of the player when crouching
     [SerializeField] private float crouchSpeed = 3f;
     [SerializeField] private float crouchAcceleration = 4f;
     //[SerializeField] private float ceilingDistance = 0.1f;
@@ -39,23 +42,27 @@ public class PlayerMovement : MonoBehaviour
 
     [Header("Sliding")]
     [SerializeField] private float slideSpeed = 12f;
-    [SerializeField] private float slideTime = 1f;
+    [SerializeField] private float slideTime = 1f; //max time slide can last
+    [SerializeField] private float velocityToSlide = 11f; //required velocity of player to initiate a slide
     //[SerializeField] private AudioClip slideSound;
+    private Vector3 slideDirection; //tracks the direction a player initiated a slide so they stay sliding in that direction
 
     [Header("Keybinds")]
     [SerializeField] KeyCode jumpKey = KeyCode.Space;
     [SerializeField] KeyCode sprintKey = KeyCode.LeftShift;
-    [SerializeField] KeyCode crouchKey = KeyCode.C;
+    [SerializeField] KeyCode toggleCrouchKey = KeyCode.C;
+    [SerializeField] KeyCode holdCrouchKey = KeyCode.LeftControl;
 
     [Header("Drag")]
+    //rigidbody drag
     [SerializeField] private float groundDrag = 6f;
     [SerializeField] private float airDrag = 2f;
 
     [Header("Ground Detection")]
-    [SerializeField] private Transform groundCheck;
-    [SerializeField] private float groundDistance = 0.4f;
+    [SerializeField] private Transform groundCheck; //game object on the bottom of the player
+    [SerializeField] private float groundDistance = 0.4f; //distance the player has to be from the ground to determine ifGrounded
     [SerializeField] private LayerMask groundMask;
-    private bool isGrounded;
+    public bool isGrounded { get; private set; }
     private RaycastHit slopeHit;
 
     [Header("Physical Attributes")]
@@ -73,10 +80,15 @@ public class PlayerMovement : MonoBehaviour
     private float currentPlayerHeight;
 
     public bool isCrouching { get; private set; }
-    private bool isSprinting;
+    public bool isSprinting { get; private set; }
     private bool isSliding;
-    public bool canDoubleJump;
     AudioSource m_AudioSource;
+
+    //relies on toggleSprint
+    private delegate void CrouchDelegate();
+    private CrouchDelegate crouchMethod;
+    private delegate void SprintDelegate();
+    private SprintDelegate sprintMethod;
 
     private void Start()
     {
@@ -86,57 +98,41 @@ public class PlayerMovement : MonoBehaviour
         isCrouching = false;
         isSprinting = false;
         isSliding = false;
-        canDoubleJump = true;
         cam.fieldOfView = normalFOV;
+        moveSpeed = walkSpeed;
+        canStrafe = true;
         //m_AudioSource = GetComponent<AudioSource>();
     }
 
     private void Update()
     {
-        isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
+        isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask); //performs sphereCheck to see if the player is close enough to the ground to be considered grounded
         //ceilingContest = Physics.CheckSphere(ceilingCheck.position, ceilingDistance);
 
+        DelegateToggles();
         PlayerInput();
         ControlDrag();
         ControlSpeed();
         ControlPhysical();
 
-        if (isGrounded)
-        {
-            canDoubleJump = true;
-        }
-
         if (Input.GetKeyDown(jumpKey) && isGrounded && !isCrouching)
         {
             Jump(groundJumpForce);
         }
-        else if (Input.GetKeyDown(jumpKey) && !isGrounded && canDoubleJump)
-        {
-            Jump(airJumpForce);
-            canDoubleJump = false;
-        }
 
-        if (Input.GetKeyDown(crouchKey) && isGrounded && !isSprinting)
-        {
-            Crouch();
-        }
-        else if ((Input.GetKeyDown(crouchKey) || Input.GetKeyDown(jumpKey)) && isCrouching)
-        {
-            Crouch();
-        }
-        else if (Input.GetKeyDown(crouchKey) && isGrounded && isSprinting)
-        {
-            Slide();
-            Invoke("stopSlide", slideTime);
-        }
+        crouchMethod();
 
         slopeMoveDirection = Vector3.ProjectOnPlane(moveDirection, slopeHit.normal);
+        //Debug.Log(rb.velocity.magnitude);
     }
 
     public void PlayerInput()
     {
-        horizontalMovement = Input.GetAxisRaw("Horizontal");
-        verticalMovement = Input.GetAxisRaw("Vertical");
+        if (canStrafe)
+        {
+            horizontalMovement = Input.GetAxisRaw("Horizontal");
+            verticalMovement = Input.GetAxisRaw("Vertical");
+        }
 
         moveDirection = orientation.forward * verticalMovement + orientation.right * horizontalMovement;
     }
@@ -149,38 +145,132 @@ public class PlayerMovement : MonoBehaviour
         //m_AudioSource.PlayOneShot(m_AudioSource.clip);
     }
 
-    public void Crouch()
+    private void DelegateToggles()
     {
-        if (!isCrouching)
+        if (toggleSprint)
+        {
+            crouchMethod = HoldCrouch;
+            sprintMethod = ToggleSprint;
+        }
+        else
+        {
+            crouchMethod = ToggleCrouch;
+            sprintMethod = HoldSprint;
+        }
+    }
+
+    public void ToggleCrouch()
+    {
+        if (Input.GetKeyDown(toggleCrouchKey) && isGrounded && !isCrouching)
         {
             capsuleSize.localScale = new Vector3(1, capsuleSize.transform.localScale.y * crouchHeightScale, 1);
             cameraPosition.localPosition = new Vector3(0, cameraPosition.localPosition.y * crouchHeightScale, 0);
             transform.position = new Vector3(transform.position.x, groundCheck.position.y + capsuleSize.localScale.y, transform.position.z);
             isCrouching = true;
+            if (rb.velocity.magnitude > velocityToSlide) //TODO: add buffer variable for slide speed target
+            {
+                Slide();
+                Invoke("StopSlide", slideTime);
+            }
         }
-        else if (isCrouching)
+        else if (Input.GetKeyDown(toggleCrouchKey) && isCrouching && isGrounded && !isSprinting)
         {
             capsuleSize.localScale = new Vector3(1, capsuleSize.transform.localScale.y / crouchHeightScale, 1);
             transform.position = new Vector3(transform.position.x, groundCheck.position.y + capsuleSize.localScale.y, transform.position.z);
             cameraPosition.localPosition = new Vector3(0, cameraPosition.localPosition.y / crouchHeightScale, 0);
             isCrouching = false;
+            isSliding = false;
+            canStrafe = true;
+        }
+    }
+
+    public void HoldCrouch()
+    {
+        if (Input.GetKey(holdCrouchKey) && isGrounded && !isCrouching)
+        {
+            capsuleSize.localScale = new Vector3(1, capsuleSize.transform.localScale.y * crouchHeightScale, 1);
+            cameraPosition.localPosition = new Vector3(0, cameraPosition.localPosition.y * crouchHeightScale, 0);
+            transform.position = new Vector3(transform.position.x, groundCheck.position.y + capsuleSize.localScale.y, transform.position.z);
+            isCrouching = true;
+            if (rb.velocity.magnitude > velocityToSlide)
+            {
+                Slide();
+                Invoke("StopSlide", slideTime);
+            }
+        }
+        else if (Input.GetKeyUp(holdCrouchKey) && isCrouching)
+        {
+            capsuleSize.localScale = new Vector3(1, capsuleSize.transform.localScale.y / crouchHeightScale, 1);
+            transform.position = new Vector3(transform.position.x, groundCheck.position.y + capsuleSize.localScale.y, transform.position.z);
+            cameraPosition.localPosition = new Vector3(0, cameraPosition.localPosition.y / crouchHeightScale, 0);
+            isCrouching = false;
+            isSliding = false;
+            canStrafe = true;
         }
     }
 
     private void Slide()
     {
-        Crouch();
+        slideDirection = rb.velocity.normalized;
         isSliding = true;
+        isSprinting = false;
+        canStrafe = false;
         //m_AudioSource.clip = slideSound;
         //m_AudioSource.PlayOneShot(m_AudioSource.clip);
     }
 
-    private void stopSlide()
+    private void StopSlide()
     {
         isSliding = false;
+        canStrafe = true;
     }
 
     public void ControlSpeed()
+    {
+        sprintMethod();
+
+        if (isCrouching && !isSliding)
+        {
+            moveSpeed = Mathf.Lerp(moveSpeed, crouchSpeed, crouchAcceleration * Time.deltaTime);
+            cam.fieldOfView = Mathf.Lerp(cam.fieldOfView, crouchFOV, fovTime * Time.deltaTime);
+        }
+        else if (isCrouching && isSliding)
+        {
+            moveSpeed = slideSpeed;
+            cam.fieldOfView = Mathf.Lerp(cam.fieldOfView, slideFOV, fovTime * Time.deltaTime);
+        }
+        
+        else if (!isSprinting)
+        {
+            isSprinting = false;
+            moveSpeed = Mathf.Lerp(moveSpeed, walkSpeed, crouchAcceleration * Time.deltaTime);
+            cam.fieldOfView = Mathf.Lerp(cam.fieldOfView, normalFOV, fovTime * Time.deltaTime);
+        }
+        
+    }
+
+    private void ToggleSprint()
+    {
+        if (Input.GetKeyDown(sprintKey) && isGrounded && !isCrouching && !isSprinting)
+        {
+            isSprinting = true;
+            moveSpeed = sprintSpeed;
+            //moveSpeed = Mathf.Lerp(moveSpeed, sprintSpeed, sprintAcceleration * Time.deltaTime);
+            cam.fieldOfView = sprintFOV;
+            //cam.fieldOfView = Mathf.Lerp(cam.fieldOfView, sprintFOV, fovTime * Time.deltaTime);
+        }
+        else if ((Input.GetKeyDown(sprintKey) && isGrounded && !isCrouching && isSprinting) || verticalMovement == 0 || !isGrounded) 
+        {
+            isSprinting = false;
+            moveSpeed = walkSpeed;
+            //moveSpeed = Mathf.Lerp(moveSpeed, walkSpeed, sprintAcceleration * Time.deltaTime);
+            cam.fieldOfView = normalFOV;
+            //cam.fieldOfView = Mathf.Lerp(cam.fieldOfView, normalFOV, fovTime * Time.deltaTime);
+           //cam.fieldOfView = Mathf.Lerp(cam.fieldOfView, normalFOV, fovTime * Time.deltaTime);
+        }
+    }
+
+    private void HoldSprint()
     {
 
         if (Input.GetKey(sprintKey) && isGrounded && !isCrouching)
@@ -195,28 +285,11 @@ public class PlayerMovement : MonoBehaviour
             cam.fieldOfView = Mathf.Lerp(cam.fieldOfView, normalFOV, fovTime * Time.deltaTime);
             isSprinting = false;
         }
-
-        if (isCrouching && !isSliding)
-        {
-            moveSpeed = Mathf.Lerp(moveSpeed, crouchSpeed, crouchAcceleration * Time.deltaTime);
-            cam.fieldOfView = Mathf.Lerp(cam.fieldOfView, crouchFOV, fovTime * Time.deltaTime);
-        }
-        else if (isCrouching && isSliding)
-        {
-            moveSpeed = slideSpeed;
-            cam.fieldOfView = Mathf.Lerp(cam.fieldOfView, slideFOV, fovTime * Time.deltaTime);
-        }
-        /*
-        else
-        {
-            moveSpeed = Mathf.Lerp(moveSpeed, walkSpeed, crouchAcceleration * Time.deltaTime);
-            cam.fieldOfView = Mathf.Lerp(cam.fieldOfView, normalFOV, fovTime * Time.deltaTime);
-        }
-        */
     }
 
     private void ControlPhysical()
     {
+        //changes the player capsule height depending on if crouched or not
         playerCapsule.height = currentPlayerHeight;
         groundCheck.localPosition = new Vector3(0, -capsuleSize.transform.localScale.y, 0);
     }
@@ -233,7 +306,7 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    private bool OnSlope()
+    private bool OnSlope() //stops player from sliding down on slopes
     {
         if (Physics.Raycast(transform.position, Vector3.down, out slopeHit, currentPlayerHeight / 2 + 0.5f))
         {
@@ -270,6 +343,11 @@ public class PlayerMovement : MonoBehaviour
         {
             rb.AddForce(moveDirection.normalized * moveSpeed * movementMultiplier * airMultiplier, ForceMode.Acceleration);
             gameObject.GetComponent<Rigidbody>().useGravity = true;
+        }
+        else if (isSliding)
+        {
+            rb.AddForce(slideDirection.normalized * moveSpeed * movementMultiplier * airMultiplier, ForceMode.Acceleration);
+            gameObject.GetComponent<Rigidbody>().useGravity = false;
         }
     }
 
