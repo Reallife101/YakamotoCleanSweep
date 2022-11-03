@@ -11,7 +11,7 @@ public class SoapTalisman : Ranged
         DrawRaycast(eye.forward);
         if (hitDetection)
         {
-            print("Take Damage");
+            DealDamage();
         }
         UpdateAmmo();
     }

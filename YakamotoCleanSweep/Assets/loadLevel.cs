@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class loadLevel : MonoBehaviour
 {
     [SerializeField]
-    int level;
+    private int level;
     private void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Player")
