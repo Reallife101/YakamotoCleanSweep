@@ -2,6 +2,8 @@ using UnityEngine;
 
 public class WeaponMedia : MediaController<Weapon>
 {
+    public static readonly int Attack = Animator.StringToHash("Attack");
+
     private void OnEnable()
     {
         host.OnAttack += AnimateAttack;
@@ -9,7 +11,7 @@ public class WeaponMedia : MediaController<Weapon>
 
     private void AnimateAttack()
     {
-        anim.SetTrigger("Attack");
+        anim.SetTrigger(Attack);
     }
 
     private void OnDisable()

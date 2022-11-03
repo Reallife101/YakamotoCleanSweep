@@ -1,8 +1,11 @@
 using UnityEngine;
 using System.Collections;
+using System;
 
 public abstract class Ranged : Weapon
 {
+    public event Action OnReload; // To let the media controller(s) respond
+
     [SerializeField] protected float reloadTime = 1f;
     [SerializeField] protected int clipSize = 1;
     
@@ -12,6 +15,7 @@ public abstract class Ranged : Weapon
     {
         bulletsRemaining = clipSize;
     }
+
 
     private void Update()
     {
@@ -34,6 +38,7 @@ public abstract class Ranged : Weapon
 
     protected IEnumerator ReloadRoutine()
     {
+        OnReload?.Invoke();
         yield return new WaitForSeconds(reloadTime);
         bulletsRemaining = clipSize;
     }
