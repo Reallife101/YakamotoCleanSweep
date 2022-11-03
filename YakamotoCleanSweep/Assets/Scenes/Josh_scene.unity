@@ -965,7 +965,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 442284348}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2878ee6d0e9f5d2488d9cf00d0f8bc4b, type: 3}
+  m_Script: {fileID: 11500000, guid: 7db8f21d400616245a83f37d6aced843, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   loadLevel: {fileID: 964435864}
@@ -1331,7 +1331,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 9221817431416743974, guid: 0d419ef40b2b7ab4aaee2940fc44df06, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 0d419ef40b2b7ab4aaee2940fc44df06, type: 3}
 --- !u!1 &845704260
 GameObject:
@@ -2224,7 +2225,8 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2917143153099555081, guid: a4d8638f8ff60a64bac1dc336c31dc71, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: a4d8638f8ff60a64bac1dc336c31dc71, type: 3}
 --- !u!1001 &1200440507
 PrefabInstance:
