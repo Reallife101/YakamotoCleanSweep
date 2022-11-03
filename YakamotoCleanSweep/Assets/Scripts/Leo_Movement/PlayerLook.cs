@@ -21,17 +21,23 @@ public class PlayerLook : MonoBehaviour
     private float xRotation;
     private float yRotation;
 
+    public bool allowLooking;
+
     private void Start()
     {
 
         cam = GetComponentInChildren<Camera>();
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
+        allowLooking = true;
     }
 
     private void Update()
     {
-        PlayerInput();
+        if (allowLooking)
+        {
+            PlayerInput();
+        }
 
         cam.transform.rotation = Quaternion.Euler(xRotation, yRotation, wallRun.tilt);
         orientation.transform.rotation = Quaternion.Euler(0, yRotation, 0);

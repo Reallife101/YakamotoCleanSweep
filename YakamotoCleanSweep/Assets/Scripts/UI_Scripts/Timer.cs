@@ -35,6 +35,11 @@ public class Timer : MonoBehaviour
         }
     }
 
+    public string getCurrentTime()
+    {
+        return format(currentTime);
+    }
+
     // Update is called once per frame
     void Update()
     {
