@@ -827,6 +827,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DirtyObject (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 747026033041960369, guid: 7061b8efe5dac8448a33cb93242b24ec, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 747026033041960397, guid: 7061b8efe5dac8448a33cb93242b24ec, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -914,7 +918,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cleanModel: {fileID: 1519830211}
   bar: {fileID: 511766746}
-  dirtyMesh: {fileID: 636540104}
+  dirtyMesh: {fileID: 511766749}
   cleanMesh: {fileID: 1519830212}
   healthBarCanvas: {fileID: 1597640692}
 --- !u!114 &511766746
@@ -930,6 +934,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   foreground: {fileID: 1841914170}
+--- !u!23 &511766749 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 6270599520803183493, guid: fb2ebeb9f6c74ac409704d4e4fd58905, type: 3}
+  m_PrefabInstance: {fileID: 1200440507}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &548916419
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1101,11 +1110,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
---- !u!23 &636540104 stripped
-MeshRenderer:
-  m_CorrespondingSourceObject: {fileID: 747026033041960371, guid: 7061b8efe5dac8448a33cb93242b24ec, type: 3}
-  m_PrefabInstance: {fileID: 465159704}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &709540452
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2173,6 +2177,10 @@ PrefabInstance:
       value: DirtyObject
       objectReference: {fileID: 0}
     - target: {fileID: 747026033041960369, guid: 7061b8efe5dac8448a33cb93242b24ec, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 747026033041960369, guid: 7061b8efe5dac8448a33cb93242b24ec, type: 3}
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
@@ -2791,7 +2799,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh25752
+  m_Name: pb_Mesh24464
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2

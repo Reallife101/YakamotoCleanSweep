@@ -10,7 +10,7 @@ public class health : MonoBehaviour
     private int currentHealth;
     private bool isAlive;
 
-    public static event Action OnDeath;
+    public event Action OnDeath;
 
     void Start()
     {
