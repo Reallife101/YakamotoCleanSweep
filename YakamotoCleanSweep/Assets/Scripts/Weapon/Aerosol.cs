@@ -22,7 +22,7 @@ public class Aerosol : Ranged
             
             if (hitDetection)
             {
-                print("Take Damage");
+                DealDamage();
             }
         }
 
