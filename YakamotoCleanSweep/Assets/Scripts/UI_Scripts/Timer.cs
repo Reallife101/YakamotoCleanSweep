@@ -35,6 +35,10 @@ public class Timer : MonoBehaviour
         }
     }
 
+    public float getCurrentTimeAsNum() {
+        return currentTime;
+    }
+
     public string getCurrentTime()
     {
         return format(currentTime);
