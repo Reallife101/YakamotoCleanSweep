@@ -147,7 +147,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 64790872}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.7530482, y: 1.83, z: -2.612977}
+  m_LocalPosition: {x: 0.7530482, y: 1.03, z: -2.612977}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1718,6 +1718,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   level: 1
+  endScreen: {fileID: 0}
+  timer: {fileID: 0}
+  tm: {fileID: 0}
+  pl: {fileID: 0}
 --- !u!135 &964435865
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -2847,7 +2851,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh24464
+  m_Name: pb_Mesh25366
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -3010,7 +3014,7 @@ Rigidbody:
   m_CorrespondingSourceObject: {fileID: 7860464168464041839, guid: 79803718d2006dc4295d416decda0fe0, type: 3}
   m_PrefabInstance: {fileID: 1056231645}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &2070520887
+--- !u!114 &2070520892
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3019,9 +3023,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1089399856}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 56a9f042eca6f7047b47f871b2da476f, type: 3}
+  m_Script: {fileID: 11500000, guid: 72440fa645717f4408ff1403eae7ce21, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  lowest_point: {fileID: 845704260}
 --- !u!1 &2072468969 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8426099797160277185, guid: 0d419ef40b2b7ab4aaee2940fc44df06, type: 3}

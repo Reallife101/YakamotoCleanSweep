@@ -6,17 +6,15 @@ using UnityEngine.SceneManagement;
 public class playerrespawn : MonoBehaviour
 {
     // Start is called before the first frame update
-    private GameObject SpawnPoint;
+    [SerializeField]
+    private GameObject lowest_point;
     // Update is called once per frame
-    void Start(){
-        SpawnPoint = GameObject.Find("SpawnPoint");
-    }
     void Update()
     {
-         if (this.transform.position[1] < -20)
+         if (this.transform.position.y < lowest_point.transform.position.y - 10)
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-           this.transform.position = SpawnPoint.transform.position;
+            this.transform.position = lowest_point.transform.position;
         }
     }
 }
