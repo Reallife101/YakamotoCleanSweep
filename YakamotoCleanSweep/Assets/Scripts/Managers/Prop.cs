@@ -37,7 +37,7 @@ public class Prop : MonoBehaviour
     void Update()
     {
         UpdateHealthBar();
- /*       if (Input.GetMouseButtonDown(0))
+     /* if (Input.GetMouseButtonDown(0))
         {
             health.TakeDamage(1);
         }*/

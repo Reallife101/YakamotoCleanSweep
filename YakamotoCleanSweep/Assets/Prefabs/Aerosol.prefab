@@ -12,6 +12,8 @@ GameObject:
   - component: {fileID: 5191399292002492894}
   - component: {fileID: 8065798977256494356}
   - component: {fileID: 1250140670087013182}
+  - component: {fileID: 2637202901945463506}
+  - component: {fileID: 9221817431416743974}
   m_Layer: 0
   m_Name: Aerosol
   m_TagString: Untagged
@@ -97,14 +99,48 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 1
-  fireRate: 1
-  range: 2
+  fireRate: 0.8
+  range: 5
   enemyLayer:
     serializedVersion: 2
     m_Bits: 128
-  reloadTime: 1
-  clipSize: 1
+  reloadTime: 2
+  clipSize: 5
   sprayAngle: 50
   pelletAmount: 9
-  knockbackPower: 5
+  knockbackPower: 10
   playerBody: {fileID: 0}
+--- !u!95 &2637202901945463506
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8426099797160277185}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 22100000, guid: d33cc582ca4392647bcc9d4349322b22, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &9221817431416743974
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8426099797160277185}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9317b1bf4d7c24a4585c874cb6e3aa8d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  host: {fileID: 1250140670087013182}
+  anim: {fileID: 2637202901945463506}

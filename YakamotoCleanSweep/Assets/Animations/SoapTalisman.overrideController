@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!221 &22100000
+AnimatorOverrideController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: SoapTalisman
+  m_Controller: {fileID: 9100000, guid: 48acab61e453bc741b3d47179d4e6d57, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: 92eb3b2139779a341b37dcbba368db77, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 92eb3b2139779a341b37dcbba368db77, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: aca4e05debe0b744896414a432c15e5f, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: aca4e05debe0b744896414a432c15e5f, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: b95e33a2cff63cb468cf004141f37a89, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: b95e33a2cff63cb468cf004141f37a89, type: 2}
