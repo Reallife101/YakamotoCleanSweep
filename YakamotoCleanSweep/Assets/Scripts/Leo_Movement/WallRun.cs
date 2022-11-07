@@ -38,9 +38,12 @@ public class WallRun : MonoBehaviour
 
     private Rigidbody rb;
 
+    private bool isWallRunning;
+
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
+        isWallRunning = false;
     }
 
     private void Update()
@@ -49,7 +52,7 @@ public class WallRun : MonoBehaviour
 
         if (CanWallRun())
         {
-            if (wallLeft || wallRight)
+            if ((wallLeft || wallRight))
             {
                 StartWallRun();
             }
@@ -64,7 +67,7 @@ public class WallRun : MonoBehaviour
         }
     }
 
-    private void CheckWall()
+    private void CheckWall() //determines if a wall is to the left or right of a player
     {
         wallLeft = Physics.Raycast(transform.position, -orientation.right, out leftWallHit, wallDistance);
         wallRight = Physics.Raycast(transform.position, orientation.right, out rightWallHit, wallDistance);
@@ -72,18 +75,20 @@ public class WallRun : MonoBehaviour
 
     private bool CanWallRun()
     {
+        //makes sure player is off the ground, moving forward, and not crouching to initiate wall run
         return !Physics.Raycast(transform.position, Vector3.down, minimumJumpHeight) && orientation.InverseTransformDirection(rb.velocity).z > requiredForwardVelocity && !movement.isCrouching;
     }
 
     private void StartWallRun()
     {
-        rb.useGravity = false;
+        rb.useGravity = false; //switches to lower gravity for wall running
+        isWallRunning = true;
 
         rb.AddForce(Vector3.down * wallRunGravity, ForceMode.Force);
 
         cam.fieldOfView = Mathf.Lerp(cam.fieldOfView, wallRunfov, wallRunfovTime * Time.deltaTime);
 
-        if (wallLeft)
+        if (wallLeft) //tilts camera approriately depending on which side the wall is on
         {
             tilt = Mathf.Lerp(tilt, -camTilt, camTiltTime * Time.deltaTime);
         }
@@ -92,7 +97,7 @@ public class WallRun : MonoBehaviour
             tilt = Mathf.Lerp(tilt, camTilt, camTiltTime * Time.deltaTime);
         }
 
-        if (Input.GetKeyDown(jumpKey))
+        if (Input.GetKeyDown(jumpKey)) //sends players jumping away from and up from wall
         {
             if (wallLeft)
             {
@@ -108,14 +113,17 @@ public class WallRun : MonoBehaviour
             }
         }
 
-        movement.canDoubleJump = true;
     }
 
     private void StopWallRun()
     {
-        rb.useGravity = true;
+        if (!movement.isSprinting)
+        {
+            rb.useGravity = true;
+            isWallRunning = false;
 
-        cam.fieldOfView = Mathf.Lerp(cam.fieldOfView, fov, wallRunfovTime * Time.deltaTime);
-        tilt = Mathf.Lerp(tilt, 0, camTiltTime * Time.deltaTime);
+            cam.fieldOfView = Mathf.Lerp(cam.fieldOfView, fov, wallRunfovTime * Time.deltaTime);
+            tilt = Mathf.Lerp(tilt, 0, camTiltTime * Time.deltaTime);
+        }
     }
 }

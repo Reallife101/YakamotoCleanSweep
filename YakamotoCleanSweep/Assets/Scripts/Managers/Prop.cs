@@ -26,21 +26,21 @@ public class Prop : MonoBehaviour
         cleanMesh.enabled = false;
         healthBarCanvas.enabled = true;
         isClean = false;
+        health.OnDeath += MakeClean;
     }
 
     private void Awake()
     {
-        health.OnDeath += MakeClean;
         propManager = GameObject.FindGameObjectWithTag("PropManager");
     }
 
     void Update()
     {
         UpdateHealthBar();
-        if (Input.GetMouseButtonDown(0))
+     /* if (Input.GetMouseButtonDown(0))
         {
             health.TakeDamage(1);
-        }
+        }*/
     }
 
     private void MakeClean()
