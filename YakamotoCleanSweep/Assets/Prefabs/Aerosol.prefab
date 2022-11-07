@@ -99,7 +99,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 1
-  fireRate: 0.8
+  fireRate: 1
   range: 5
   enemyLayer:
     serializedVersion: 2

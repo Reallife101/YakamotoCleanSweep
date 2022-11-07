@@ -815,7 +815,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8426099797160277185, guid: 0d419ef40b2b7ab4aaee2940fc44df06, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9197570569926274683, guid: 0d419ef40b2b7ab4aaee2940fc44df06, type: 3}
       propertyPath: m_RootOrder
@@ -869,7 +869,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh29782
+  m_Name: pb_Mesh24406
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -1049,7 +1049,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4862565543342571118, guid: ec7413f337ca7c94fb80cbc146126994, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5201830424217429204, guid: ec7413f337ca7c94fb80cbc146126994, type: 3}
       propertyPath: m_RootOrder
@@ -1522,7 +1522,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7860464168464041837, guid: 79803718d2006dc4295d416decda0fe0, type: 3}
       propertyPath: groundJumpForce
-      value: 100
+      value: 750
       objectReference: {fileID: 0}
     - target: {fileID: 7860464168464041837, guid: 79803718d2006dc4295d416decda0fe0, type: 3}
       propertyPath: crouchHeightScale
