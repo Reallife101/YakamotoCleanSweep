@@ -8,13 +8,20 @@ public class loadLevel : MonoBehaviour
 {
     [SerializeField] int level;
     [SerializeField] GameObject endScreen;
+    [SerializeField] GameObject gold;
+    [SerializeField] GameObject silver;
+    [SerializeField] GameObject bronze;
     [SerializeField] TMP_Text timer;
     [SerializeField] Timer tm;
     [SerializeField] PlayerLook pl;
+    [SerializeField] int goldTime = 20;
+    [SerializeField] int silverTime = 45;
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Player")
         {
+            float myTime = tm.getCurrentTimeAsNum();
             //If its the player, show the end screen and pause the game
             endScreen.SetActive(true);
             timer.text = tm.getCurrentTime();
@@ -22,7 +29,15 @@ public class loadLevel : MonoBehaviour
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
             pl.allowLooking = false;
-
+            if (myTime < goldTime) {
+                gold.SetActive(true);
+            }
+            else if (myTime < silverTime) {
+                silver.SetActive(true);
+            }
+            else {
+                bronze.SetActive(true);
+            }
         }
     }
 
