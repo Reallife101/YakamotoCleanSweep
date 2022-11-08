@@ -645,9 +645,17 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 7860464168464041839}
     - target: {fileID: 1250140670087013182, guid: 0d419ef40b2b7ab4aaee2940fc44df06, type: 3}
+      propertyPath: pelletAmount
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 1250140670087013182, guid: 0d419ef40b2b7ab4aaee2940fc44df06, type: 3}
       propertyPath: knockbackPower
       value: 12
       objectReference: {fileID: 0}
+    - target: {fileID: 8065798977256494356, guid: 0d419ef40b2b7ab4aaee2940fc44df06, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: dbe55c877a55904409709d7e566c0129, type: 2}
     - target: {fileID: 8426099797160277185, guid: 0d419ef40b2b7ab4aaee2940fc44df06, type: 3}
       propertyPath: m_Name
       value: Aerosol
