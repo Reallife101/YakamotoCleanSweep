@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Josh_scene.unity
     guid: 366f820ed2dde4e4e9b528e2e8c033bb
+  - enabled: 1
+    path: Assets/Scenes/Leo_LevelTest.unity
+    guid: 272061bb5e8649b40961a077248ac5d9
   m_configObjects: {}
