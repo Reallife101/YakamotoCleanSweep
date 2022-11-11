@@ -16,6 +16,7 @@ public class loadLevel : MonoBehaviour
     [SerializeField] PlayerLook pl;
     [SerializeField] int goldTime = 20;
     [SerializeField] int silverTime = 45;
+    [SerializeField] int bronzeTime = 75;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -35,7 +36,7 @@ public class loadLevel : MonoBehaviour
             else if (myTime < silverTime) {
                 silver.SetActive(true);
             }
-            else {
+            else if (myTime < bronzeTime) {
                 bronze.SetActive(true);
             }
         }
