@@ -53,4 +53,9 @@ public class PlayerLook : MonoBehaviour
 
         xRotation = Mathf.Clamp(xRotation, -90f, 90f);
     }
+
+    public void setSensitivity(float sensitivity) {
+        Debug.Log(sensitivity);
+        multiplier = sensitivity;
+    }
 }
