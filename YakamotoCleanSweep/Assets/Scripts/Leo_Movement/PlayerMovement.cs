@@ -9,6 +9,8 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float movementMultiplier = 10f; //purely for rigidbody physics
     [SerializeField] private float airMultiplier = 0.4f; //rigidbody physics in the air
     [SerializeField] private Transform orientation; //keeps track of where the player is looking
+    [SerializeField] private bool toggleSprint; //whether or not the sprint button is toggle or hold
+    [SerializeField] private bool toggleCrouch;
     private bool canStrafe; //whether or not the player can move side-to-side
  
     [Header("Camera")]
@@ -26,7 +28,6 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float walkSpeed = 4f;
     [SerializeField] private float sprintSpeed = 6f;
     [SerializeField] private float sprintAcceleration = 10f; //how long it takes to get up to sprint speed
-    [SerializeField] private bool toggleSprint; //whether or not the sprint button is toggle or hold
 
     [Header("Jumping")]
     [SerializeField] private float groundJumpForce = 5f;
@@ -149,13 +150,19 @@ public class PlayerMovement : MonoBehaviour
     {
         if (toggleSprint)
         {
-            crouchMethod = HoldCrouch;
             sprintMethod = ToggleSprint;
         }
         else
         {
-            crouchMethod = ToggleCrouch;
             sprintMethod = HoldSprint;
+        }
+        if (toggleCrouch)
+        {
+            crouchMethod = ToggleCrouch;
+        }
+        else
+        {
+            crouchMethod = HoldCrouch;
         }
     }
 
