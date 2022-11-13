@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 3972646819959681436}
   - component: {fileID: 3972646819959681437}
   - component: {fileID: 3972646819959681434}
-  - component: {fileID: 3972646819959681435}
   - component: {fileID: 1454129100267434443}
   - component: {fileID: 2917143153099555081}
+  - component: {fileID: 1691543080817685161}
   m_Layer: 0
   m_Name: SoapTalisman
   m_TagString: Untagged
@@ -100,30 +100,6 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &3972646819959681435
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3972646819959681432}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bed50f9e1e8ee494aab798f457c1cb71, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  damage: 1
-  fireRate: 0.25
-  range: 1000
-  enemyLayer:
-    serializedVersion: 2
-    m_Bits: 128
-  reloadTime: 1.5
-  clipSize: 25
-  groundLayer:
-    serializedVersion: 2
-    m_Bits: 64
-  puddle: {fileID: 8385443726673739258, guid: 2400e64f796a548418cd1ad0f281b2eb, type: 3}
 --- !u!95 &1454129100267434443
 Animator:
   serializedVersion: 4
@@ -156,5 +132,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9317b1bf4d7c24a4585c874cb6e3aa8d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  host: {fileID: 3972646819959681435}
+  host: {fileID: 1691543080817685161}
   anim: {fileID: 1454129100267434443}
+--- !u!114 &1691543080817685161
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3972646819959681432}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc3f734be5294e741bdc375be9fe4713, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 1
+  fireRate: 0.01
+  range: 1
+  enemyLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  reloadTime: 0.01
+  clipSize: 1
+  throwForce: 10
+  toThrow: {fileID: 2371805189268572134, guid: db50f3ec5aaa09943a40c8046de1a8d9, type: 3}
