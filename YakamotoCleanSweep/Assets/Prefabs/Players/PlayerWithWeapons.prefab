@@ -498,6 +498,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7860464169090707111}
     m_Modifications:
+    - target: {fileID: 1691543080817685161, guid: a4d8638f8ff60a64bac1dc336c31dc71, type: 3}
+      propertyPath: enemyLayer.m_Bits
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3972646819959681432, guid: a4d8638f8ff60a64bac1dc336c31dc71, type: 3}
       propertyPath: m_Name
       value: SoapTalisman
@@ -716,3 +720,29 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 8426099797160277185, guid: 0d419ef40b2b7ab4aaee2940fc44df06, type: 3}
   m_PrefabInstance: {fileID: 5343892888014454607}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2244546343431547199
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4523539665750117262}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c461d3e47c148ee42badfc0c3071a2b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  particlesys: {fileID: 7460375679517611849, guid: 9b5f90f8d52e3704cb1f9d15e9c89fd9, type: 3}
+  host: {fileID: 6588825716049599601}
+  LastingTime: 2
+--- !u!114 &6588825716049599601 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1250140670087013182, guid: 0d419ef40b2b7ab4aaee2940fc44df06, type: 3}
+  m_PrefabInstance: {fileID: 5343892888014454607}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4523539665750117262}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a527cbffffece484d8d0ae2bebbe8e66, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
