@@ -6,11 +6,13 @@ public class levelExitManager : MonoBehaviour
 {
     public PropManager pm;
     public GameObject exit;
+    public GameObject door;
 
     public bool forceExit;
     // Start is called before the first frame update
     void Start()
     {
+        door.SetActive(true);
         forceExit = false;
         exit.SetActive(false);
     }
@@ -20,6 +22,7 @@ public class levelExitManager : MonoBehaviour
     {
        if(pm.CheckCount() || forceExit)
         {
+            door.SetActive(false);
             exit.SetActive(true);
         }
     }
