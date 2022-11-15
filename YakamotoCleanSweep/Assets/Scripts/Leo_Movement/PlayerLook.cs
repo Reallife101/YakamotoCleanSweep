@@ -25,7 +25,7 @@ public class PlayerLook : MonoBehaviour
 
     private void Start()
     {
-
+        multiplier = PlayerPrefs.GetFloat("sensitivity", .01f);
         cam = GetComponentInChildren<Camera>();
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
@@ -52,5 +52,10 @@ public class PlayerLook : MonoBehaviour
         xRotation -= mouseY * sensY * multiplier;
 
         xRotation = Mathf.Clamp(xRotation, -90f, 90f);
+    }
+
+    public void setSensitivity(float sensitivity) {
+        this.multiplier = sensitivity;
+        PlayerPrefs.SetFloat("sensitivity", this.multiplier);
     }
 }
