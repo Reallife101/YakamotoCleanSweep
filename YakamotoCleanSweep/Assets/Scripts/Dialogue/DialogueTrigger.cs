@@ -4,14 +4,21 @@ using UnityEngine;
 
 public class DialogueTrigger : MonoBehaviour
 {
-    
-    public Message[] messages;
-    public Actor[] actors;
+    [SerializeField]
+    private Message[] messages;
+    [SerializeField]
+    private Actor[] actors;
 
     public void StartDialogue()
     {
-        //FindObjectOfType<DialogueManager>().OpenDialogue(messages, actors);
+        //Creates a singleton in the dialogue manager with the messages and actors in the fields.
         DialogueManager.GetInstance().OpenDialogue(messages, actors);
+    }
+
+    //REMOVE THIS START FUNCTION IF WE PLAN ON IMPLEMENTING DIALOGUE WITHIN LEVELS AND MAKE INHERITTED CLASS FOR SCENE ONLY DIALOGUE
+    void Start()
+    {
+        StartDialogue();
     }
 }
 
