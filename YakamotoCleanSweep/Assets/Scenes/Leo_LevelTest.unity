@@ -12795,6 +12795,14 @@ PrefabInstance:
       propertyPath: fireRate
       value: 0.1
       objectReference: {fileID: 0}
+    - target: {fileID: 7860464168464041810, guid: 9b61d79360f2b5d409ea703228271bf7, type: 3}
+      propertyPath: wallRunUpJumpForce
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 7860464168464041810, guid: 9b61d79360f2b5d409ea703228271bf7, type: 3}
+      propertyPath: wallRunSideJumpForce
+      value: 300
+      objectReference: {fileID: 0}
     - target: {fileID: 7860464168464041811, guid: 9b61d79360f2b5d409ea703228271bf7, type: 3}
       propertyPath: m_Name
       value: PlayerWithWeapons (1)
