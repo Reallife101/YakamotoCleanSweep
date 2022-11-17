@@ -12,7 +12,7 @@ public class SoapTalisman : Ranged
         bool groundDetection = Physics.Raycast(eye.position, eye.forward, out hit, range, groundLayer);
         if (groundDetection)
         {
-            MakePuddle(hit.point + Vector3.up * 0.01f);
+            MakePuddle(hit.point);
         }
 
         bool hitDetection = Physics.Raycast(eye.position, eye.forward, out hit, range, enemyLayer);
@@ -27,6 +27,6 @@ public class SoapTalisman : Ranged
     private void MakePuddle(Vector3 position)
     {
         // Change rotation later to align with the surface (perpendicular to its normal)
-        Instantiate(puddle, position, Quaternion.identity);
+        Instantiate(puddle, position, Quaternion.Euler(0, Random.Range(0, 360), 0));
     }
 }
