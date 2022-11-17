@@ -147,12 +147,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 1
-  fireRate: 0.01
+  fireRate: 0.1
   range: 1
   enemyLayer:
     serializedVersion: 2
     m_Bits: 0
   reloadTime: 0.01
   clipSize: 1
-  throwForce: 10
+  throwForce: 60
   toThrow: {fileID: 2371805189268572134, guid: db50f3ec5aaa09943a40c8046de1a8d9, type: 3}

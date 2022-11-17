@@ -236,7 +236,7 @@ GameObject:
   - component: {fileID: 7860464168766041196}
   - component: {fileID: 7860464168766041197}
   - component: {fileID: 7860464168766041170}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Capsule
   m_TagString: Player
   m_Icon: {fileID: 0}
