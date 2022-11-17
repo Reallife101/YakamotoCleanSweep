@@ -53,16 +53,14 @@ public class WallRun : MonoBehaviour
     {
         CheckWall();
 
-        if (CanWallRun())
+        if (CanWallRun() && (wallLeft || wallRight))
         {
-            if ((wallLeft || wallRight))
+            if (!isWallRunning)
             {
-                StartWallRun();
+                rb.AddForce(movement.moveDirection.normalized * initialWallRunForwardForce, ForceMode.Impulse);
+                rb.AddForce(Vector3.up * initialWallRunUpwardForce, ForceMode.Impulse);
             }
-            else
-            {
-                StopWallRun();
-            }
+            StartWallRun();
         }
         else
         {
@@ -84,11 +82,8 @@ public class WallRun : MonoBehaviour
 
     private void StartWallRun()
     {
-        rb.useGravity = false; //switches to lower gravity for wall running
+        rb.useGravity = false; //switches to lower gravity for wall running     
         isWallRunning = true;
-
-        rb.AddForce(movement.moveDirection.normalized * initialWallRunForwardForce);
-        rb.AddForce(Vector3.up * initialWallRunUpwardForce);
         rb.AddForce(Vector3.down * wallRunGravity);
 
         cam.fieldOfView = Mathf.Lerp(cam.fieldOfView, wallRunfov, wallRunfovTime * Time.deltaTime);
