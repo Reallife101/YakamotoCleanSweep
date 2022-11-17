@@ -13,7 +13,7 @@ public class UpdateUI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey(KeyCode.Alpha1)) {
+        if (Input.GetKeyDown(KeyCode.Alpha1)) {
             sprayIcon.SetActive(true);
             broomIcon.SetActive(false);
             soapIcon.SetActive(false);
@@ -21,7 +21,7 @@ public class UpdateUI : MonoBehaviour
             broomCrosshair.SetActive(false);
             soapCrosshair.SetActive(false);
         }
-        else if (Input.GetKey(KeyCode.Alpha2)) {
+        else if (Input.GetKeyDown(KeyCode.Alpha2)) {
             sprayIcon.SetActive(false);
             broomIcon.SetActive(true);
             soapIcon.SetActive(false);
@@ -29,7 +29,7 @@ public class UpdateUI : MonoBehaviour
             broomCrosshair.SetActive(true);
             soapCrosshair.SetActive(false);
         }
-        else if (Input.GetKey(KeyCode.Alpha3)) {
+        else if (Input.GetKeyDown(KeyCode.Alpha3)) {
             sprayIcon.SetActive(false);
             broomIcon.SetActive(false);
             soapIcon.SetActive(true);
