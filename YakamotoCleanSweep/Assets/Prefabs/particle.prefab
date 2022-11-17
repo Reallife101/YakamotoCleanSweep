@@ -45,4 +45,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   particlesys: {fileID: 7460375679517611849, guid: 9b5f90f8d52e3704cb1f9d15e9c89fd9, type: 3}
-  lifeTime: 4
+  lifeTime: 1

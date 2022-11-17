@@ -9,7 +9,7 @@ public class RangedWeaponParticle : MonoBehaviour
     [SerializeField] private Weapon host;           
     // control how long each particle effect last
     [SerializeField] private float offset = 0.2f; // determine how much the emitter is in front of the player
-    private GameObject a;
+
     private Transform eye = null;
 
 
@@ -30,7 +30,7 @@ public class RangedWeaponParticle : MonoBehaviour
 
         // the second argument, upwards, defaults to Vector3.up
         Quaternion rotation = Quaternion.LookRotation(relativePos, Vector3.up);
-       a = Instantiate(particlesys,eye.position + osvector, rotation);
+       Instantiate(particlesys,eye.position + osvector, rotation);
       
     }
     
