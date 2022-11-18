@@ -16,8 +16,11 @@ public class WallRun : MonoBehaviour
     [SerializeField] private float minimumJumpHeight = 1.5f;
 
     [Header("WallRunning")]
+    [SerializeField] private float initialWallRunForwardForce;
+    [SerializeField] private float initialWallRunUpwardForce;
     [SerializeField] private float wallRunGravity;
-    [SerializeField] private float wallRunJumpForce;
+    [SerializeField] private float wallRunUpJumpForce;
+    [SerializeField] private float wallRunSideJumpForce;
     [SerializeField] private float requiredForwardVelocity = 1;
 
     [Header("Camera")]
@@ -50,16 +53,14 @@ public class WallRun : MonoBehaviour
     {
         CheckWall();
 
-        if (CanWallRun())
+        if (CanWallRun() && (wallLeft || wallRight))
         {
-            if ((wallLeft || wallRight))
+            if (!isWallRunning)
             {
-                StartWallRun();
+                rb.AddForce(movement.moveDirection.normalized * initialWallRunForwardForce, ForceMode.Impulse);
+                rb.AddForce(Vector3.up * initialWallRunUpwardForce, ForceMode.Impulse);
             }
-            else
-            {
-                StopWallRun();
-            }
+            StartWallRun();
         }
         else
         {
@@ -76,15 +77,14 @@ public class WallRun : MonoBehaviour
     private bool CanWallRun()
     {
         //makes sure player is off the ground, moving forward, and not crouching to initiate wall run
-        return !Physics.Raycast(transform.position, Vector3.down, minimumJumpHeight) && orientation.InverseTransformDirection(rb.velocity).z > requiredForwardVelocity && !movement.isCrouching;
+        return !Physics.Raycast(transform.position, Vector3.down, minimumJumpHeight) && orientation.InverseTransformDirection(rb.velocity).z > requiredForwardVelocity && !movement.isCrouching && !movement.isGrounded;
     }
 
     private void StartWallRun()
     {
-        rb.useGravity = false; //switches to lower gravity for wall running
+        rb.useGravity = false; //switches to lower gravity for wall running     
         isWallRunning = true;
-
-        rb.AddForce(Vector3.down * wallRunGravity, ForceMode.Force);
+        rb.AddForce(Vector3.down * wallRunGravity);
 
         cam.fieldOfView = Mathf.Lerp(cam.fieldOfView, wallRunfov, wallRunfovTime * Time.deltaTime);
 
@@ -99,17 +99,20 @@ public class WallRun : MonoBehaviour
 
         if (Input.GetKeyDown(jumpKey)) //sends players jumping away from and up from wall
         {
+            Vector3 wallRunUpJumpDirection = transform.up;
             if (wallLeft)
             {
-                Vector3 wallRunJumpDirection = transform.up + leftWallHit.normal;
+                Vector3 wallRunLeftJumpDirection = leftWallHit.normal;
                 rb.velocity = new Vector3(rb.velocity.x, 0, rb.velocity.z);
-                rb.AddForce(wallRunJumpDirection * wallRunJumpForce * 100, ForceMode.Force);
+                rb.AddForce(wallRunUpJumpDirection * wallRunUpJumpForce * 100, ForceMode.Force);
+                rb.AddForce(wallRunLeftJumpDirection * wallRunSideJumpForce * 100, ForceMode.Force);
             }
             else if (wallRight)
             {
-                Vector3 wallRunJumpDirection = transform.up + rightWallHit.normal;
+                Vector3 wallRunRightJumpDirection = rightWallHit.normal;
                 rb.velocity = new Vector3(rb.velocity.x, 0, rb.velocity.z);
-                rb.AddForce(wallRunJumpDirection * wallRunJumpForce * 100, ForceMode.Force);
+                rb.AddForce(wallRunUpJumpDirection * wallRunUpJumpForce * 100, ForceMode.Force);
+                rb.AddForce(wallRunRightJumpDirection * wallRunSideJumpForce * 100, ForceMode.Force);
             }
         }
 
