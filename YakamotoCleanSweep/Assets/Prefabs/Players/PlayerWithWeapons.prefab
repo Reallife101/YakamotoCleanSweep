@@ -504,6 +504,7 @@ MonoBehaviour:
   - {fileID: 4523539665750117262}
   - {fileID: 6400140739300727841}
   - {fileID: 3887005043239967703}
+  startingWeaponIndex: 0
 --- !u!1 &7860464169124964693
 GameObject:
   m_ObjectHideFlags: 0
@@ -616,10 +617,6 @@ PrefabInstance:
     - target: {fileID: 4862565543342571118, guid: ec7413f337ca7c94fb80cbc146126994, type: 3}
       propertyPath: m_Name
       value: Broom
-      objectReference: {fileID: 0}
-    - target: {fileID: 4862565543342571118, guid: ec7413f337ca7c94fb80cbc146126994, type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5201830424217429204, guid: ec7413f337ca7c94fb80cbc146126994, type: 3}
       propertyPath: m_RootOrder
