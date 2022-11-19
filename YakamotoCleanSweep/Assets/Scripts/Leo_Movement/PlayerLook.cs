@@ -9,6 +9,8 @@ public class PlayerLook : MonoBehaviour
 
     [SerializeField] private float sensX = 2f;
     [SerializeField] private float sensY = 2f;
+    [SerializeField] private float startingCamXRot;
+    [SerializeField] private float startingCamYRot;
 
     private Camera cam;
     [SerializeField] private Transform orientation;
@@ -27,6 +29,9 @@ public class PlayerLook : MonoBehaviour
     {
         multiplier = PlayerPrefs.GetFloat("sensitivity", .01f);
         cam = GetComponentInChildren<Camera>();
+        xRotation = startingCamXRot;
+        yRotation = startingCamYRot;
+        orientation.transform.rotation = Quaternion.Euler(0, startingCamYRot, 0);
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
         allowLooking = true;

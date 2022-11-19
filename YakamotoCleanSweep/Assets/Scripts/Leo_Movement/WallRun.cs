@@ -14,6 +14,7 @@ public class WallRun : MonoBehaviour
     [Header("Detection")]
     [SerializeField] private float wallDistance = .5f;
     [SerializeField] private float minimumJumpHeight = 1.5f;
+    [SerializeField] private LayerMask wallRunMask;
 
     [Header("WallRunning")]
     [SerializeField] private float initialWallRunForwardForce;
@@ -61,6 +62,7 @@ public class WallRun : MonoBehaviour
                 rb.AddForce(Vector3.up * initialWallRunUpwardForce, ForceMode.Impulse);
             }
             StartWallRun();
+            Debug.Log("bruh");
         }
         else
         {
@@ -70,8 +72,8 @@ public class WallRun : MonoBehaviour
 
     private void CheckWall() //determines if a wall is to the left or right of a player
     {
-        wallLeft = Physics.Raycast(transform.position, -orientation.right, out leftWallHit, wallDistance);
-        wallRight = Physics.Raycast(transform.position, orientation.right, out rightWallHit, wallDistance);
+        wallLeft = Physics.Raycast(transform.position, -orientation.right, out leftWallHit, wallDistance, wallRunMask);
+        wallRight = Physics.Raycast(transform.position, orientation.right, out rightWallHit, wallDistance, wallRunMask);
     }
 
     private bool CanWallRun()
