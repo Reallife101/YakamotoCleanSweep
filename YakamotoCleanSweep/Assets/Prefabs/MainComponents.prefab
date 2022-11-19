@@ -290,6 +290,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2082593961482343294, guid: ac2b352608540594894aced2b85e157f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 6434482057548123312}
+    - target: {fileID: 2082593961482343294, guid: ac2b352608540594894aced2b85e157f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: togglePause
+      objectReference: {fileID: 0}
     - target: {fileID: 3468227787951850968, guid: ac2b352608540594894aced2b85e157f, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -317,6 +325,14 @@ PrefabInstance:
     - target: {fileID: 8764144998120676916, guid: ac2b352608540594894aced2b85e157f, type: 3}
       propertyPath: m_AnchorMax.y
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8896968698609824386, guid: ac2b352608540594894aced2b85e157f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 6434482057548123312}
+    - target: {fileID: 8896968698609824386, guid: ac2b352608540594894aced2b85e157f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: restartLevel
       objectReference: {fileID: 0}
     - target: {fileID: 9145633382153457488, guid: ac2b352608540594894aced2b85e157f, type: 3}
       propertyPath: m_AnchorMax.x
@@ -456,6 +472,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlayerWithWeapons (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 7860464168464041836, guid: 9b61d79360f2b5d409ea703228271bf7, type: 3}
+      propertyPath: multiplier
+      value: 0.25
+      objectReference: {fileID: 0}
     - target: {fileID: 7860464168464041838, guid: 9b61d79360f2b5d409ea703228271bf7, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -577,6 +597,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7935999837200961894, guid: df581de9c4644c8409126caaa9f59e0f, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 65f596d200741bb458e3dae5650b3353, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: df581de9c4644c8409126caaa9f59e0f, type: 3}
 --- !u!114 &19807993942833930 stripped
