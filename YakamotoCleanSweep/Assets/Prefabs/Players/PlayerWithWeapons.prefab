@@ -1,5 +1,36 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &73210773093999402
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8301220702472083394}
+  m_Layer: 0
+  m_Name: Ceiling Check
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8301220702472083394
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 73210773093999402}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 1, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7860464168464041838}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7860464168001807292
 GameObject:
   m_ObjectHideFlags: 0
@@ -70,6 +101,7 @@ Transform:
   - {fileID: 7860464169124964692}
   - {fileID: 7860464168936003364}
   - {fileID: 7860464168973304646}
+  - {fileID: 8301220702472083394}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -87,7 +119,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 1
-  m_Constraints: 112
+  m_Constraints: 80
   m_CollisionDetection: 0
 --- !u!114 &7860464168464041836
 MonoBehaviour:
@@ -124,13 +156,17 @@ MonoBehaviour:
   airMultiplier: 0.11
   orientation: {fileID: 7860464169124964692}
   toggleSprint: 1
-  toggleCrouch: 0
   cam: {fileID: 7860464169090707108}
   cameraPosition: {fileID: 7860464168001807295}
   crouchFOV: 80
   normalFOV: 90
   sprintFOV: 100
   slideFOV: 110
+  actualCrouchFOV: 83
+  actualNormalFOV: 90
+  actualSprintFOV: 100
+  actualSlideFOV: 103
+  fovBuffer: 1
   fovTime: 15
   walkSpeed: 3
   sprintSpeed: 5
@@ -139,6 +175,8 @@ MonoBehaviour:
   crouchHeightScale: 0.7
   crouchSpeed: 2
   crouchAcceleration: 2
+  ceilingDistance: 0.1
+  ceilingCheck: {fileID: 8301220702472083394}
   slideSpeed: 10
   slideTime: 1
   velocityToSlide: 11
@@ -153,6 +191,9 @@ MonoBehaviour:
   groundMask:
     serializedVersion: 2
     m_Bits: 64
+  enemyMask:
+    serializedVersion: 2
+    m_Bits: 128
   rb: {fileID: 7860464168464041839}
   capsuleSize: {fileID: 7860464168766041199}
   playerCapsule: {fileID: 7860464168766041170}
@@ -173,8 +214,11 @@ MonoBehaviour:
   jumpKey: 32
   wallDistance: 0.75
   minimumJumpHeight: 1.2
-  wallRunGravity: 0.5
-  wallRunJumpForce: 250
+  initialWallRunForwardForce: 100
+  initialWallRunUpwardForce: 100
+  wallRunGravity: 0.29
+  wallRunUpJumpForce: 315
+  wallRunSideJumpForce: 315
   requiredForwardVelocity: 1
   cam: {fileID: 7860464169090707108}
   fov: 90
@@ -411,7 +455,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7860464169090707114}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -445,11 +489,11 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: 0.01
-  far clip plane: 1000
-  field of view: 60
+  near clip plane: 0.1
+  far clip plane: 5000
+  field of view: 90
   orthographic: 0
-  orthographic size: 5
+  orthographic size: 10
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
