@@ -5,12 +5,11 @@ using UnityEngine;
 public class Prop : MonoBehaviour
 {
     // Start is called before the first frame update
+    [SerializeField] private GameObject dirtyModel;
     [SerializeField] private GameObject cleanModel;
     [SerializeField] private healthbar bar;
     private health health; //TODO Change this to a Health object
     //private bool canTakeDamage;
-    [SerializeField] private MeshRenderer dirtyMesh;
-    [SerializeField] private MeshRenderer cleanMesh;
     [SerializeField] private Canvas healthBarCanvas;
     private GameObject propManager;
     private bool isClean;
@@ -18,12 +17,12 @@ public class Prop : MonoBehaviour
     void Start()
     {
         //canTakeDamage = true;
-        health = GetComponent<health>();
+        health = GetComponentInChildren<health>();
         //dirtyMesh = gameObject.GetComponent<MeshRenderer>();
         //cleanMesh = cleanModel.GetComponent<MeshRenderer>();
         //healthBarCanvas = gameObject.GetComponentInChildren<Canvas>();
-        dirtyMesh.enabled = true;
-        cleanMesh.enabled = false;
+        dirtyModel.SetActive(true);
+        cleanModel.SetActive(false);
         healthBarCanvas.enabled = true;
         isClean = false;
         health.OnDeath += MakeClean;
@@ -37,10 +36,6 @@ public class Prop : MonoBehaviour
     void Update()
     {
         UpdateHealthBar();
-     /* if (Input.GetMouseButtonDown(0))
-        {
-            health.TakeDamage(1);
-        }*/
     }
 
     private void MakeClean()
@@ -48,8 +43,8 @@ public class Prop : MonoBehaviour
         if (!isClean)
         {
             propManager.GetComponent<PropManager>().IncreaseCount();
-            dirtyMesh.enabled = false;
-            cleanMesh.enabled = true;
+            dirtyModel.SetActive(false);
+            cleanModel.SetActive(true);
             healthBarCanvas.enabled = false;
             isClean = true;
         }
