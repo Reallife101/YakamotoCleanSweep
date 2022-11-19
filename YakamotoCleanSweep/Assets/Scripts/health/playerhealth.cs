@@ -18,12 +18,12 @@ public class playerhealth : health
             ReportDeath();
            
         }
-        /*
+        
         if (Input.GetKeyDown(KeyCode.P))
         {
            TakeDamage(1);
         }
-        */
+        
    }
 
     
@@ -32,7 +32,7 @@ public class playerhealth : health
     {
         if (!ifinvincible){
         currentHealth -= healthPTS;
-        //Debug.Log("damage down 1");
+        Debug.Log("damage down 1");
         StartCoroutine(InvincibilityElapse());
     }
     }

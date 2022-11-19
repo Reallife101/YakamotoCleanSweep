@@ -12775,6 +12775,10 @@ PrefabInstance:
       propertyPath: damage
       value: 15
       objectReference: {fileID: 0}
+    - target: {fileID: 830871606279300882, guid: 9b61d79360f2b5d409ea703228271bf7, type: 3}
+      propertyPath: offset
+      value: 1.4
+      objectReference: {fileID: 0}
     - target: {fileID: 1560873554140469478, guid: 9b61d79360f2b5d409ea703228271bf7, type: 3}
       propertyPath: fireRate
       value: 0.1
@@ -12859,7 +12863,8 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 8
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2244546343431547199, guid: 9b61d79360f2b5d409ea703228271bf7, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 9b61d79360f2b5d409ea703228271bf7, type: 3}
 --- !u!1 &389529860 stripped
 GameObject:

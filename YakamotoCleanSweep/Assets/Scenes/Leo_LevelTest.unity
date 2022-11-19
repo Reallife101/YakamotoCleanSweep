@@ -12771,6 +12771,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -6783446149690760489, guid: 9b61d79360f2b5d409ea703228271bf7, type: 3}
+      propertyPath: lowest_point
+      value: 
+      objectReference: {fileID: 591144977}
     - target: {fileID: 32240270589132397, guid: 9b61d79360f2b5d409ea703228271bf7, type: 3}
       propertyPath: damage
       value: 15
@@ -12847,7 +12851,8 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 8
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2244546343431547199, guid: 9b61d79360f2b5d409ea703228271bf7, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 9b61d79360f2b5d409ea703228271bf7, type: 3}
 --- !u!1 &482133540
 GameObject:
@@ -34457,7 +34462,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh115630
+  m_Name: pb_Mesh28334
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -42444,7 +42449,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh115882
+  m_Name: pb_Mesh28586
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
