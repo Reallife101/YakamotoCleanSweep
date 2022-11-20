@@ -1,5 +1,36 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &73210773093999402
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8301220702472083394}
+  m_Layer: 0
+  m_Name: Ceiling Check
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8301220702472083394
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 73210773093999402}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 1, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7860464168464041838}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7860464168001807292
 GameObject:
   m_ObjectHideFlags: 0
@@ -44,6 +75,8 @@ GameObject:
   - component: {fileID: 7860464168464041836}
   - component: {fileID: 7860464168464041837}
   - component: {fileID: 7860464168464041810}
+  - component: {fileID: 1051044440804996975}
+  - component: {fileID: -6783446149690760489}
   m_Layer: 0
   m_Name: PlayerWithWeapons
   m_TagString: Player
@@ -68,6 +101,7 @@ Transform:
   - {fileID: 7860464169124964692}
   - {fileID: 7860464168936003364}
   - {fileID: 7860464168973304646}
+  - {fileID: 8301220702472083394}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -85,7 +119,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 1
-  m_Constraints: 112
+  m_Constraints: 80
   m_CollisionDetection: 0
 --- !u!114 &7860464168464041836
 MonoBehaviour:
@@ -122,13 +156,17 @@ MonoBehaviour:
   airMultiplier: 0.11
   orientation: {fileID: 7860464169124964692}
   toggleSprint: 1
-  toggleCrouch: 0
   cam: {fileID: 7860464169090707108}
   cameraPosition: {fileID: 7860464168001807295}
   crouchFOV: 80
   normalFOV: 90
   sprintFOV: 100
   slideFOV: 110
+  actualCrouchFOV: 83
+  actualNormalFOV: 90
+  actualSprintFOV: 100
+  actualSlideFOV: 103
+  fovBuffer: 1
   fovTime: 15
   walkSpeed: 3
   sprintSpeed: 5
@@ -137,6 +175,8 @@ MonoBehaviour:
   crouchHeightScale: 0.7
   crouchSpeed: 2
   crouchAcceleration: 2
+  ceilingDistance: 0.1
+  ceilingCheck: {fileID: 8301220702472083394}
   slideSpeed: 10
   slideTime: 1
   velocityToSlide: 11
@@ -151,6 +191,9 @@ MonoBehaviour:
   groundMask:
     serializedVersion: 2
     m_Bits: 64
+  enemyMask:
+    serializedVersion: 2
+    m_Bits: 128
   rb: {fileID: 7860464168464041839}
   capsuleSize: {fileID: 7860464168766041199}
   playerCapsule: {fileID: 7860464168766041170}
@@ -171,8 +214,11 @@ MonoBehaviour:
   jumpKey: 32
   wallDistance: 0.75
   minimumJumpHeight: 1.2
-  wallRunGravity: 0.5
-  wallRunJumpForce: 250
+  initialWallRunForwardForce: 100
+  initialWallRunUpwardForce: 100
+  wallRunGravity: 0.29
+  wallRunUpJumpForce: 315
+  wallRunSideJumpForce: 315
   requiredForwardVelocity: 1
   cam: {fileID: 7860464169090707108}
   fov: 90
@@ -180,6 +226,34 @@ MonoBehaviour:
   wallRunfovTime: 10
   camTilt: 10
   camTiltTime: 10
+--- !u!114 &1051044440804996975
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7860464168464041811}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ece966ee981897499579d565e145695, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MaxHealth: 3
+  invinicible_time: 3
+--- !u!114 &-6783446149690760489
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7860464168464041811}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 72440fa645717f4408ff1403eae7ce21, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lowest_point: {fileID: 0}
+  ph_host: {fileID: 1051044440804996975}
 --- !u!1 &7860464168766041171
 GameObject:
   m_ObjectHideFlags: 0
@@ -381,7 +455,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7860464169090707114}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -415,11 +489,11 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: 0.01
-  far clip plane: 1000
-  field of view: 60
+  near clip plane: 0.1
+  far clip plane: 5000
+  field of view: 90
   orthographic: 0
-  orthographic size: 5
+  orthographic size: 10
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
@@ -498,6 +572,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7860464169090707111}
     m_Modifications:
+    - target: {fileID: 1691543080817685161, guid: a4d8638f8ff60a64bac1dc336c31dc71, type: 3}
+      propertyPath: enemyLayer.m_Bits
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3972646819959681432, guid: a4d8638f8ff60a64bac1dc336c31dc71, type: 3}
       propertyPath: m_Name
       value: SoapTalisman
@@ -716,3 +794,29 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 8426099797160277185, guid: 0d419ef40b2b7ab4aaee2940fc44df06, type: 3}
   m_PrefabInstance: {fileID: 5343892888014454607}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2244546343431547199
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4523539665750117262}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c461d3e47c148ee42badfc0c3071a2b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  particlesys: {fileID: 7460375679517611849, guid: 9b5f90f8d52e3704cb1f9d15e9c89fd9, type: 3}
+  host: {fileID: 6588825716049599601}
+  offset: 0.2
+--- !u!114 &6588825716049599601 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1250140670087013182, guid: 0d419ef40b2b7ab4aaee2940fc44df06, type: 3}
+  m_PrefabInstance: {fileID: 5343892888014454607}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4523539665750117262}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a527cbffffece484d8d0ae2bebbe8e66, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
