@@ -15,6 +15,7 @@ public class PlayerMovement : MonoBehaviour
     [Header("Camera")]
     [SerializeField] private Camera cam;
     [SerializeField] private Transform cameraPosition;
+    private Vector3 startingCamPosition;
     //Fields of View for the camera
     [SerializeField] private float crouchFOV = 80f;
     [SerializeField] private float normalFOV = 90f;
@@ -104,6 +105,7 @@ public class PlayerMovement : MonoBehaviour
         isSprinting = false;
         isSliding = false;
         cam.fieldOfView = normalFOV;
+        startingCamPosition = cameraPosition.localPosition;
         moveSpeed = walkSpeed;
         canStrafe = true;
         //m_AudioSource = GetComponent<AudioSource>();
@@ -216,6 +218,15 @@ public class PlayerMovement : MonoBehaviour
             isSliding = false;
             canStrafe = true;
         }
+        else if (!isGrounded)
+        {
+            capsuleSize.localScale = new Vector3(1, 1, 1);
+            transform.position = new Vector3(transform.position.x, groundCheck.position.y + capsuleSize.localScale.y, transform.position.z);
+            cameraPosition.localPosition = startingCamPosition;
+            isCrouching = false;
+            isSliding = false;
+            canStrafe = true;
+        }
     }
 
     private void Slide()
@@ -251,7 +262,7 @@ public class PlayerMovement : MonoBehaviour
         {
             moveSpeed = slideSpeed;
             cam.fieldOfView = Mathf.Lerp(cam.fieldOfView, slideFOV, fovTime * Time.deltaTime);
-            if (cam.fieldOfView > actualSlideFOV + fovBuffer)
+            if (cam.fieldOfView > actualSlideFOV - fovBuffer)
             {
                 cam.fieldOfView = actualSlideFOV;
             }

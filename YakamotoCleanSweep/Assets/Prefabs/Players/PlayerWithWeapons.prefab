@@ -75,7 +75,7 @@ GameObject:
   - component: {fileID: 7860464168464041836}
   - component: {fileID: 7860464168464041837}
   - component: {fileID: 7860464168464041810}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: PlayerWithWeapons
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -134,6 +134,8 @@ MonoBehaviour:
   wallRun: {fileID: 7860464168464041810}
   sensX: 100
   sensY: 100
+  startingCamXRot: 0
+  startingCamYRot: 0
   orientation: {fileID: 7860464169124964692}
   multiplier: 0.01
   allowLooking: 0
@@ -159,11 +161,11 @@ MonoBehaviour:
   crouchFOV: 80
   normalFOV: 90
   sprintFOV: 100
-  slideFOV: 110
+  slideFOV: 120
   actualCrouchFOV: 83
   actualNormalFOV: 90
   actualSprintFOV: 100
-  actualSlideFOV: 103
+  actualSlideFOV: 109
   fovBuffer: 1
   fovTime: 15
   walkSpeed: 3
@@ -177,7 +179,7 @@ MonoBehaviour:
   ceilingCheck: {fileID: 8301220702472083394}
   slideSpeed: 10
   slideTime: 1
-  velocityToSlide: 11
+  velocityToSlide: 8
   jumpKey: 32
   sprintKey: 304
   toggleCrouchKey: 99
@@ -214,7 +216,7 @@ MonoBehaviour:
   minimumJumpHeight: 1.2
   initialWallRunForwardForce: 100
   initialWallRunUpwardForce: 100
-  wallRunGravity: 0.29
+  wallRunGravity: -19.1
   wallRunUpJumpForce: 315
   wallRunSideJumpForce: 315
   requiredForwardVelocity: 1
@@ -504,6 +506,7 @@ MonoBehaviour:
   - {fileID: 4523539665750117262}
   - {fileID: 6400140739300727841}
   - {fileID: 3887005043239967703}
+  startingWeaponIndex: 0
 --- !u!1 &7860464169124964693
 GameObject:
   m_ObjectHideFlags: 0
@@ -548,6 +551,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3972646819959681432, guid: a4d8638f8ff60a64bac1dc336c31dc71, type: 3}
       propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3972646819959681434, guid: a4d8638f8ff60a64bac1dc336c31dc71, type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3972646819959681439, guid: a4d8638f8ff60a64bac1dc336c31dc71, type: 3}
