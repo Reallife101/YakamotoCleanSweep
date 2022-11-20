@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 8807720929248308628}
   - component: {fileID: 9120385372873696995}
   - component: {fileID: 6101371673242213445}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Puddle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -101,7 +101,7 @@ MonoBehaviour:
   playerLayer:
     serializedVersion: 2
     m_Bits: 256
-  slideForce: 0.05
+  slideForce: 1
   lifeTime: 5
 --- !u!65 &6101371673242213445
 BoxCollider:

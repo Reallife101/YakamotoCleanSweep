@@ -14,7 +14,7 @@ public class SoapTalisman : Ranged
         bool groundDetection = Physics.Raycast(eye.position, eye.forward, out hit, range, groundLayer);
         if (groundDetection)
         {
-            MakePuddle(hit.point + hit.normal * 0.1f);
+            MakePuddle(hit.point + hit.normal * 0.01f);
         }
 
         bool hitDetection = Physics.Raycast(eye.position, eye.forward, out hit, range, enemyLayer);
