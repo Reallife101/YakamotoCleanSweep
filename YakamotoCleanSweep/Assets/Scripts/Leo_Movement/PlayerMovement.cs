@@ -155,7 +155,7 @@ public class PlayerMovement : MonoBehaviour
             canStrafe = true;
             capsuleSize.localScale = new Vector3(1, 1, 1);
             transform.position = new Vector3(transform.position.x, groundCheck.position.y + capsuleSize.localScale.y, transform.position.z);
-            cameraPosition.localPosition = new Vector3(0, 0, 0);
+            cameraPosition.localPosition = new Vector3(0, cameraPosition.localPosition.y / crouchHeightScale, 0);
         }
     }
 
@@ -367,8 +367,8 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    private void ControlFOVs()
+    public void MultiplySpeed(float multiplier)
     {
-
+        moveSpeed *= multiplier;
     }
 }

@@ -24,7 +24,8 @@ public class Puddle : MonoBehaviour
         RaycastHit hit;
         if (Physics.BoxCast(transform.position - Vector3.Scale(extents, transform.up), extents, transform.up, out hit, transform.rotation, extents.y, playerLayer))
         {
-            hit.rigidbody.AddForce(hit.rigidbody.velocity.normalized * slideForce, ForceMode.Acceleration);
+            Vector3 dir = hit.rigidbody.velocity.normalized;
+            hit.rigidbody.AddForce(new Vector3 (dir.x, 0, dir.z) * slideForce, ForceMode.VelocityChange);
         }
     }
 
