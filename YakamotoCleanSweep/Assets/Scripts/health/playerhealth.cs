@@ -11,13 +11,7 @@ public class playerhealth : health
 
    //FOR TESTING ONLY
     void Update(){
-
-        if (currentHealth <= 0 && isAlive)
-        {
-            Debug.Log("REPORTDEATH");
-            ReportDeath();
-           
-        }
+        CheckHealth();
         
         if (Input.GetKeyDown(KeyCode.P))
         {
@@ -28,7 +22,7 @@ public class playerhealth : health
 
     
 
-    public void TakeDamage(int healthPTS)
+    public new void TakeDamage(int healthPTS)
     {
         if (!ifinvincible){
         currentHealth -= healthPTS;

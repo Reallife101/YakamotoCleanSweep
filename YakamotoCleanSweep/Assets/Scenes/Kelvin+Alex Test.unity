@@ -130,6 +130,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1466876837}
     m_Modifications:
+    - target: {fileID: 2917143153099555081, guid: a4d8638f8ff60a64bac1dc336c31dc71, type: 3}
+      propertyPath: host
+      value: 
+      objectReference: {fileID: 1134552803}
     - target: {fileID: 3972646819959681432, guid: a4d8638f8ff60a64bac1dc336c31dc71, type: 3}
       propertyPath: m_Name
       value: SoapTalisman
@@ -190,7 +194,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1691543080817685161, guid: a4d8638f8ff60a64bac1dc336c31dc71, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: a4d8638f8ff60a64bac1dc336c31dc71, type: 3}
 --- !u!1 &454527663
 GameObject:
@@ -794,6 +799,37 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1134552795 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3972646819959681432, guid: a4d8638f8ff60a64bac1dc336c31dc71, type: 3}
+  m_PrefabInstance: {fileID: 4231165}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1134552803
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1134552795}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bed50f9e1e8ee494aab798f457c1cb71, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 1
+  fireRate: 1
+  range: 1
+  enemyLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  reloadTime: 1
+  clipSize: 1
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  throwForce: 1
+  puddle: {fileID: 0}
+  projectile: {fileID: 0}
 --- !u!1001 &1359213150
 PrefabInstance:
   m_ObjectHideFlags: 0
