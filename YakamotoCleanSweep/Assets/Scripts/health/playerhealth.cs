@@ -11,8 +11,7 @@ public class playerhealth : health
 
    //FOR TESTING ONLY
     void Update(){
-        CheckHealth();
-        
+
         if (Input.GetKeyDown(KeyCode.P))
         {
            TakeDamage(1);
@@ -26,6 +25,7 @@ public class playerhealth : health
     {
         if (!ifinvincible){
         currentHealth -= healthPTS;
+        CheckHealth();
         Debug.Log("damage down 1");
         StartCoroutine(InvincibilityElapse());
     }

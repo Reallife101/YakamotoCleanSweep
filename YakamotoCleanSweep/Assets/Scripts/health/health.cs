@@ -32,6 +32,8 @@ public class health : MonoBehaviour
 
         currentHealth -= healthPTS;
 
+        CheckHealth();
+
     }
 
     public void ReportDeath()
