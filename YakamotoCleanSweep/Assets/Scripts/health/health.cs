@@ -6,9 +6,9 @@ using UnityEngine.UI;
 
 public class health : MonoBehaviour
 {
-    [SerializeField] private int MaxHealth;
-    private int currentHealth;
-    private bool isAlive;
+    [SerializeField] protected int MaxHealth;
+    protected int currentHealth;
+    protected bool isAlive;
 
     public event Action OnDeath;
 
@@ -18,11 +18,13 @@ public class health : MonoBehaviour
         isAlive = true;
     }
 
-    private void Update()
+    protected void Update()
     {
         if (currentHealth <= 0 && isAlive)
         {
+            Debug.Log("REPORTDEATH");
             ReportDeath();
+           
         }
     }
 
