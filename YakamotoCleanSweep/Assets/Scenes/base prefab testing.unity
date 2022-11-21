@@ -287,6 +287,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fb5c4caeb62a09345ab4124eb168b155, type: 3}
+--- !u!1 &62555277 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3000538813674582378, guid: ba956d1cea15c4f43847db693b468861, type: 3}
+  m_PrefabInstance: {fileID: 1901667356}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &71157262
 GameObject:
   m_ObjectHideFlags: 0
@@ -14195,6 +14200,11 @@ MonoBehaviour:
   m_SelectedFaces: 
   m_SelectedEdges: []
   m_SelectedVertices: 
+--- !u!1 &695961168 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8628810996528086292, guid: ba956d1cea15c4f43847db693b468861, type: 3}
+  m_PrefabInstance: {fileID: 1901667356}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &738888575
 GameObject:
   m_ObjectHideFlags: 0
@@ -32128,6 +32138,11 @@ Mesh:
     offset: 0
     size: 0
     path: 
+--- !u!1 &1134411727 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7352983096764944392, guid: ba956d1cea15c4f43847db693b468861, type: 3}
+  m_PrefabInstance: {fileID: 1901667356}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1168766738
 GameObject:
   m_ObjectHideFlags: 0
@@ -32169,6 +32184,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1190435566 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1978498832696666567, guid: ba956d1cea15c4f43847db693b468861, type: 3}
+  m_PrefabInstance: {fileID: 1901667356}
+  m_PrefabAsset: {fileID: 0}
 --- !u!43 &1236666537
 Mesh:
   m_ObjectHideFlags: 0
@@ -33476,6 +33496,11 @@ Mesh:
     offset: 0
     size: 0
     path: 
+--- !u!1 &1337386441 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7869064225620589469, guid: ba956d1cea15c4f43847db693b468861, type: 3}
+  m_PrefabInstance: {fileID: 1901667356}
+  m_PrefabAsset: {fileID: 0}
 --- !u!43 &1350703306
 Mesh:
   m_ObjectHideFlags: 0
@@ -38394,6 +38419,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fb5c4caeb62a09345ab4124eb168b155, type: 3}
+--- !u!1 &1643859454 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3356090566775544452, guid: ba956d1cea15c4f43847db693b468861, type: 3}
+  m_PrefabInstance: {fileID: 1901667356}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1648832992
 GameObject:
   m_ObjectHideFlags: 0
@@ -41178,6 +41208,30 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6434482059187939483, guid: ba956d1cea15c4f43847db693b468861, type: 3}
+      propertyPath: soapIcon
+      value: 
+      objectReference: {fileID: 695961168}
+    - target: {fileID: 6434482059187939483, guid: ba956d1cea15c4f43847db693b468861, type: 3}
+      propertyPath: broomIcon
+      value: 
+      objectReference: {fileID: 1190435566}
+    - target: {fileID: 6434482059187939483, guid: ba956d1cea15c4f43847db693b468861, type: 3}
+      propertyPath: sprayIcon
+      value: 
+      objectReference: {fileID: 1134411727}
+    - target: {fileID: 6434482059187939483, guid: ba956d1cea15c4f43847db693b468861, type: 3}
+      propertyPath: soapCrosshair
+      value: 
+      objectReference: {fileID: 62555277}
+    - target: {fileID: 6434482059187939483, guid: ba956d1cea15c4f43847db693b468861, type: 3}
+      propertyPath: broomCrosshair
+      value: 
+      objectReference: {fileID: 1643859454}
+    - target: {fileID: 6434482059187939483, guid: ba956d1cea15c4f43847db693b468861, type: 3}
+      propertyPath: sprayCrosshair
+      value: 
+      objectReference: {fileID: 1337386441}
     - target: {fileID: 7702290989026667808, guid: ba956d1cea15c4f43847db693b468861, type: 3}
       propertyPath: m_Name
       value: MainComponents
