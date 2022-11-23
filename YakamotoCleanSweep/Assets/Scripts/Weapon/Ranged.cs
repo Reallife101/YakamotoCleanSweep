@@ -11,6 +11,8 @@ public abstract class Ranged : Weapon
     
     protected int bulletsRemaining = 1;
 
+    private bool canAttack = true;
+
     private void Start()
     {
         bulletsRemaining = clipSize;
@@ -19,7 +21,10 @@ public abstract class Ranged : Weapon
 
     private void Update()
     {
-        UpdateAttack();
+        if (canAttack == true)
+        {
+            UpdateAttack();
+        }
 
         if (Input.GetButtonDown("Reload"))
         {
@@ -38,9 +43,11 @@ public abstract class Ranged : Weapon
 
     protected IEnumerator ReloadRoutine()
     {
+        canAttack = false;
         OnReload?.Invoke();
         yield return new WaitForSeconds(reloadTime);
         bulletsRemaining = clipSize;
+        canAttack = true;
     }
 
     protected void DrawRaycast(Vector3 dir)
