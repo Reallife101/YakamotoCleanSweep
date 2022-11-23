@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class UpdateUI : MonoBehaviour
-{
+{   
+    /*
     [SerializeField] GameObject spray;
     [SerializeField] GameObject broom;
     [SerializeField] GameObject soap;
@@ -26,5 +27,5 @@ public class UpdateUI : MonoBehaviour
             soap.SetActive(true);
         }
     }
-
+    */
 }

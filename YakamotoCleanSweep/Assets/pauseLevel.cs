@@ -8,8 +8,13 @@ public class pauseLevel : MonoBehaviour
 {
     [SerializeField] GameObject pauseMen;
     [SerializeField] PlayerLook pl;
+    
 
     // Update is called once per frame
+    public bool isPaused() {
+        return pauseMen.activeSelf;
+    }
+    
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))

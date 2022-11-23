@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
+    [SerializeField] protected pauseLevel pause;
     [Header("Movement")]
     [SerializeField] private float moveSpeed = 6f; //for debug: shows the current movem speed of the player
     [SerializeField] private float movementMultiplier = 10f; //purely for rigidbody physics
@@ -121,7 +122,7 @@ public class PlayerMovement : MonoBehaviour
         ControlPhysical();
         Crouching();
 
-        if (Input.GetKeyDown(jumpKey) && isGrounded)
+        if (Input.GetKeyDown(jumpKey) && isGrounded && !pause.isPaused())
         {
             Jump(groundJumpForce);
         }

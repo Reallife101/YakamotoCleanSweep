@@ -456,9 +456,45 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8253430233366570218}
     m_Modifications:
+    - target: {fileID: 778064773, guid: 9b61d79360f2b5d409ea703228271bf7, type: 3}
+      propertyPath: pause
+      value: 
+      objectReference: {fileID: 6434482057548123312}
+    - target: {fileID: 778064773, guid: 9b61d79360f2b5d409ea703228271bf7, type: 3}
+      propertyPath: weaponUIs.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 778064773, guid: 9b61d79360f2b5d409ea703228271bf7, type: 3}
+      propertyPath: weaponUIs.Array.data[0]
+      value: 
+      objectReference: {fileID: 184087785107831341}
+    - target: {fileID: 778064773, guid: 9b61d79360f2b5d409ea703228271bf7, type: 3}
+      propertyPath: weaponUIs.Array.data[1]
+      value: 
+      objectReference: {fileID: 5574263010877223358}
+    - target: {fileID: 778064773, guid: 9b61d79360f2b5d409ea703228271bf7, type: 3}
+      propertyPath: weaponUIs.Array.data[2]
+      value: 
+      objectReference: {fileID: 726392271624286753}
+    - target: {fileID: 32240270589132397, guid: 9b61d79360f2b5d409ea703228271bf7, type: 3}
+      propertyPath: pause
+      value: 
+      objectReference: {fileID: 6434482057548123312}
     - target: {fileID: 32240270589132397, guid: 9b61d79360f2b5d409ea703228271bf7, type: 3}
       propertyPath: damage
       value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 1560873554140469478, guid: 9b61d79360f2b5d409ea703228271bf7, type: 3}
+      propertyPath: pause
+      value: 
+      objectReference: {fileID: 6434482057548123312}
+    - target: {fileID: 1560873554140469478, guid: 9b61d79360f2b5d409ea703228271bf7, type: 3}
+      propertyPath: clipSize
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 1560873554140469478, guid: 9b61d79360f2b5d409ea703228271bf7, type: 3}
+      propertyPath: reloadTime
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3887005043239967700, guid: 9b61d79360f2b5d409ea703228271bf7, type: 3}
       propertyPath: damage
@@ -468,6 +504,10 @@ PrefabInstance:
       propertyPath: fireRate
       value: 0.1
       objectReference: {fileID: 0}
+    - target: {fileID: 6588825716049599601, guid: 9b61d79360f2b5d409ea703228271bf7, type: 3}
+      propertyPath: pause
+      value: 
+      objectReference: {fileID: 6434482057548123312}
     - target: {fileID: 7860464168464041811, guid: 9b61d79360f2b5d409ea703228271bf7, type: 3}
       propertyPath: m_Name
       value: PlayerWithWeapons (1)
@@ -476,6 +516,10 @@ PrefabInstance:
       propertyPath: multiplier
       value: 0.25
       objectReference: {fileID: 0}
+    - target: {fileID: 7860464168464041837, guid: 9b61d79360f2b5d409ea703228271bf7, type: 3}
+      propertyPath: pause
+      value: 
+      objectReference: {fileID: 6434482057548123312}
     - target: {fileID: 7860464168464041838, guid: 9b61d79360f2b5d409ea703228271bf7, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -644,8 +688,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20aa9c2641f0b884aa5fbb576ceead5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &184087785107831341 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6612935213359667319, guid: df581de9c4644c8409126caaa9f59e0f, type: 3}
+  m_PrefabInstance: {fileID: 6434482058796376666}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &726392271624286753 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6007650975378018427, guid: df581de9c4644c8409126caaa9f59e0f, type: 3}
+  m_PrefabInstance: {fileID: 6434482058796376666}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &4247771052706466211 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7185706592865561593, guid: df581de9c4644c8409126caaa9f59e0f, type: 3}
+  m_PrefabInstance: {fileID: 6434482058796376666}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &5574263010877223358 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1445688448081007588, guid: df581de9c4644c8409126caaa9f59e0f, type: 3}
   m_PrefabInstance: {fileID: 6434482058796376666}
   m_PrefabAsset: {fileID: 0}
