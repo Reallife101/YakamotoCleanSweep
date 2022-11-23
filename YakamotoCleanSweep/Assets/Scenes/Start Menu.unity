@@ -427,7 +427,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0.00016117096, y: -49.999992}
+  m_AnchoredPosition: {x: 0.00016117096, y: -100}
   m_SizeDelta: {x: 1068.9, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &139679643
@@ -1133,7 +1133,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 0, y: -100}
+  m_AnchoredPosition: {x: 0, y: -60}
   m_SizeDelta: {x: 300, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &521291935
@@ -1637,7 +1637,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: 0.00018310547, y: 263.99994}
+  m_AnchoredPosition: {x: 0.00018310547, y: 200}
   m_SizeDelta: {x: 0, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1181444532
@@ -1660,49 +1660,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Ryan Ngoon - Team Lead
-
-    Megan Cheung - Art Producer
-
-    Jeffrey Dang
-    - Programming Producer
-
-    Jessica Lam - Art
-
-    Britney Phan - Art
-
-    Alex
-    Gottuso - Programming
-
-    Leo - Programming
-
-    Dean D - Programming
-
-    Diana
-    - Programming
-
-    Isaac Corona - Programming
-
-    Josh - Programming
-
-    Kelvin
-    Zhao - Programming
-
-    Ringo - Programming
-
-    Eric - Design
-
-    Frederic
-    Maa - Design
-
-    Mahmoud - Design
-
-    Cole Young - UI/UX and Programming
-
-    Janie
-    Chen - Audio
-
-    Santiago C. - Writing'
+  m_text: Insert Text about how to play
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 62fdedda950ca064b979cbf2e221dbf5, type: 2}
   m_sharedMaterial: {fileID: -6040134519954802808, guid: 62fdedda950ca064b979cbf2e221dbf5, type: 2}
@@ -2064,7 +2022,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0, y: -50}
+  m_AnchoredPosition: {x: 0, y: -100}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1398284068
@@ -2472,7 +2430,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 0.00016117096, y: -99.999985}
+  m_AnchoredPosition: {x: 0.00016117096, y: -59}
   m_SizeDelta: {x: 300, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1767977345
@@ -3095,7 +3053,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 264}
+  m_AnchoredPosition: {x: 0, y: 240}
   m_SizeDelta: {x: 0, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2044065402
