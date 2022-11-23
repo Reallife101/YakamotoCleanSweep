@@ -5,6 +5,7 @@ public abstract class Weapon : MonoBehaviour
 {
     public event Action OnAttack;
 
+    [SerializeField] protected pauseLevel pause;
     [SerializeField] protected int damage = 1;
     [SerializeField] protected float fireRate = 1f;
     [SerializeField] protected float range = 1f;
@@ -23,7 +24,7 @@ public abstract class Weapon : MonoBehaviour
     {
         attackTimer -= Time.deltaTime;
 
-        if (Input.GetButton("Fire1") && attackTimer <= 0)
+        if (Input.GetButton("Fire1") && attackTimer <= 0 && !pause.isPaused())
         {
             OnAttack?.Invoke();
             Attack();

@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
+    [SerializeField] protected pauseLevel pause;
     [Header("Movement")]
     [SerializeField] private float moveSpeed = 6f; //for debug: shows the current movem speed of the player
     [SerializeField] private float movementMultiplier = 10f; //purely for rigidbody physics
@@ -15,6 +16,7 @@ public class PlayerMovement : MonoBehaviour
     [Header("Camera")]
     [SerializeField] private Camera cam;
     [SerializeField] private Transform cameraPosition;
+    private Vector3 startingCamPosition;
     //Fields of View for the camera
     [SerializeField] private float crouchFOV = 80f;
     [SerializeField] private float normalFOV = 90f;
@@ -104,6 +106,7 @@ public class PlayerMovement : MonoBehaviour
         isSprinting = false;
         isSliding = false;
         cam.fieldOfView = normalFOV;
+        startingCamPosition = cameraPosition.localPosition;
         moveSpeed = walkSpeed;
         canStrafe = true;
         //m_AudioSource = GetComponent<AudioSource>();
@@ -121,7 +124,7 @@ public class PlayerMovement : MonoBehaviour
         ControlPhysical();
         Crouching();
 
-        if (Input.GetKeyDown(jumpKey) && isGrounded)
+        if (Input.GetKeyDown(jumpKey) && isGrounded && !pause.isPaused())
         {
             Jump(groundJumpForce);
         }
@@ -155,7 +158,7 @@ public class PlayerMovement : MonoBehaviour
             canStrafe = true;
             capsuleSize.localScale = new Vector3(1, 1, 1);
             transform.position = new Vector3(transform.position.x, groundCheck.position.y + capsuleSize.localScale.y, transform.position.z);
-            cameraPosition.localPosition = new Vector3(0, 0, 0);
+            cameraPosition.localPosition = new Vector3(0, cameraPosition.localPosition.y / crouchHeightScale, 0);
         }
     }
 
@@ -216,6 +219,15 @@ public class PlayerMovement : MonoBehaviour
             isSliding = false;
             canStrafe = true;
         }
+        else if (!isGrounded)
+        {
+            capsuleSize.localScale = new Vector3(1, 1, 1);
+            transform.position = new Vector3(transform.position.x, groundCheck.position.y + capsuleSize.localScale.y, transform.position.z);
+            cameraPosition.localPosition = startingCamPosition;
+            isCrouching = false;
+            isSliding = false;
+            canStrafe = true;
+        }
     }
 
     private void Slide()
@@ -251,7 +263,7 @@ public class PlayerMovement : MonoBehaviour
         {
             moveSpeed = slideSpeed;
             cam.fieldOfView = Mathf.Lerp(cam.fieldOfView, slideFOV, fovTime * Time.deltaTime);
-            if (cam.fieldOfView > actualSlideFOV + fovBuffer)
+            if (cam.fieldOfView > actualSlideFOV - fovBuffer)
             {
                 cam.fieldOfView = actualSlideFOV;
             }
@@ -367,8 +379,8 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    private void ControlFOVs()
+    public void MultiplySpeed(float multiplier)
     {
-
+        moveSpeed *= multiplier;
     }
 }
