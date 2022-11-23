@@ -1,0 +1,4 @@
+1. pausing the game while in the countdown stage locks the timer
+2. you can pause and unpause in the level finished screen 
+(unpausing allows you to continue playing the level)
+3. puddle textures can show up through walls and dont work well on slanted surfaces
