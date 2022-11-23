@@ -5,13 +5,45 @@ using UnityEngine.SceneManagement;
 
 public class StartMenu : MonoBehaviour
 {
-    public void start() {
-        SceneManager.LoadScene(1);
-        //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+
+    [SerializeField] private GameObject main;
+    [SerializeField] private GameObject credits;
+    [SerializeField] private GameObject howToPlay;
+
+    private void Start()
+    {
+        showMain();
     }
 
-    public void quitGame() {
+    public void quitGame()
+    {
         Application.Quit();
     }
+
+    public void startGame()
+    {
+        SceneManager.LoadScene(1);
+    }
+
+    public void showCredits()
+    {
+        credits.SetActive(true);
+        main.SetActive(false);
+        howToPlay.SetActive(false);
+    }
+    public void showMain()
+    {
+        credits.SetActive(false);
+        main.SetActive(true);
+        howToPlay.SetActive(false);
+    }
+
+    public void showHowTo()
+    {
+        credits.SetActive(false);
+        main.SetActive(false);
+        howToPlay.SetActive(true);
+    }
+
 
 }
