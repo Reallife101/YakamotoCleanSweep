@@ -43,8 +43,8 @@ public class Prop : MonoBehaviour
         if (!isClean)
         {
             propManager.GetComponent<PropManager>().IncreaseCount();
-            dirtyModel.SetActive(false);
             cleanModel.SetActive(true);
+            dirtyModel.SetActive(false);
             healthBarCanvas.enabled = false;
             isClean = true;
         }

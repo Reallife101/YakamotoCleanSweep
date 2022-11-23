@@ -101,7 +101,7 @@ MonoBehaviour:
   playerLayer:
     serializedVersion: 2
     m_Bits: 256
-  slideForce: 5
+  slideForce: 0.05
   lifeTime: 5
 --- !u!65 &5256748587217031091
 BoxCollider:

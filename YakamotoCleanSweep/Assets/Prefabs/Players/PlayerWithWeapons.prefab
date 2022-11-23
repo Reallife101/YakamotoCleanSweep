@@ -75,9 +75,7 @@ GameObject:
   - component: {fileID: 7860464168464041836}
   - component: {fileID: 7860464168464041837}
   - component: {fileID: 7860464168464041810}
-  - component: {fileID: 1051044440804996975}
-  - component: {fileID: -6783446149690760489}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: PlayerWithWeapons
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -136,6 +134,8 @@ MonoBehaviour:
   wallRun: {fileID: 7860464168464041810}
   sensX: 100
   sensY: 100
+  startingCamXRot: 0
+  startingCamYRot: 0
   orientation: {fileID: 7860464169124964692}
   multiplier: 0.01
   allowLooking: 0
@@ -161,11 +161,11 @@ MonoBehaviour:
   crouchFOV: 80
   normalFOV: 90
   sprintFOV: 100
-  slideFOV: 110
+  slideFOV: 120
   actualCrouchFOV: 83
   actualNormalFOV: 90
   actualSprintFOV: 100
-  actualSlideFOV: 103
+  actualSlideFOV: 109
   fovBuffer: 1
   fovTime: 15
   walkSpeed: 3
@@ -179,7 +179,7 @@ MonoBehaviour:
   ceilingCheck: {fileID: 8301220702472083394}
   slideSpeed: 10
   slideTime: 1
-  velocityToSlide: 11
+  velocityToSlide: 8
   jumpKey: 32
   sprintKey: 304
   toggleCrouchKey: 99
@@ -216,7 +216,7 @@ MonoBehaviour:
   minimumJumpHeight: 1.2
   initialWallRunForwardForce: 100
   initialWallRunUpwardForce: 100
-  wallRunGravity: 0.29
+  wallRunGravity: -19.1
   wallRunUpJumpForce: 315
   wallRunSideJumpForce: 315
   requiredForwardVelocity: 1
@@ -226,34 +226,6 @@ MonoBehaviour:
   wallRunfovTime: 10
   camTilt: 10
   camTiltTime: 10
---- !u!114 &1051044440804996975
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7860464168464041811}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6ece966ee981897499579d565e145695, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  MaxHealth: 3
-  invinicible_time: 3
---- !u!114 &-6783446149690760489
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7860464168464041811}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 72440fa645717f4408ff1403eae7ce21, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  lowest_point: {fileID: 0}
-  ph_host: {fileID: 1051044440804996975}
 --- !u!1 &7860464168766041171
 GameObject:
   m_ObjectHideFlags: 0
@@ -573,16 +545,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7860464169090707111}
     m_Modifications:
-    - target: {fileID: 1691543080817685161, guid: a4d8638f8ff60a64bac1dc336c31dc71, type: 3}
-      propertyPath: enemyLayer.m_Bits
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 3972646819959681432, guid: a4d8638f8ff60a64bac1dc336c31dc71, type: 3}
       propertyPath: m_Name
       value: SoapTalisman
       objectReference: {fileID: 0}
     - target: {fileID: 3972646819959681432, guid: a4d8638f8ff60a64bac1dc336c31dc71, type: 3}
       propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3972646819959681434, guid: a4d8638f8ff60a64bac1dc336c31dc71, type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3972646819959681439, guid: a4d8638f8ff60a64bac1dc336c31dc71, type: 3}
@@ -651,6 +623,10 @@ PrefabInstance:
     - target: {fileID: 4862565543342571118, guid: ec7413f337ca7c94fb80cbc146126994, type: 3}
       propertyPath: m_Name
       value: Broom
+      objectReference: {fileID: 0}
+    - target: {fileID: 4862565543342571118, guid: ec7413f337ca7c94fb80cbc146126994, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5201830424217429204, guid: ec7413f337ca7c94fb80cbc146126994, type: 3}
       propertyPath: m_RootOrder
@@ -791,29 +767,3 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 8426099797160277185, guid: 0d419ef40b2b7ab4aaee2940fc44df06, type: 3}
   m_PrefabInstance: {fileID: 5343892888014454607}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &2244546343431547199
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4523539665750117262}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c461d3e47c148ee42badfc0c3071a2b9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  particlesys: {fileID: 7460375679517611849, guid: 9b5f90f8d52e3704cb1f9d15e9c89fd9, type: 3}
-  host: {fileID: 6588825716049599601}
-  offset: 0.2
---- !u!114 &6588825716049599601 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1250140670087013182, guid: 0d419ef40b2b7ab4aaee2940fc44df06, type: 3}
-  m_PrefabInstance: {fileID: 5343892888014454607}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4523539665750117262}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a527cbffffece484d8d0ae2bebbe8e66, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
