@@ -586,6 +586,14 @@ PrefabInstance:
       propertyPath: fireRate
       value: 0.1
       objectReference: {fileID: 0}
+    - target: {fileID: 3887005043239967703, guid: 9b61d79360f2b5d409ea703228271bf7, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4523539665750117262, guid: 9b61d79360f2b5d409ea703228271bf7, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6588825716049599601, guid: 9b61d79360f2b5d409ea703228271bf7, type: 3}
       propertyPath: pause
       value: 
