@@ -522,6 +522,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9b61d79360f2b5d409ea703228271bf7, type: 3}
+--- !u!114 &160978686244120431 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6588825716049599601, guid: 9b61d79360f2b5d409ea703228271bf7, type: 3}
+  m_PrefabInstance: {fileID: 6434482058556685086}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a527cbffffece484d8d0ae2bebbe8e66, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &3773495132512943216 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7860464168464041838, guid: 9b61d79360f2b5d409ea703228271bf7, type: 3}
@@ -538,6 +549,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 685e947167e383a4a8deb01f97eb4342, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &5540141592867578872 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1560873554140469478, guid: 9b61d79360f2b5d409ea703228271bf7, type: 3}
+  m_PrefabInstance: {fileID: 6434482058556685086}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc3f734be5294e741bdc375be9fe4713, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &6434482058796376666
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -545,6 +567,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8253430233366570218}
     m_Modifications:
+    - target: {fileID: 646863295495961139, guid: df581de9c4644c8409126caaa9f59e0f, type: 3}
+      propertyPath: weapon
+      value: 
+      objectReference: {fileID: 5540141592867578872}
     - target: {fileID: 6138784218230024050, guid: df581de9c4644c8409126caaa9f59e0f, type: 3}
       propertyPath: m_Name
       value: ui_canvas
@@ -601,6 +627,10 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: 65f596d200741bb458e3dae5650b3353, type: 3}
+    - target: {fileID: 8957903450870668888, guid: df581de9c4644c8409126caaa9f59e0f, type: 3}
+      propertyPath: weapon
+      value: 
+      objectReference: {fileID: 160978686244120431}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: df581de9c4644c8409126caaa9f59e0f, type: 3}
 --- !u!114 &19807993942833930 stripped
