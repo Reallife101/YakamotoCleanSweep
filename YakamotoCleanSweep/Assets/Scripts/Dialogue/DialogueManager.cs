@@ -3,19 +3,23 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement;
+
 
 public class DialogueManager : MonoBehaviour
 {
     private static DialogueManager instance;
 
     //All objects which are to be displayed 
-    public GameObject dialogueBox;
-    public Image actorImage;
-    public TextMeshProUGUI actorName;
-    public TextMeshProUGUI messageText;
+    [SerializeField] GameObject dialogueObject;
+    [SerializeField] GameObject dialogueBox;
+    [SerializeField] Image actorImage;
+    [SerializeField] TextMeshProUGUI actorName;
+    [SerializeField] TextMeshProUGUI messageText;
 
     private Message[] currentMessages;
     private Actor[] currentActors;
+    private int nextLevel;
     private int activeMessage = 0;
     public static bool isActive = false;
 
@@ -29,13 +33,14 @@ public class DialogueManager : MonoBehaviour
         return instance;
     }
 
-    public void OpenDialogue(Message[] messages, Actor[] actors)
+    public void OpenDialogue(Message[] messages, Actor[] actors, int next)
     {
         currentMessages = messages;
         currentActors = actors;
+        nextLevel = next;
         activeMessage = 0;
         isActive = true;
-        dialogueBox.SetActive(true);
+        dialogueObject.SetActive(true);
         Debug.Log("Loaded convo");
         DisplayMessage();
     }
@@ -61,15 +66,16 @@ public class DialogueManager : MonoBehaviour
         {
             Debug.Log("Convo ended");
             isActive = false;
-            dialogueBox.SetActive(false);
+            dialogueObject.SetActive(false);
+            SceneManager.LoadScene(nextLevel);
         }
     }
     
     // Start is called before the first frame update
     void Start()
     {
-        isActive = false;
-        dialogueBox.SetActive(false);
+        //isActive = false;
+        //dialogueObject.SetActive(false);
     }
 
     // Update is called once per frame
