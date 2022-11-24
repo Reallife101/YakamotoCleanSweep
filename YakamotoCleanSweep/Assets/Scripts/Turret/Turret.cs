@@ -50,7 +50,6 @@ public class Turret : MonoBehaviour
         }
         if (clipSize == 0)
         {
-            Debug.Log("Reloading");
             StartCoroutine("Reload");           
         }
     }

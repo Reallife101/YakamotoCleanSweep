@@ -8,9 +8,8 @@ public class Missile : MonoBehaviour
     private Rigidbody rb;
 
     [SerializeField]
-    private LayerMask obstacle;
-    [SerializeField]
-    private LayerMask playerMask;
+    private int damage; 
+
 
     [SerializeField]
     private float speed;
@@ -25,12 +24,12 @@ public class Missile : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.layer == playerMask.value)
+        if (collision.gameObject.tag == "Player")
         {
-            // collision.gameObject.GetComponent<health>()
-            Debug.Log("Missile hitting Player");
+            collision.gameObject.GetComponent<playerhealth>().TakeDamage(damage);
+            Destroy(gameObject);
         }
-        else if (collision.gameObject.layer == obstacle.value)
+        else if (collision.gameObject.tag == "Wall")
         {
             Debug.Log("Destroying");
             Destroy(gameObject);

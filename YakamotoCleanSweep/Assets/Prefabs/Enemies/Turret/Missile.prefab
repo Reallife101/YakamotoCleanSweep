@@ -113,6 +113,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 8593513242513924605}
+  damage: 1
   obstacle:
     serializedVersion: 2
     m_Bits: 512
