@@ -109,6 +109,12 @@ public class PlayerMovement : MonoBehaviour
         startingCamPosition = cameraPosition.localPosition;
         moveSpeed = walkSpeed;
         canStrafe = true;
+        if (PlayerPrefs.GetInt("sprintToggle", 0) == 1) {
+            toggleSprint = true;
+        }
+        else {
+            toggleSprint = false;
+        }
         //m_AudioSource = GetComponent<AudioSource>();
     }
 
@@ -160,6 +166,10 @@ public class PlayerMovement : MonoBehaviour
             transform.position = new Vector3(transform.position.x, groundCheck.position.y + capsuleSize.localScale.y, transform.position.z);
             cameraPosition.localPosition = new Vector3(0, cameraPosition.localPosition.y / crouchHeightScale, 0);
         }
+    }
+
+    public void setToggleSprintPM(bool toggleOn) {
+        toggleSprint = toggleOn;
     }
 
     private void DelegateToggles()

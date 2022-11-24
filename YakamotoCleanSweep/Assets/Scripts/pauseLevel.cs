@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 public class pauseLevel : MonoBehaviour
 {
     [SerializeField] GameObject pauseMen;
+    [SerializeField] GameObject gameUI;
     [SerializeField] PlayerLook pl;
     
 
@@ -32,6 +33,7 @@ public class pauseLevel : MonoBehaviour
     {
         if (b)
         {
+            gameUI.SetActive(false);
             pauseMen.SetActive(true);
             Time.timeScale = 0f;
             Cursor.lockState = CursorLockMode.None;
@@ -40,6 +42,7 @@ public class pauseLevel : MonoBehaviour
         }
         else
         {
+            gameUI.SetActive(true);
             pauseMen.SetActive(false);
             Time.timeScale = 1f;
             Cursor.lockState = CursorLockMode.Locked;
