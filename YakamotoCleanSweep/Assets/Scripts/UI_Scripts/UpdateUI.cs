@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class UpdateUI : MonoBehaviour
 {   
-    [SerializeField] private GameObject[] hearts;
+    [SerializeField] private GameObject[] states;
+    [SerializeField] private GameObject[] butlers;
+    [SerializeField] private GameObject[] maids;
     /* put this behavoir into the weapon swap script
     [SerializeField] GameObject spray;
     [SerializeField] GameObject broom;
@@ -29,13 +31,17 @@ public class UpdateUI : MonoBehaviour
         }
     }
     */
+    void Start() {
+
+    }
+    
     public void setHealth(int health) {
-        for (int i = 0; i < hearts.Length; i++) {
-            if (i < health) {
-                hearts[i].SetActive(true);
+        for (int i = 0; i < states.Length; i++) {
+            if (i == health - 1) {
+                states[i].SetActive(true);
             }
             else {
-                hearts[i].SetActive(false);
+                states[i].SetActive(false);
             }    
         }
     }

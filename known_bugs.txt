@@ -2,3 +2,7 @@
 2. you can pause and unpause in the level finished screen 
 (unpausing allows you to continue playing the level)
 3. puddle textures can show up through walls and dont work well on slanted surfaces
+4. if i switch weapons while reloading, i cannot use that weapon again until i reload a second time
+(ex. i am at 4/5 ammo and try to reload but switch first. when i switch back, i still can't
+fire, even though i still have the 4 ammo)
+5. i can still crouch while paused
