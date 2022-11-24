@@ -17,4 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Leo_LevelTest.unity
     guid: 272061bb5e8649b40961a077248ac5d9
+  - enabled: 1
+    path: Assets/Scenes/Isaac Test Dialogue.unity
+    guid: 85f34f243480d8d49a105cc2c3a537f4
   m_configObjects: {}
