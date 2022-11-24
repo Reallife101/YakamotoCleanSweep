@@ -75,6 +75,7 @@ GameObject:
   - component: {fileID: 7860464168464041836}
   - component: {fileID: 7860464168464041837}
   - component: {fileID: 7860464168464041810}
+  - component: {fileID: 16981477366210288}
   m_Layer: 8
   m_Name: PlayerWithWeapons
   m_TagString: Player
@@ -151,6 +152,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67e87a6da820597469a0c2deb0918f90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pause: {fileID: 0}
   moveSpeed: 6
   movementMultiplier: 10
   airMultiplier: 0.11
@@ -226,6 +228,20 @@ MonoBehaviour:
   wallRunfovTime: 10
   camTilt: 10
   camTiltTime: 10
+--- !u!114 &16981477366210288
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7860464168464041811}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ece966ee981897499579d565e145695, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MaxHealth: 3
+  invinicible_time: 3
 --- !u!1 &7860464168766041171
 GameObject:
   m_ObjectHideFlags: 0
@@ -501,11 +517,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bdcb8e13139c08946b4e239a9bf1e99a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pause: {fileID: 0}
   swapKeys: 310000003200000033000000
   weapons:
   - {fileID: 4523539665750117262}
   - {fileID: 6400140739300727841}
   - {fileID: 3887005043239967703}
+  weaponUIs: []
   startingWeaponIndex: 0
 --- !u!1 &7860464169124964693
 GameObject:
