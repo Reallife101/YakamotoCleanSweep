@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 1250140670087013182}
   - component: {fileID: 2637202901945463506}
   - component: {fileID: 9221817431416743974}
+  - component: {fileID: 4732873186527025245}
   m_Layer: 0
   m_Name: Aerosol
   m_TagString: Untagged
@@ -144,3 +145,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   host: {fileID: 1250140670087013182}
   anim: {fileID: 2637202901945463506}
+--- !u!114 &4732873186527025245
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8426099797160277185}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c461d3e47c148ee42badfc0c3071a2b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  particlesys: {fileID: 2804547923299718100, guid: b65b41b2fc10a344d953037c5af79dcb, type: 3}
+  host: {fileID: 1250140670087013182}
+  offset: 1.4
