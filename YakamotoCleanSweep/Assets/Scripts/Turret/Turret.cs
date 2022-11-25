@@ -23,8 +23,6 @@ public class Turret : MonoBehaviour
     [SerializeField]
     private float reloadTime;
 
-    private float initialReloadTime;
-
     [SerializeField]
     private float clipSize;
 
@@ -34,7 +32,6 @@ public class Turret : MonoBehaviour
     void Start()
     {
         initialFiraRate = fireRate;
-        initialReloadTime = reloadTime;
         initialClipSize = clipSize;
         fov = GetComponent<FOV>();
         fov.OnView += LookAtPlayer; 
