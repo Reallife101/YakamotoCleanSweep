@@ -45,7 +45,7 @@ public class Broom : Weapon
 
     private void Glid()
     {
-        if (Input.GetButton("Fire1"))
+        if (Input.GetButton("Fire2"))
         {
             if (prevDirection != orientation.forward)
             {
