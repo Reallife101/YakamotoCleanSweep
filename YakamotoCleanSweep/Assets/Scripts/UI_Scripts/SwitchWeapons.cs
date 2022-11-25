@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class SwitchWeapons : MonoBehaviour
 {
+    [SerializeField] protected pauseLevel pause;
     [SerializeField] private KeyCode[] swapKeys;
     [SerializeField] private GameObject[] weapons;
+    [SerializeField] private GameObject[] weaponUIs;
     [SerializeField] private int startingWeaponIndex = 0;
 
     // Start is called before the first frame update
@@ -27,7 +29,9 @@ public class SwitchWeapons : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        WeaponSwap();
+        if (!pause.isPaused()) {
+            WeaponSwap();
+        }
     }
 
     private void WeaponSwap()
@@ -72,6 +76,17 @@ public class SwitchWeapons : MonoBehaviour
             else
             {
                 weapon.SetActive(false);
+            }
+        }
+        foreach (GameObject weaponUI in weaponUIs)
+        {
+            if (weaponUI == weaponUIs[index])
+            {
+                weaponUI.SetActive(true);
+            }
+            else
+            {
+                weaponUI.SetActive(false);
             }
         }
     }

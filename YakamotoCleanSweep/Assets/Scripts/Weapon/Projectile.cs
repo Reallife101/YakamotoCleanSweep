@@ -14,5 +14,7 @@ public class Projectile : Ranged
         Vector3 force = eye.transform.forward * throwForce;
 
         projectile.GetComponent<Rigidbody>().AddForce(force, ForceMode.Impulse);
+
+        UpdateAmmo();
     }
 }

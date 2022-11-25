@@ -55,4 +55,12 @@ public abstract class Ranged : Weapon
         Vector3 end = eye.position + dir * range;
         Debug.DrawLine(eye.position, end, Color.red, 10);
     }
+
+    public int getAmmo() {
+        return this.bulletsRemaining;
+    }
+
+    public int getSize() {
+        return this.clipSize;
+    }
 }
