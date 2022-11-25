@@ -14,14 +14,13 @@ public class Broom : Weapon
     [SerializeField] private Rigidbody player;
     [SerializeField] private Transform orientation;
     [SerializeField] private float fallSpeed;
-    [SerializeField] private float maxSpeed = 6;
+    [SerializeField] private float forwardSpeed;
+    public float desiredYVel;
 
 
     private void Update()
     {    
         UpdateAttack();
-
-
     }
 
     protected override void Attack()
@@ -48,9 +47,16 @@ public class Broom : Weapon
     {
         if (Input.GetButton("Fire1"))
         {
-            Vector3 direction = orientation.forward + orientation.right;
-            player.MovePosition(player.position + direction.normalized * Time.deltaTime * maxSpeed);
-            player.AddForce(transform.up * fallSpeed, ForceMode.Acceleration);
+            Vector3 horvel = new Vector3(player.velocity.x, 0, player.velocity.z);
+            Vector3 offsetVel = (orientation.forward * forwardSpeed) - horvel;
+            player.AddForce(new Vector3(offsetVel.x, 0, offsetVel.z));
+
+            if (player.velocity.y < desiredYVel)
+            {
+                Debug.Log("Lifting");
+                player.AddForce(new Vector3(0, fallSpeed, 0));
+            }
+
         }
     }
 }
