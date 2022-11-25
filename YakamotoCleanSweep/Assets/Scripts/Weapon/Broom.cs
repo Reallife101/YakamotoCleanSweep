@@ -8,15 +8,15 @@ public class Broom : Weapon
     // Should melee weapons have a collider
     [SerializeField] private Collider col = null;
 
-
-
+    [Header("Gliding Settings")]
     [SerializeField] private PlayerMovement playerMovement;
     [SerializeField] private Rigidbody player;
     [SerializeField] private Transform orientation;
     [SerializeField] private float fallSpeed;
     [SerializeField] private float forwardSpeed;
-    public float desiredYVel;
+    [SerializeField] private float desiredYVel;
 
+    private Vector3 prevDirection = Vector3.zero; 
 
     private void Update()
     {    
@@ -47,13 +47,16 @@ public class Broom : Weapon
     {
         if (Input.GetButton("Fire1"))
         {
-            Vector3 horvel = new Vector3(player.velocity.x, 0, player.velocity.z);
-            Vector3 offsetVel = (orientation.forward * forwardSpeed) - horvel;
-            player.AddForce(new Vector3(offsetVel.x, 0, offsetVel.z));
+            if (prevDirection != orientation.forward)
+            {
+                Vector3 horvel = new Vector3(player.velocity.x, 0, player.velocity.z);
+                Vector3 offsetVel = (orientation.forward * forwardSpeed) - horvel;
+                player.AddForce(new Vector3(offsetVel.x, 0, offsetVel.z), ForceMode.VelocityChange);
+                prevDirection = orientation.forward;
+            }
 
             if (player.velocity.y < desiredYVel)
             {
-                Debug.Log("Lifting");
                 player.AddForce(new Vector3(0, fallSpeed, 0));
             }
 
