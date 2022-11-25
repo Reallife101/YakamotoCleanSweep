@@ -22,6 +22,7 @@ public class SoapTalisman : Ranged
             DealDamage();
         }
         UpdateAmmo();
+        playAttackSound();
     }
 
     private void MakePuddle(Vector3 position)

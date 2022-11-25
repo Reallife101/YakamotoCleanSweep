@@ -1,5 +1,6 @@
 using UnityEngine;
 using System;
+using System.Collections.Generic;
 
 public abstract class Weapon : MonoBehaviour
 {
@@ -10,7 +11,9 @@ public abstract class Weapon : MonoBehaviour
     [SerializeField] protected float fireRate = 1f;
     [SerializeField] protected float range = 1f;
     [SerializeField] protected LayerMask enemyLayer = new LayerMask();
+    [SerializeField] private List<AudioClip> attacks;
 
+    private AudioSource attackSource;
     private float attackTimer = 1f;
     protected RaycastHit hit;
     protected Transform eye = null; // Camera transform for simplicity;
@@ -18,6 +21,7 @@ public abstract class Weapon : MonoBehaviour
     private void Awake()
     {
         eye = Camera.main.transform;
+        attackSource = GetComponent<AudioSource>();
     }
 
     public void UpdateAttack()
@@ -29,6 +33,14 @@ public abstract class Weapon : MonoBehaviour
             OnAttack?.Invoke();
             Attack();
             attackTimer = fireRate;
+        }
+    }
+
+    protected void playAttackSound()
+    {
+        if (attackSource && attacks.Count > 0)
+        {
+            attackSource.PlayOneShot(attacks[UnityEngine.Random.Range(0, attacks.Count)], 1f);
         }
     }
 
