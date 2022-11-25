@@ -11,7 +11,9 @@ public class Turret : MonoBehaviour
     private GameObject missile;
 
     [SerializeField]
-    private GameObject tipOfCannon;
+    private GameObject tipOfCannon1;
+    [SerializeField]
+    private GameObject tipOfCannon2;
 
     [SerializeField]
     private float fireRate;
@@ -56,7 +58,8 @@ public class Turret : MonoBehaviour
 
     private void Shoot()
     {
-        Instantiate(missile, tipOfCannon.transform.position, tipOfCannon.transform.rotation.normalized);
+        Instantiate(missile, tipOfCannon1.transform.position, tipOfCannon1.transform.rotation.normalized);
+        Instantiate(missile, tipOfCannon2.transform.position, tipOfCannon2.transform.rotation.normalized);
     }
     
 
