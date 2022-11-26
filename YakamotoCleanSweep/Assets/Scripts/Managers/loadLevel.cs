@@ -18,13 +18,7 @@ public class loadLevel : MonoBehaviour
     [SerializeField] int goldTime = 20;
     [SerializeField] int silverTime = 45;
     [SerializeField] pauseLevel pause;
-    //private pauseLevel pause;
 
-    /*private void Awake()
-    {
-        pause = GetComponent<pauseLevel>();
-    }
-*/
     private void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Player")
