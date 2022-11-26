@@ -3,7 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="95349829-708a-4a71-b6d2-81ef0d83d8ae" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.YakamotoCleanSweep/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.YakamotoCleanSweep/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Weapon/Ranged.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Weapon/Ranged.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/MainComponents.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/MainComponents.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Managers/loadLevel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Managers/loadLevel.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/pauseLevel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/pauseLevel.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,7 +33,7 @@
 }</component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
     <configuration name="UnitTests (batch mode)" type="RunUnityExe" factoryName="Unity Executable">
-      <option name="EXE_PATH" value="/Applications/Unity/Hub/Editor/2021.3.11f1/Unity.app/Contents/MacOS/Unity" />
+      <option name="EXE_PATH" value="C:\Program Files\Unity\Hub\Editor\2021.3.11f1\Editor\Unity.exe" />
       <option name="PROGRAM_PARAMETERS" value="-runTests -batchmode -projectPath $PROJECT_DIR$ -testResults Logs/results.xml -testPlatform EditMode -debugCodeOptimization" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="PASS_PARENT_ENVS" value="1" />
@@ -69,6 +71,8 @@
       <updated>1667871358317</updated>
       <workItem from="1667871378242" duration="7347000" />
       <workItem from="1667974592146" duration="722000" />
+      <workItem from="1669491463724" duration="1367000" />
+      <workItem from="1669492857831" duration="3085000" />
     </task>
     <task id="LOCAL-00001" summary="failing to make swap in/out animations :)">
       <created>1667873398237</created>
