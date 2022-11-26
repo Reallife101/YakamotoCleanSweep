@@ -32,6 +32,7 @@ public class Broom : Weapon
             print("Damage");
             DealDamage();
         }
+        playAttackSound();
     }
 
     private void FixedUpdate()
