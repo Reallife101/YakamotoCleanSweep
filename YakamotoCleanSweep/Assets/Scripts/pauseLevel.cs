@@ -11,7 +11,7 @@ public class pauseLevel : MonoBehaviour
     [SerializeField] GameObject gameUI;
     [SerializeField] PlayerLook pl;
 
-    private bool enablePause;
+    [HideInInspector] public bool enablePause;
     
     private void Start()
     {

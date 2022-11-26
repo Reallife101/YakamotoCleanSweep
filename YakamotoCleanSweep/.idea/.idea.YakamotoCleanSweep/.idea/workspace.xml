@@ -3,8 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="95349829-708a-4a71-b6d2-81ef0d83d8ae" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.YakamotoCleanSweep/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.YakamotoCleanSweep/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/MainComponents.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/MainComponents.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Managers/loadLevel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Managers/loadLevel.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/pauseLevel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/pauseLevel.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/Packages/com.unity.probuilder/Settings.json" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/Packages/com.unity.probuilder/Settings.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -71,7 +72,7 @@
       <workItem from="1667871378242" duration="7347000" />
       <workItem from="1667974592146" duration="722000" />
       <workItem from="1669491463724" duration="1367000" />
-      <workItem from="1669492857831" duration="1241000" />
+      <workItem from="1669492857831" duration="3085000" />
     </task>
     <task id="LOCAL-00001" summary="failing to make swap in/out animations :)">
       <created>1667873398237</created>
