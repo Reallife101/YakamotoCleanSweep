@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -9,7 +10,20 @@ public class pauseLevel : MonoBehaviour
     [SerializeField] GameObject pauseMen;
     [SerializeField] GameObject gameUI;
     [SerializeField] PlayerLook pl;
+
+    private bool enablePause;
     
+    private void Start()
+    {
+        StartCoroutine(disablePauseFor(3));
+    }
+    
+    IEnumerator disablePauseFor(int seconds)
+    {
+        enablePause = false;
+        yield return new WaitForSeconds(seconds);
+        enablePause = true;
+    }
 
     // Update is called once per frame
     public bool isPaused() {
@@ -18,7 +32,7 @@ public class pauseLevel : MonoBehaviour
     
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Escape) && enablePause)
         {
             togglePause();
         }
