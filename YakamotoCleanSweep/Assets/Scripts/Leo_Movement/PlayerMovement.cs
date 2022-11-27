@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
+    [SerializeField] protected pauseLevel pause;
     [Header("Movement")]
     [SerializeField] private float moveSpeed = 6f; //for debug: shows the current movem speed of the player
     [SerializeField] private float movementMultiplier = 10f; //purely for rigidbody physics
@@ -11,10 +12,12 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private Transform orientation; //keeps track of where the player is looking
     [SerializeField] private bool toggleSprint; //whether or not the sprint button is toggle or hold
     private bool canStrafe; //whether or not the player can move side-to-side
+    [SerializeField] private float maxVelocity = 30f; //determines the maximum velocity the player can move at
  
     [Header("Camera")]
     [SerializeField] private Camera cam;
     [SerializeField] private Transform cameraPosition;
+    private Vector3 startingCamPosition;
     //Fields of View for the camera
     [SerializeField] private float crouchFOV = 80f;
     [SerializeField] private float normalFOV = 90f;
@@ -89,6 +92,7 @@ public class PlayerMovement : MonoBehaviour
     public bool isCrouching { get; private set; }
     public bool isSprinting { get; private set; }
     private bool isSliding;
+    private bool gamePaused;
     AudioSource m_AudioSource;
 
     //relies on toggleSprint
@@ -104,8 +108,15 @@ public class PlayerMovement : MonoBehaviour
         isSprinting = false;
         isSliding = false;
         cam.fieldOfView = normalFOV;
+        startingCamPosition = cameraPosition.localPosition;
         moveSpeed = walkSpeed;
         canStrafe = true;
+        if (PlayerPrefs.GetInt("sprintToggle", 0) == 1) {
+            toggleSprint = true;
+        }
+        else {
+            toggleSprint = false;
+        }
         //m_AudioSource = GetComponent<AudioSource>();
     }
 
@@ -113,21 +124,32 @@ public class PlayerMovement : MonoBehaviour
     {
         isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask) || Physics.CheckSphere(groundCheck.position, groundDistance, enemyMask); //performs sphereCheck to see if the player is close enough to the ground to be considered grounded
         ceilingContest = Physics.CheckSphere(ceilingCheck.position, ceilingDistance);
+        gamePaused = pause.isPaused();
 
         DelegateToggles();
         PlayerInput();
         ControlDrag();
         ControlSpeed();
         ControlPhysical();
-        Crouching();
 
-        if (Input.GetKeyDown(jumpKey) && isGrounded)
+        if (!gamePaused)
+        {
+            Crouching();
+        }
+
+        if (Input.GetKeyDown(jumpKey) && isGrounded && !gamePaused)
         {
             Jump(groundJumpForce);
         }
 
         slopeMoveDirection = Vector3.ProjectOnPlane(moveDirection, slopeHit.normal);
         //Debug.Log(rb.velocity.magnitude);
+        
+        //limit speed
+        if(rb.velocity.magnitude > maxVelocity)
+        {
+            rb.velocity = Vector3.ClampMagnitude(rb.velocity, maxVelocity);
+        }
     }
 
     public void PlayerInput()
@@ -157,6 +179,10 @@ public class PlayerMovement : MonoBehaviour
             transform.position = new Vector3(transform.position.x, groundCheck.position.y + capsuleSize.localScale.y, transform.position.z);
             cameraPosition.localPosition = new Vector3(0, cameraPosition.localPosition.y / crouchHeightScale, 0);
         }
+    }
+
+    public void setToggleSprintPM(bool toggleOn) {
+        toggleSprint = toggleOn;
     }
 
     private void DelegateToggles()
@@ -216,6 +242,15 @@ public class PlayerMovement : MonoBehaviour
             isSliding = false;
             canStrafe = true;
         }
+        else if (!isGrounded)
+        {
+            capsuleSize.localScale = new Vector3(1, 1, 1);
+            transform.position = new Vector3(transform.position.x, groundCheck.position.y + capsuleSize.localScale.y, transform.position.z);
+            cameraPosition.localPosition = startingCamPosition;
+            isCrouching = false;
+            isSliding = false;
+            canStrafe = true;
+        }
     }
 
     private void Slide()
@@ -251,7 +286,7 @@ public class PlayerMovement : MonoBehaviour
         {
             moveSpeed = slideSpeed;
             cam.fieldOfView = Mathf.Lerp(cam.fieldOfView, slideFOV, fovTime * Time.deltaTime);
-            if (cam.fieldOfView > actualSlideFOV + fovBuffer)
+            if (cam.fieldOfView > actualSlideFOV - fovBuffer)
             {
                 cam.fieldOfView = actualSlideFOV;
             }

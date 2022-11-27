@@ -27,6 +27,7 @@ public class Aerosol : Ranged
         }
 
         UpdateAmmo();
+        playAttackSound();
 
         Knockback();
     }
