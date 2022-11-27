@@ -53,6 +53,7 @@ public class DialogueManager : MonoBehaviour
         Actor actorToDisplay = currentActors[messageToDisplay.actorid];
         actorName.text = actorToDisplay.name;
         actorImage.sprite = actorToDisplay.sprite;
+        actorImage.gameObject.GetComponent<RectTransform>().sizeDelta = new Vector2(actorToDisplay.sprite.rect.width, actorToDisplay.sprite.rect.height);
     }
 
     public void NextMessage()
@@ -64,9 +65,9 @@ public class DialogueManager : MonoBehaviour
         }
         else
         {
-            Debug.Log("Convo ended");
+            /*Debug.Log("Convo ended");
             isActive = false;
-            dialogueObject.SetActive(false);
+            dialogueObject.SetActive(false);*/
             SceneManager.LoadScene(nextLevel);
         }
     }
