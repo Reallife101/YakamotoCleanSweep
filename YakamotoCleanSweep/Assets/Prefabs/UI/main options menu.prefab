@@ -1938,7 +1938,7 @@ GameObject:
   - component: {fileID: 973441412105265317}
   - component: {fileID: 4426122046334972458}
   m_Layer: 0
-  m_Name: pause menu
+  m_Name: main options menu
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
