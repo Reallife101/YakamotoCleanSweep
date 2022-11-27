@@ -9,9 +9,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3291525365011948094}
-  - component: {fileID: 2960827528343349680}
   - component: {fileID: 2809070376123803412}
   - component: {fileID: 7766128944174264004}
+  - component: {fileID: 1993715899221304651}
   m_Layer: 9
   m_Name: TalismanProjectile
   m_TagString: Untagged
@@ -35,23 +35,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2960827528343349680
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2371805189268572134}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 99f5da7f19c2c5c408c5b3467019d2f9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  damage: 1
-  groundLayer:
-    serializedVersion: 2
-    m_Bits: 64
-  puddle: {fileID: 8385443726673739258, guid: 2400e64f796a548418cd1ad0f281b2eb, type: 3}
 --- !u!54 &2809070376123803412
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -80,6 +63,18 @@ ConstantForce:
   m_RelativeForce: {x: 0, y: 0, z: 0}
   m_Torque: {x: 0, y: 0, z: 0}
   m_RelativeTorque: {x: 0, y: 0, z: 0}
+--- !u!114 &1993715899221304651
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2371805189268572134}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 99f5da7f19c2c5c408c5b3467019d2f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8839150135358964748
 GameObject:
   m_ObjectHideFlags: 0
