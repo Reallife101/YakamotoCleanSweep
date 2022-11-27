@@ -26,13 +26,13 @@ public class playerhealth : health
     public new void TakeDamage(int healthPTS)
     {
         if (!ifinvincible){
-        currentHealth -= healthPTS;
-        CheckHealth();
-        Debug.Log("damage down 1");
-        StartCoroutine(InvincibilityElapse());
-        }
-        
-        playerHealthUI.setHealth(currentHealth);
+            currentHealth -= healthPTS;
+            CheckHealth();
+            Debug.Log("damage down 1");
+            StartCoroutine(InvincibilityElapse());
+            playerHealthUI.setHealth(currentHealth);
+            playerHealthUI.onDamage();
+        }        
     }
     
 
