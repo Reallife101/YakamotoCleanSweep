@@ -12391,6 +12391,34 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+<<<<<<< HEAD:YakamotoCleanSweep/Assets/Scenes/Leo_LevelTest.unity
+    - target: {fileID: 7860464168766041171, guid: 9b61d79360f2b5d409ea703228271bf7, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7860464169090707111, guid: 9b61d79360f2b5d409ea703228271bf7, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 7860464169090707111, guid: 9b61d79360f2b5d409ea703228271bf7, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7860464169090707111, guid: 9b61d79360f2b5d409ea703228271bf7, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 7860464169090707111, guid: 9b61d79360f2b5d409ea703228271bf7, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7860464169090707111, guid: 9b61d79360f2b5d409ea703228271bf7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 90
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 9b61d79360f2b5d409ea703228271bf7, type: 3}
+=======
     - target: {fileID: 6405517949658889103, guid: b3ae02b51ec94094ea74b742d17e698e, type: 3}
       propertyPath: m_Name
       value: Updated_DirtyObject (1)
@@ -12402,6 +12430,7 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6405517949658889099, guid: b3ae02b51ec94094ea74b742d17e698e, type: 3}
   m_PrefabInstance: {fileID: 481296350}
   m_PrefabAsset: {fileID: 0}
+>>>>>>> main:YakamotoCleanSweep/Assets/Scenes/playerhealth testing.unity
 --- !u!1 &482133540
 GameObject:
   m_ObjectHideFlags: 0
