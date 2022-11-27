@@ -12,6 +12,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private Transform orientation; //keeps track of where the player is looking
     [SerializeField] private bool toggleSprint; //whether or not the sprint button is toggle or hold
     private bool canStrafe; //whether or not the player can move side-to-side
+    [SerializeField] private float maxVelocity = 30f; //determines the maximum velocity the player can move at
  
     [Header("Camera")]
     [SerializeField] private Camera cam;
@@ -137,6 +138,12 @@ public class PlayerMovement : MonoBehaviour
 
         slopeMoveDirection = Vector3.ProjectOnPlane(moveDirection, slopeHit.normal);
         //Debug.Log(rb.velocity.magnitude);
+        
+        //limit speed
+        if(rb.velocity.magnitude > maxVelocity)
+        {
+            rb.velocity = Vector3.ClampMagnitude(rb.velocity, maxVelocity);
+        }
     }
 
     public void PlayerInput()
