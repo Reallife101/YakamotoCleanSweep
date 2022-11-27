@@ -952,6 +952,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8030155342854066303, guid: 9b61d79360f2b5d409ea703228271bf7, type: 3}
+      propertyPath: pause
+      value: 
+      objectReference: {fileID: 6434482057548123312}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9b61d79360f2b5d409ea703228271bf7, type: 3}
 --- !u!1 &115406117179467583 stripped
@@ -1103,15 +1107,15 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7860464169124964692, guid: 9b61d79360f2b5d409ea703228271bf7, type: 3}
   m_PrefabInstance: {fileID: 6434482058556685086}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &5540141592867578872 stripped
+--- !u!114 &3907726904330857313 stripped
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1560873554140469478, guid: 9b61d79360f2b5d409ea703228271bf7, type: 3}
+  m_CorrespondingSourceObject: {fileID: 8030155342854066303, guid: 9b61d79360f2b5d409ea703228271bf7, type: 3}
   m_PrefabInstance: {fileID: 6434482058556685086}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7834773691066835145}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fc3f734be5294e741bdc375be9fe4713, type: 3}
+  m_Script: {fileID: 11500000, guid: bed50f9e1e8ee494aab798f457c1cb71, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &6446775078616671726 stripped
@@ -1242,7 +1246,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -1337,7 +1341,7 @@ PrefabInstance:
     - target: {fileID: 646863295495961139, guid: df581de9c4644c8409126caaa9f59e0f, type: 3}
       propertyPath: weapon
       value: 
-      objectReference: {fileID: 5540141592867578872}
+      objectReference: {fileID: 3907726904330857313}
     - target: {fileID: 1445688448081007588, guid: df581de9c4644c8409126caaa9f59e0f, type: 3}
       propertyPath: m_IsActive
       value: 0
