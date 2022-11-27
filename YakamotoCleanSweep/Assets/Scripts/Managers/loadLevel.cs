@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -16,6 +17,7 @@ public class loadLevel : MonoBehaviour
     [SerializeField] PlayerLook pl;
     [SerializeField] int goldTime = 20;
     [SerializeField] int silverTime = 45;
+    [SerializeField] pauseLevel pause;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -29,6 +31,7 @@ public class loadLevel : MonoBehaviour
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
             pl.allowLooking = false;
+            pause.enablePause = false;
             if (myTime < goldTime) {
                 gold.SetActive(true);
             }
