@@ -26,7 +26,8 @@ public class pauseLevel : MonoBehaviour
     }
 
     // Update is called once per frame
-    public bool isPaused() {
+    public bool isPaused() 
+    {
         return pauseMen.activeSelf;
     }
     

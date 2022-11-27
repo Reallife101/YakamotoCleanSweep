@@ -12,6 +12,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private Transform orientation; //keeps track of where the player is looking
     [SerializeField] private bool toggleSprint; //whether or not the sprint button is toggle or hold
     private bool canStrafe; //whether or not the player can move side-to-side
+    [SerializeField] private float maxVelocity = 30f; //determines the maximum velocity the player can move at
  
     [Header("Camera")]
     [SerializeField] private Camera cam;
@@ -91,6 +92,7 @@ public class PlayerMovement : MonoBehaviour
     public bool isCrouching { get; private set; }
     public bool isSprinting { get; private set; }
     private bool isSliding;
+    private bool gamePaused;
     AudioSource m_AudioSource;
 
     //relies on toggleSprint
@@ -122,21 +124,32 @@ public class PlayerMovement : MonoBehaviour
     {
         isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask) || Physics.CheckSphere(groundCheck.position, groundDistance, enemyMask); //performs sphereCheck to see if the player is close enough to the ground to be considered grounded
         ceilingContest = Physics.CheckSphere(ceilingCheck.position, ceilingDistance);
+        gamePaused = pause.isPaused();
 
         DelegateToggles();
         PlayerInput();
         ControlDrag();
         ControlSpeed();
         ControlPhysical();
-        Crouching();
 
-        if (Input.GetKeyDown(jumpKey) && isGrounded && !pause.isPaused())
+        if (!gamePaused)
+        {
+            Crouching();
+        }
+
+        if (Input.GetKeyDown(jumpKey) && isGrounded && !gamePaused)
         {
             Jump(groundJumpForce);
         }
 
         slopeMoveDirection = Vector3.ProjectOnPlane(moveDirection, slopeHit.normal);
         //Debug.Log(rb.velocity.magnitude);
+        
+        //limit speed
+        if(rb.velocity.magnitude > maxVelocity)
+        {
+            rb.velocity = Vector3.ClampMagnitude(rb.velocity, maxVelocity);
+        }
     }
 
     public void PlayerInput()
