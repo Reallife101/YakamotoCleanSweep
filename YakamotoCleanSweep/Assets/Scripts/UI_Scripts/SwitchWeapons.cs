@@ -72,6 +72,14 @@ public class SwitchWeapons : MonoBehaviour
             if (weapon == weapons[index])
             {
                 weapon.SetActive(true);
+                if (weapon.name == "Aerosol")
+                {
+                    weapon.GetComponent<Aerosol>().onSwap();
+                }
+                if (weapon.name == "SoapTalisman")
+                {
+                    weapon.GetComponent<Projectile>().onSwap();
+                }
             }
             else
             {
