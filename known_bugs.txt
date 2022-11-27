@@ -6,3 +6,4 @@
 (ex. i am at 4/5 ammo and try to reload but switch first. when i switch back, i still can't
 fire, even though i still have the 4 ammo)
 5. i can still crouch while paused
+6. UI/UX issue : menus look wierd a wide aspect ratios

@@ -44,7 +44,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72440fa645717f4408ff1403eae7ce21, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lowest_point: {fileID: 0}
   ph_host: {fileID: 6446775078616671726}
 --- !u!1 &5568740519741123973
 GameObject:
@@ -550,6 +549,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1825996478015653634, guid: ac2b352608540594894aced2b85e157f, type: 3}
+      propertyPath: ui
+      value: 
+      objectReference: {fileID: 3356578556795305319}
     - target: {fileID: 2082593961482343294, guid: ac2b352608540594894aced2b85e157f, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -581,6 +584,14 @@ PrefabInstance:
     - target: {fileID: 3705022093372557926, guid: ac2b352608540594894aced2b85e157f, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8411641908876169553, guid: ac2b352608540594894aced2b85e157f, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 3773495132512943218}
+    - target: {fileID: 8411641908876169553, guid: ac2b352608540594894aced2b85e157f, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: setSensitivity
       objectReference: {fileID: 0}
     - target: {fileID: 8514551101689741402, guid: ac2b352608540594894aced2b85e157f, type: 3}
       propertyPath: m_Name
