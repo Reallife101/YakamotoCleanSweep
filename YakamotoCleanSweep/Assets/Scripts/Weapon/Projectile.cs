@@ -16,5 +16,6 @@ public class Projectile : Ranged
         projectile.GetComponent<Rigidbody>().AddForce(force, ForceMode.Impulse);
 
         UpdateAmmo();
+        playAttackSound();
     }
 }
