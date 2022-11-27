@@ -986,7 +986,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7860464168464041836, guid: 9b61d79360f2b5d409ea703228271bf7, type: 3}
       propertyPath: multiplier
-      value: 0.094
+      value: 0.25
       objectReference: {fileID: 0}
     - target: {fileID: 7860464168464041837, guid: 9b61d79360f2b5d409ea703228271bf7, type: 3}
       propertyPath: pause
@@ -1040,6 +1040,34 @@ PrefabInstance:
       propertyPath: pause
       value: 
       objectReference: {fileID: 6434482057548123312}
+    - target: {fileID: 8030155342854066303, guid: 9b61d79360f2b5d409ea703228271bf7, type: 3}
+      propertyPath: clipSize
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 8030155342854066303, guid: 9b61d79360f2b5d409ea703228271bf7, type: 3}
+      propertyPath: attacks.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8030155342854066303, guid: 9b61d79360f2b5d409ea703228271bf7, type: 3}
+      propertyPath: attacks.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: 17f4403a3eccd3f42b4733e76330cb67, type: 3}
+    - target: {fileID: 8030155342854066303, guid: 9b61d79360f2b5d409ea703228271bf7, type: 3}
+      propertyPath: attacks.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: 6d27d99dd6d723d40a35eca7db589d68, type: 3}
+    - target: {fileID: 8030155342854066303, guid: 9b61d79360f2b5d409ea703228271bf7, type: 3}
+      propertyPath: attacks.Array.data[2]
+      value: 
+      objectReference: {fileID: 8300000, guid: f4efc72dc88aa6d4c81bd74e9fea3422, type: 3}
+    - target: {fileID: 8030155342854066303, guid: 9b61d79360f2b5d409ea703228271bf7, type: 3}
+      propertyPath: attacks.Array.data[3]
+      value: 
+      objectReference: {fileID: 8300000, guid: 5a35c7b1d991af547a29781ede57b4d3, type: 3}
+    - target: {fileID: 8030155342854066303, guid: 9b61d79360f2b5d409ea703228271bf7, type: 3}
+      propertyPath: attacks.Array.data[4]
+      value: 
+      objectReference: {fileID: 8300000, guid: fef85ad24590bac43912f80d461f6e2c, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9b61d79360f2b5d409ea703228271bf7, type: 3}
 --- !u!1 &115406117179467583 stripped
