@@ -13,7 +13,6 @@ public abstract class Ranged : Weapon
 
     private bool canAttack = true;
 
-
     private void Start()
     {
         bulletsRemaining = clipSize;
@@ -29,10 +28,7 @@ public abstract class Ranged : Weapon
 
         if (Input.GetButtonDown("Reload"))
         {
-            if (canAttack)
-            {
-                StartCoroutine(ReloadRoutine());
-            }
+            StartCoroutine(ReloadRoutine());
         }
     }
 
@@ -58,15 +54,6 @@ public abstract class Ranged : Weapon
     {
         Vector3 end = eye.position + dir * range;
         Debug.DrawLine(eye.position, end, Color.red, 10);
-    }
-
-    public void onSwap()
-    { 
-        canAttack = true;
-        if (bulletsRemaining <= 0)
-        {
-            StartCoroutine(ReloadRoutine());
-        }
     }
 
     public int getAmmo() {
