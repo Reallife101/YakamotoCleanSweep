@@ -32,9 +32,28 @@ public class UpdateUI : MonoBehaviour
     }
     */
     void Start() {
-
+        this.updateCharacter();
     }
     
+    public void updateCharacter() {
+        if (PlayerPrefs.GetString("character", "") == "Maid") {
+            foreach (GameObject b in butlers) {
+                b.SetActive(false);
+            }
+            foreach (GameObject m in maids) {
+                m.SetActive(true);
+            }
+        }
+        else {
+            foreach (GameObject b in butlers) {
+                b.SetActive(true);
+            }
+            foreach (GameObject m in maids) {
+                m.SetActive(false);
+            }
+        }
+    }
+
     public void setHealth(int health) {
         for (int i = 0; i < states.Length; i++) {
             if (i == health - 1) {
