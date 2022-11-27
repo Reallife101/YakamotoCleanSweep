@@ -158,6 +158,7 @@ MonoBehaviour:
   airMultiplier: 0.11
   orientation: {fileID: 7860464169124964692}
   toggleSprint: 1
+  maxVelocity: 30
   cam: {fileID: 7860464169090707108}
   cameraPosition: {fileID: 7860464168001807295}
   crouchFOV: 80
@@ -242,6 +243,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MaxHealth: 3
   invinicible_time: 3
+  playerHealthUI: {fileID: 0}
 --- !u!1 &7860464168766041171
 GameObject:
   m_ObjectHideFlags: 0
