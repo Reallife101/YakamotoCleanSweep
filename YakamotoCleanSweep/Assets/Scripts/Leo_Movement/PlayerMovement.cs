@@ -92,6 +92,7 @@ public class PlayerMovement : MonoBehaviour
     public bool isCrouching { get; private set; }
     public bool isSprinting { get; private set; }
     private bool isSliding;
+    private bool gamePaused;
     AudioSource m_AudioSource;
 
     //relies on toggleSprint
@@ -123,15 +124,20 @@ public class PlayerMovement : MonoBehaviour
     {
         isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask) || Physics.CheckSphere(groundCheck.position, groundDistance, enemyMask); //performs sphereCheck to see if the player is close enough to the ground to be considered grounded
         ceilingContest = Physics.CheckSphere(ceilingCheck.position, ceilingDistance);
+        gamePaused = pause.isPaused();
 
         DelegateToggles();
         PlayerInput();
         ControlDrag();
         ControlSpeed();
         ControlPhysical();
-        Crouching();
 
-        if (Input.GetKeyDown(jumpKey) && isGrounded && !pause.isPaused())
+        if (!gamePaused)
+        {
+            Crouching();
+        }
+
+        if (Input.GetKeyDown(jumpKey) && isGrounded && !gamePaused)
         {
             Jump(groundJumpForce);
         }
