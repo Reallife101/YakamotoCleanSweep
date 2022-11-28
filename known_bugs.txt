@@ -4,3 +4,4 @@
 fire, even though i still have the 4 ammo)
 3. UI/UX issue : menus look wierd a wide aspect ratios
 4. audio menu does not work
+5. broom does not work for objects low to the floor (which it really should if its a broom)
