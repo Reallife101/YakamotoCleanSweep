@@ -22,11 +22,11 @@ public class VisualManager : MonoBehaviour
 
     public void swapCharacter() {
         if (textMesh.text == "Butler"){
-            PlayerPrefs.SetString("character", "Maid");
+            PlayerPrefs.SetString("character", "maid");
             textMesh.text = "Maid";
         }
         else {
-            PlayerPrefs.SetString("character", "Butler");
+            PlayerPrefs.SetString("character", "butler");
             textMesh.text = "Butler";
         }
         ui.updateCharacter();

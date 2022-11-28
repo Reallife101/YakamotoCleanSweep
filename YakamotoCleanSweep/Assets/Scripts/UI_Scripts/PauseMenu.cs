@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class PauseMenu : MonoBehaviour
 {
@@ -17,5 +18,9 @@ public class PauseMenu : MonoBehaviour
 
     public void setSliderTextValue(float value) {
         sliderText.text = "Sensistivity : " + value.ToString("0.000");
+    }
+
+    public void toMainMenu() {
+        SceneManager.LoadScene(0);
     }
 }
