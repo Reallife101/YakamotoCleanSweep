@@ -18,13 +18,12 @@ public class health : MonoBehaviour
         isAlive = true;
     }
 
-    protected void Update()
+    protected void CheckHealth()
     {
         if (currentHealth <= 0 && isAlive)
         {
             Debug.Log("REPORTDEATH");
             ReportDeath();
-           
         }
     }
 
@@ -32,6 +31,8 @@ public class health : MonoBehaviour
     {
 
         currentHealth -= healthPTS;
+
+        CheckHealth();
 
     }
 

@@ -99,12 +99,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a527cbffffece484d8d0ae2bebbe8e66, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pause: {fileID: 0}
   damage: 1
-  fireRate: 0.8
+  fireRate: 1
   range: 5
   enemyLayer:
     serializedVersion: 2
     m_Bits: 128
+  attacks: []
   reloadTime: 2
   clipSize: 5
   sprayAngle: 50
@@ -159,4 +161,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   particlesys: {fileID: 2804547923299718100, guid: b65b41b2fc10a344d953037c5af79dcb, type: 3}
   host: {fileID: 1250140670087013182}
-  offset: 1.4
+  offset: 0

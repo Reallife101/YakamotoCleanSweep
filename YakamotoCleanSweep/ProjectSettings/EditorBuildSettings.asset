@@ -8,9 +8,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Leo_MovementTesting.unity
     guid: 17706d90e4b98d8448c535fbba5b1eaa
-  - enabled: 1
-    path: Assets/Scenes/Ryan Level Test.unity
-    guid: 83ed9108528b01047847357459ebb1a4
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
   - enabled: 1
     path: Assets/Scenes/Josh_scene.unity
     guid: 366f820ed2dde4e4e9b528e2e8c033bb

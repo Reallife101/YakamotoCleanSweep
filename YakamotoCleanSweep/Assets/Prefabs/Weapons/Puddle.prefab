@@ -96,7 +96,7 @@ GameObject:
   - component: {fileID: 3570438679340941673}
   - component: {fileID: 8807720929248308628}
   - component: {fileID: 9120385372873696995}
-  - component: {fileID: 5256748587217031091}
+  - component: {fileID: 6101371673242213445}
   m_Layer: 0
   m_Name: Puddle
   m_TagString: Untagged
@@ -148,7 +148,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a419ae9eff0255c4b81a9adec46a6c2b, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -182,13 +182,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30222a9f75d5b5d41baedf1ac9482868, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  col: {fileID: 5256748587217031091}
+  col: {fileID: 6101371673242213445}
   playerLayer:
     serializedVersion: 2
     m_Bits: 256
-  slideForce: 0.05
+  slideForce: 500
   lifeTime: 5
---- !u!65 &5256748587217031091
+--- !u!65 &6101371673242213445
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -196,8 +196,8 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8385443726673739258}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 0
+  m_IsTrigger: 1
+  m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 10, y: 1, z: 10}
+  m_Size: {x: 7.5, y: 0.5, z: 7.5}
   m_Center: {x: 0, y: 0, z: 0}

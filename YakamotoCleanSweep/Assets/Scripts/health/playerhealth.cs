@@ -14,13 +14,6 @@ public class playerhealth : health
     //FOR TESTING ONLY
     void Update(){
 
-        if (currentHealth <= 0 && isAlive)
-        {
-            Debug.Log("REPORTDEATH");
-            ReportDeath();
-           
-        }
-        
         if (Input.GetKeyDown(KeyCode.P))
         {
            TakeDamage(1);
@@ -30,15 +23,18 @@ public class playerhealth : health
 
     
 
-    public void TakeDamage(int healthPTS)
+    public new void TakeDamage(int healthPTS)
     {
         if (!ifinvincible){
             currentHealth -= healthPTS;
+            CheckHealth();
             Debug.Log("damage down 1");
             StartCoroutine(InvincibilityElapse());
             playerHealthUI.setHealth(currentHealth);
-        }
+            playerHealthUI.onDamage();
+        }        
     }
+    
 
     private IEnumerator InvincibilityElapse()
     {
