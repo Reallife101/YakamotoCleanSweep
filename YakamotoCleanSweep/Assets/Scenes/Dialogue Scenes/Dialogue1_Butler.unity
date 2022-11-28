@@ -205,7 +205,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &825224032
 PrefabInstance:
@@ -214,6 +214,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 703695675719932110, guid: fccd1c54e96cbdd4e879b5c0ebf4ba26, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: d14ed842ab34e5e44b6c2fac25e04566, type: 3}
     - target: {fileID: 817366440390341578, guid: fccd1c54e96cbdd4e879b5c0ebf4ba26, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -298,6 +302,38 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 886536536315227478, guid: fccd1c54e96cbdd4e879b5c0ebf4ba26, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 886536536315227478, guid: fccd1c54e96cbdd4e879b5c0ebf4ba26, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 886536536315227478, guid: fccd1c54e96cbdd4e879b5c0ebf4ba26, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 886536536315227478, guid: fccd1c54e96cbdd4e879b5c0ebf4ba26, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 886536536315227478, guid: fccd1c54e96cbdd4e879b5c0ebf4ba26, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 14.831177
+      objectReference: {fileID: 0}
+    - target: {fileID: 886536536315227478, guid: fccd1c54e96cbdd4e879b5c0ebf4ba26, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0.9000244
+      objectReference: {fileID: 0}
+    - target: {fileID: 886536536315227478, guid: fccd1c54e96cbdd4e879b5c0ebf4ba26, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 7.065613
+      objectReference: {fileID: 0}
+    - target: {fileID: 886536536315227478, guid: fccd1c54e96cbdd4e879b5c0ebf4ba26, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -0.0020751953
+      objectReference: {fileID: 0}
     - target: {fileID: 896810683920984759, guid: fccd1c54e96cbdd4e879b5c0ebf4ba26, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0.5
@@ -317,6 +353,356 @@ PrefabInstance:
     - target: {fileID: 896810683920984759, guid: fccd1c54e96cbdd4e879b5c0ebf4ba26, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2432943046090878336, guid: fccd1c54e96cbdd4e879b5c0ebf4ba26, type: 3}
+      propertyPath: actors.Array.size
+      value: 19
+      objectReference: {fileID: 0}
+    - target: {fileID: 2432943046090878336, guid: fccd1c54e96cbdd4e879b5c0ebf4ba26, type: 3}
+      propertyPath: messages.Array.size
+      value: 23
+      objectReference: {fileID: 0}
+    - target: {fileID: 2432943046090878336, guid: fccd1c54e96cbdd4e879b5c0ebf4ba26, type: 3}
+      propertyPath: actors.Array.data[0].name
+      value: Suji
+      objectReference: {fileID: 0}
+    - target: {fileID: 2432943046090878336, guid: fccd1c54e96cbdd4e879b5c0ebf4ba26, type: 3}
+      propertyPath: actors.Array.data[1].name
+      value: Server
+      objectReference: {fileID: 0}
+    - target: {fileID: 2432943046090878336, guid: fccd1c54e96cbdd4e879b5c0ebf4ba26, type: 3}
+      propertyPath: actors.Array.data[2].name
+      value: Suji
+      objectReference: {fileID: 0}
+    - target: {fileID: 2432943046090878336, guid: fccd1c54e96cbdd4e879b5c0ebf4ba26, type: 3}
+      propertyPath: actors.Array.data[3].name
+      value: Server
+      objectReference: {fileID: 0}
+    - target: {fileID: 2432943046090878336, guid: fccd1c54e96cbdd4e879b5c0ebf4ba26, type: 3}
+      propertyPath: actors.Array.data[4].name
+      value: Suji
+      objectReference: {fileID: 0}
+    - target: {fileID: 2432943046090878336, guid: fccd1c54e96cbdd4e879b5c0ebf4ba26, type: 3}
+      propertyPath: actors.Array.data[5].name
+      value: Server
+      objectReference: {fileID: 0}
+    - target: {fileID: 2432943046090878336, guid: fccd1c54e96cbdd4e879b5c0ebf4ba26, type: 3}
+      propertyPath: actors.Array.data[6].name
+      value: Server
+      objectReference: {fileID: 0}
+    - target: {fileID: 2432943046090878336, guid: fccd1c54e96cbdd4e879b5c0ebf4ba26, type: 3}
+      propertyPath: actors.Array.data[7].name
+      value: Suji
+      objectReference: {fileID: 0}
+    - target: {fileID: 2432943046090878336, guid: fccd1c54e96cbdd4e879b5c0ebf4ba26, type: 3}
+      propertyPath: actors.Array.data[8].name
+      value: Server
+      objectReference: {fileID: 0}
+    - target: {fileID: 2432943046090878336, guid: fccd1c54e96cbdd4e879b5c0ebf4ba26, type: 3}
+      propertyPath: actors.Array.data[9].name
+      value: Suji
+      objectReference: {fileID: 0}
+    - target: {fileID: 2432943046090878336, guid: fccd1c54e96cbdd4e879b5c0ebf4ba26, type: 3}
+      propertyPath: actors.Array.data[10].name
+      value: Server
+      objectReference: {fileID: 0}
+    - target: {fileID: 2432943046090878336, guid: fccd1c54e96cbdd4e879b5c0ebf4ba26, type: 3}
+      propertyPath: actors.Array.data[11].name
+      value: Server
+      objectReference: {fileID: 0}
+    - target: {fileID: 2432943046090878336, guid: fccd1c54e96cbdd4e879b5c0ebf4ba26, type: 3}
+      propertyPath: actors.Array.data[12].name
+      value: Suji
+      objectReference: {fileID: 0}
+    - target: {fileID: 2432943046090878336, guid: fccd1c54e96cbdd4e879b5c0ebf4ba26, type: 3}
+      propertyPath: actors.Array.data[13].name
+      value: Server
+      objectReference: {fileID: 0}
+    - target: {fileID: 2432943046090878336, guid: fccd1c54e96cbdd4e879b5c0ebf4ba26, type: 3}
+      propertyPath: actors.Array.data[14].name
+      value: Server
+      objectReference: {fileID: 0}
+    - target: {fileID: 2432943046090878336, guid: fccd1c54e96cbdd4e879b5c0ebf4ba26, type: 3}
+      propertyPath: actors.Array.data[15].name
+      value: Suji
+      objectReference: {fileID: 0}
+    - target: {fileID: 2432943046090878336, guid: fccd1c54e96cbdd4e879b5c0ebf4ba26, type: 3}
+      propertyPath: actors.Array.data[16].name
+      value: Server
+      objectReference: {fileID: 0}
+    - target: {fileID: 2432943046090878336, guid: fccd1c54e96cbdd4e879b5c0ebf4ba26, type: 3}
+      propertyPath: actors.Array.data[17].name
+      value: Suji
+      objectReference: {fileID: 0}
+    - target: {fileID: 2432943046090878336, guid: fccd1c54e96cbdd4e879b5c0ebf4ba26, type: 3}
+      propertyPath: actors.Array.data[18].name
+      value: Server
+      objectReference: {fileID: 0}
+    - target: {fileID: 2432943046090878336, guid: fccd1c54e96cbdd4e879b5c0ebf4ba26, type: 3}
+      propertyPath: actors.Array.data[0].sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 37392de892738304284ea1b266d504f1, type: 3}
+    - target: {fileID: 2432943046090878336, guid: fccd1c54e96cbdd4e879b5c0ebf4ba26, type: 3}
+      propertyPath: actors.Array.data[1].sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 1cbfa336d0661144b914f2b766dda064, type: 3}
+    - target: {fileID: 2432943046090878336, guid: fccd1c54e96cbdd4e879b5c0ebf4ba26, type: 3}
+      propertyPath: actors.Array.data[2].sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: fa34a0ea039c1964284ec205e0988cac, type: 3}
+    - target: {fileID: 2432943046090878336, guid: fccd1c54e96cbdd4e879b5c0ebf4ba26, type: 3}
+      propertyPath: actors.Array.data[3].sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 77e3f8ac87794b149ba99cdcb69e0efe, type: 3}
+    - target: {fileID: 2432943046090878336, guid: fccd1c54e96cbdd4e879b5c0ebf4ba26, type: 3}
+      propertyPath: actors.Array.data[4].sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: fbdd83d12a35e0f4a9b76ab93d19453e, type: 3}
+    - target: {fileID: 2432943046090878336, guid: fccd1c54e96cbdd4e879b5c0ebf4ba26, type: 3}
+      propertyPath: actors.Array.data[5].sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 82b769a870f6e8946a7c1036e3228a4f, type: 3}
+    - target: {fileID: 2432943046090878336, guid: fccd1c54e96cbdd4e879b5c0ebf4ba26, type: 3}
+      propertyPath: actors.Array.data[6].sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 63c7bd947fa4f4e42aba6ae633158126, type: 3}
+    - target: {fileID: 2432943046090878336, guid: fccd1c54e96cbdd4e879b5c0ebf4ba26, type: 3}
+      propertyPath: actors.Array.data[7].sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: f06aba1444f05524595fb550640b8adf, type: 3}
+    - target: {fileID: 2432943046090878336, guid: fccd1c54e96cbdd4e879b5c0ebf4ba26, type: 3}
+      propertyPath: actors.Array.data[8].sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 4a444f324c1eb7f40b64b69e78b154b7, type: 3}
+    - target: {fileID: 2432943046090878336, guid: fccd1c54e96cbdd4e879b5c0ebf4ba26, type: 3}
+      propertyPath: actors.Array.data[9].sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: aaedb7be6a591de4f903f8673f5ca120, type: 3}
+    - target: {fileID: 2432943046090878336, guid: fccd1c54e96cbdd4e879b5c0ebf4ba26, type: 3}
+      propertyPath: actors.Array.data[10].sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: ef7940e201fefd649a0b33c20f38f360, type: 3}
+    - target: {fileID: 2432943046090878336, guid: fccd1c54e96cbdd4e879b5c0ebf4ba26, type: 3}
+      propertyPath: actors.Array.data[11].sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 887a01c9acf86d34a89ed1dbebed7458, type: 3}
+    - target: {fileID: 2432943046090878336, guid: fccd1c54e96cbdd4e879b5c0ebf4ba26, type: 3}
+      propertyPath: actors.Array.data[12].sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 2739cab86ab9566499112e3a49597eb6, type: 3}
+    - target: {fileID: 2432943046090878336, guid: fccd1c54e96cbdd4e879b5c0ebf4ba26, type: 3}
+      propertyPath: actors.Array.data[13].sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: ae7992ca496d7bb4284be7a6cdeb8411, type: 3}
+    - target: {fileID: 2432943046090878336, guid: fccd1c54e96cbdd4e879b5c0ebf4ba26, type: 3}
+      propertyPath: actors.Array.data[14].sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: c787475475402234ca5d852f4e1e521b, type: 3}
+    - target: {fileID: 2432943046090878336, guid: fccd1c54e96cbdd4e879b5c0ebf4ba26, type: 3}
+      propertyPath: actors.Array.data[15].sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: c46c028b77a8efc4a8fbe3fe4517b4c0, type: 3}
+    - target: {fileID: 2432943046090878336, guid: fccd1c54e96cbdd4e879b5c0ebf4ba26, type: 3}
+      propertyPath: actors.Array.data[16].sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 8afb0e643609660458f755e30c3a253b, type: 3}
+    - target: {fileID: 2432943046090878336, guid: fccd1c54e96cbdd4e879b5c0ebf4ba26, type: 3}
+      propertyPath: actors.Array.data[17].sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 33563036475b2c246b4180bf724cf778, type: 3}
+    - target: {fileID: 2432943046090878336, guid: fccd1c54e96cbdd4e879b5c0ebf4ba26, type: 3}
+      propertyPath: actors.Array.data[18].sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 61b71930a862dee48b19dbecabcc5419, type: 3}
+    - target: {fileID: 2432943046090878336, guid: fccd1c54e96cbdd4e879b5c0ebf4ba26, type: 3}
+      propertyPath: messages.Array.data[0].message
+      value: MMM! Delicious! The soba is so good! What better comfort is there?
+      objectReference: {fileID: 0}
+    - target: {fileID: 2432943046090878336, guid: fccd1c54e96cbdd4e879b5c0ebf4ba26, type: 3}
+      propertyPath: messages.Array.data[1].actorid
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2432943046090878336, guid: fccd1c54e96cbdd4e879b5c0ebf4ba26, type: 3}
+      propertyPath: messages.Array.data[1].message
+      value: Comfort food? Are you okay sir?
+      objectReference: {fileID: 0}
+    - target: {fileID: 2432943046090878336, guid: fccd1c54e96cbdd4e879b5c0ebf4ba26, type: 3}
+      propertyPath: messages.Array.data[2].actorid
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2432943046090878336, guid: fccd1c54e96cbdd4e879b5c0ebf4ba26, type: 3}
+      propertyPath: messages.Array.data[2].message
+      value: "NO! No, I'm not okay! My boss is missing and I don\u2019t know where
+        he issssss."
+      objectReference: {fileID: 0}
+    - target: {fileID: 2432943046090878336, guid: fccd1c54e96cbdd4e879b5c0ebf4ba26, type: 3}
+      propertyPath: messages.Array.data[3].actorid
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2432943046090878336, guid: fccd1c54e96cbdd4e879b5c0ebf4ba26, type: 3}
+      propertyPath: messages.Array.data[3].message
+      value: "I\u2019m sorry but can you keep it down? Actually you\u2019re our only
+        customer so you\u2019re not really disturbing anybody\u2013"
+      objectReference: {fileID: 0}
+    - target: {fileID: 2432943046090878336, guid: fccd1c54e96cbdd4e879b5c0ebf4ba26, type: 3}
+      propertyPath: messages.Array.data[4].actorid
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2432943046090878336, guid: fccd1c54e96cbdd4e879b5c0ebf4ba26, type: 3}
+      propertyPath: messages.Array.data[4].message
+      value: WAHHH!
+      objectReference: {fileID: 0}
+    - target: {fileID: 2432943046090878336, guid: fccd1c54e96cbdd4e879b5c0ebf4ba26, type: 3}
+      propertyPath: messages.Array.data[5].actorid
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2432943046090878336, guid: fccd1c54e96cbdd4e879b5c0ebf4ba26, type: 3}
+      propertyPath: messages.Array.data[5].message
+      value: "Okay, nevermind, keep it down buddy. You\u2019re disturbing ME"
+      objectReference: {fileID: 0}
+    - target: {fileID: 2432943046090878336, guid: fccd1c54e96cbdd4e879b5c0ebf4ba26, type: 3}
+      propertyPath: messages.Array.data[6].actorid
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2432943046090878336, guid: fccd1c54e96cbdd4e879b5c0ebf4ba26, type: 3}
+      propertyPath: messages.Array.data[6].message
+      value: "Oyabun! Why did you have\u2013"
+      objectReference: {fileID: 0}
+    - target: {fileID: 2432943046090878336, guid: fccd1c54e96cbdd4e879b5c0ebf4ba26, type: 3}
+      propertyPath: messages.Array.data[7].actorid
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2432943046090878336, guid: fccd1c54e96cbdd4e879b5c0ebf4ba26, type: 3}
+      propertyPath: messages.Array.data[7].message
+      value: "Wait, did you say Oyabun? Oyabun, the head of the Yakuzas of Lower
+        Osaka group? What\u2019s your name?"
+      objectReference: {fileID: 0}
+    - target: {fileID: 2432943046090878336, guid: fccd1c54e96cbdd4e879b5c0ebf4ba26, type: 3}
+      propertyPath: messages.Array.data[8].actorid
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 2432943046090878336, guid: fccd1c54e96cbdd4e879b5c0ebf4ba26, type: 3}
+      propertyPath: messages.Array.data[8].message
+      value: "Oh, I\u2019m Suji. Nice to meet You\u2013Wait, you know my boss?"
+      objectReference: {fileID: 0}
+    - target: {fileID: 2432943046090878336, guid: fccd1c54e96cbdd4e879b5c0ebf4ba26, type: 3}
+      propertyPath: messages.Array.data[9].actorid
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 2432943046090878336, guid: fccd1c54e96cbdd4e879b5c0ebf4ba26, type: 3}
+      propertyPath: messages.Array.data[9].message
+      value: "So you\u2019re Suji, the protoge he picked up off the street! Yes of
+        course I know your boss, he\u2019s allied with the Society of Butler Assassins!"
+      objectReference: {fileID: 0}
+    - target: {fileID: 2432943046090878336, guid: fccd1c54e96cbdd4e879b5c0ebf4ba26, type: 3}
+      propertyPath: messages.Array.data[10].actorid
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 2432943046090878336, guid: fccd1c54e96cbdd4e879b5c0ebf4ba26, type: 3}
+      propertyPath: messages.Array.data[10].message
+      value: Oh, are you a part of SOBA?
+      objectReference: {fileID: 0}
+    - target: {fileID: 2432943046090878336, guid: fccd1c54e96cbdd4e879b5c0ebf4ba26, type: 3}
+      propertyPath: messages.Array.data[11].actorid
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 2432943046090878336, guid: fccd1c54e96cbdd4e879b5c0ebf4ba26, type: 3}
+      propertyPath: messages.Array.data[11].message
+      value: ...
+      objectReference: {fileID: 0}
+    - target: {fileID: 2432943046090878336, guid: fccd1c54e96cbdd4e879b5c0ebf4ba26, type: 3}
+      propertyPath: messages.Array.data[12].actorid
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 2432943046090878336, guid: fccd1c54e96cbdd4e879b5c0ebf4ba26, type: 3}
+      propertyPath: messages.Array.data[12].message
+      value: What?
+      objectReference: {fileID: 0}
+    - target: {fileID: 2432943046090878336, guid: fccd1c54e96cbdd4e879b5c0ebf4ba26, type: 3}
+      propertyPath: messages.Array.data[13].actorid
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 2432943046090878336, guid: fccd1c54e96cbdd4e879b5c0ebf4ba26, type: 3}
+      propertyPath: messages.Array.data[13].message
+      value: "Do you even know the name of the shop you\u2019re in right now?"
+      objectReference: {fileID: 0}
+    - target: {fileID: 2432943046090878336, guid: fccd1c54e96cbdd4e879b5c0ebf4ba26, type: 3}
+      propertyPath: messages.Array.data[14].actorid
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 2432943046090878336, guid: fccd1c54e96cbdd4e879b5c0ebf4ba26, type: 3}
+      propertyPath: messages.Array.data[14].message
+      value: What, SOBA Noodles?Ohhhhhhhhhh. You know, I thought the name sounded
+        bland.
+      objectReference: {fileID: 0}
+    - target: {fileID: 2432943046090878336, guid: fccd1c54e96cbdd4e879b5c0ebf4ba26, type: 3}
+      propertyPath: messages.Array.data[15].actorid
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 2432943046090878336, guid: fccd1c54e96cbdd4e879b5c0ebf4ba26, type: 3}
+      propertyPath: messages.Array.data[15].message
+      value: "ANYWAY, we\u2019re the Society of Butler Assassins. Sad to say, your
+        boss hasn\u2019t been seen after he left to take on the putrid scent of the
+        Yakamoto Corporation\u2019s gross office building."
+      objectReference: {fileID: 0}
+    - target: {fileID: 2432943046090878336, guid: fccd1c54e96cbdd4e879b5c0ebf4ba26, type: 3}
+      propertyPath: messages.Array.data[16].actorid
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 2432943046090878336, guid: fccd1c54e96cbdd4e879b5c0ebf4ba26, type: 3}
+      propertyPath: messages.Array.data[16].message
+      value: Even he seems to be having trouble with such a hideous place!
+      objectReference: {fileID: 0}
+    - target: {fileID: 2432943046090878336, guid: fccd1c54e96cbdd4e879b5c0ebf4ba26, type: 3}
+      propertyPath: messages.Array.data[17].actorid
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2432943046090878336, guid: fccd1c54e96cbdd4e879b5c0ebf4ba26, type: 3}
+      propertyPath: messages.Array.data[17].message
+      value: "I just wish he didn\u2019t have to leaveeeeeeeeeeee!"
+      objectReference: {fileID: 0}
+    - target: {fileID: 2432943046090878336, guid: fccd1c54e96cbdd4e879b5c0ebf4ba26, type: 3}
+      propertyPath: messages.Array.data[18].actorid
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 2432943046090878336, guid: fccd1c54e96cbdd4e879b5c0ebf4ba26, type: 3}
+      propertyPath: messages.Array.data[18].message
+      value: "Hey! Tell you what. If you join us, you can have training in the ways
+        of a contract cleaner. With our butler arts, it\u2019s possible you can stand
+        a chance against that notorious corporation, and bring your boss back too!"
+      objectReference: {fileID: 0}
+    - target: {fileID: 2432943046090878336, guid: fccd1c54e96cbdd4e879b5c0ebf4ba26, type: 3}
+      propertyPath: messages.Array.data[19].actorid
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 2432943046090878336, guid: fccd1c54e96cbdd4e879b5c0ebf4ba26, type: 3}
+      propertyPath: messages.Array.data[19].message
+      value: You think so?
+      objectReference: {fileID: 0}
+    - target: {fileID: 2432943046090878336, guid: fccd1c54e96cbdd4e879b5c0ebf4ba26, type: 3}
+      propertyPath: messages.Array.data[20].actorid
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 2432943046090878336, guid: fccd1c54e96cbdd4e879b5c0ebf4ba26, type: 3}
+      propertyPath: messages.Array.data[20].message
+      value: "Oh I\u2019m sure of it. Now stop crying and meet me in the kitchen!
+        You have a lot to learn."
+      objectReference: {fileID: 0}
+    - target: {fileID: 2432943046090878336, guid: fccd1c54e96cbdd4e879b5c0ebf4ba26, type: 3}
+      propertyPath: messages.Array.data[21].actorid
+      value: 17
+      objectReference: {fileID: 0}
+    - target: {fileID: 2432943046090878336, guid: fccd1c54e96cbdd4e879b5c0ebf4ba26, type: 3}
+      propertyPath: messages.Array.data[21].message
+      value: Ok, sensei!
+      objectReference: {fileID: 0}
+    - target: {fileID: 2432943046090878336, guid: fccd1c54e96cbdd4e879b5c0ebf4ba26, type: 3}
+      propertyPath: messages.Array.data[22].actorid
+      value: 18
+      objectReference: {fileID: 0}
+    - target: {fileID: 2432943046090878336, guid: fccd1c54e96cbdd4e879b5c0ebf4ba26, type: 3}
+      propertyPath: messages.Array.data[22].message
+      value: "That\u2019s a bit much but okay."
       objectReference: {fileID: 0}
     - target: {fileID: 3012389026114492918, guid: fccd1c54e96cbdd4e879b5c0ebf4ba26, type: 3}
       propertyPath: m_Name
@@ -706,79 +1092,3 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fccd1c54e96cbdd4e879b5c0ebf4ba26, type: 3}
---- !u!1 &1029065903
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1029065906}
-  - component: {fileID: 1029065905}
-  - component: {fileID: 1029065904}
-  m_Layer: 5
-  m_Name: Image
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1029065904
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1029065903}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 0}
-  m_Type: 0
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
---- !u!222 &1029065905
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1029065903}
-  m_CullTransparentMesh: 1
---- !u!224 &1029065906
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1029065903}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.5156969, y: 0.5156969, z: 0.5156969}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 979.2573, y: 529.38074}
-  m_SizeDelta: {x: 1958.5, y: 1058.8}
-  m_Pivot: {x: 0.5, y: 0.5}
