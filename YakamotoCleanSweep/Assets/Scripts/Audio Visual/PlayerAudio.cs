@@ -30,7 +30,6 @@ public class PlayerAudio : AudioController<PlayerMovement>
     private void OnEnable()
     {
         host.OnJump += PlayJumpSound;
-        Puddle.OnPuddleEnter += PlaySpeedBoostSound;
     }
 
     private void PlayJumpSound()
@@ -88,6 +87,5 @@ public class PlayerAudio : AudioController<PlayerMovement>
     private void OnDisable()
     {
         host.OnJump -= PlayJumpSound;
-        Puddle.OnPuddleEnter -= PlaySpeedBoostSound;
     }
 }
