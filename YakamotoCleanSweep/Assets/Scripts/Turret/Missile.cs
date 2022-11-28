@@ -1,9 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class Missile : MonoBehaviour
 {
+    public event Action OnExplode;
+
     [SerializeField]
     private Rigidbody rb;
 
@@ -34,5 +37,7 @@ public class Missile : MonoBehaviour
             Debug.Log("Destroying");
             Destroy(gameObject);
         }
+
+        OnExplode?.Invoke();
     }
 }
