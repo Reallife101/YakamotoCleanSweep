@@ -40437,6 +40437,38 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: -1.09
       objectReference: {fileID: 0}
+    - target: {fileID: 2397137248403967445, guid: ba956d1cea15c4f43847db693b468861, type: 3}
+      propertyPath: maidBarks.Array.data[0].sounds.Array.data[5]
+      value: 
+      objectReference: {fileID: 8300000, guid: f91ad1464d6c48240a3800cdc6029ddb, type: 3}
+    - target: {fileID: 2397137248403967445, guid: ba956d1cea15c4f43847db693b468861, type: 3}
+      propertyPath: maidBarks.Array.data[0].sounds.Array.data[6]
+      value: 
+      objectReference: {fileID: 8300000, guid: 27752c013eecfd04b9b186b4bde003fd, type: 3}
+    - target: {fileID: 2397137248403967445, guid: ba956d1cea15c4f43847db693b468861, type: 3}
+      propertyPath: maidBarks.Array.data[0].sounds.Array.data[7]
+      value: 
+      objectReference: {fileID: 8300000, guid: 6e115baf65b536f40af2af51bbb776d3, type: 3}
+    - target: {fileID: 2397137248403967445, guid: ba956d1cea15c4f43847db693b468861, type: 3}
+      propertyPath: maidBarks.Array.data[0].sounds.Array.data[8]
+      value: 
+      objectReference: {fileID: 8300000, guid: 24d3fffe7b203af4ca8a27202474dd43, type: 3}
+    - target: {fileID: 2397137248403967445, guid: ba956d1cea15c4f43847db693b468861, type: 3}
+      propertyPath: butlerBarks.Array.data[0].sounds.Array.data[5]
+      value: 
+      objectReference: {fileID: 8300000, guid: 3c67295518a73ac48b9952763f3691db, type: 3}
+    - target: {fileID: 2397137248403967445, guid: ba956d1cea15c4f43847db693b468861, type: 3}
+      propertyPath: butlerBarks.Array.data[0].sounds.Array.data[6]
+      value: 
+      objectReference: {fileID: 8300000, guid: 9d0b5baaeb2519d439392a88ae9ca1b5, type: 3}
+    - target: {fileID: 2397137248403967445, guid: ba956d1cea15c4f43847db693b468861, type: 3}
+      propertyPath: butlerBarks.Array.data[0].sounds.Array.data[7]
+      value: 
+      objectReference: {fileID: 8300000, guid: dece6aa75651f944284c1e98b05fd3f8, type: 3}
+    - target: {fileID: 2397137248403967445, guid: ba956d1cea15c4f43847db693b468861, type: 3}
+      propertyPath: butlerBarks.Array.data[0].sounds.Array.data[8]
+      value: 
+      objectReference: {fileID: 8300000, guid: c2295acefdc50f844b6a498963e8693d, type: 3}
     - target: {fileID: 2775697471369317651, guid: ba956d1cea15c4f43847db693b468861, type: 3}
       propertyPath: m_LocalPosition.x
       value: -382.8
