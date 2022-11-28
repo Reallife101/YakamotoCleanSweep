@@ -645,14 +645,6 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: togglePause
       objectReference: {fileID: 0}
-    - target: {fileID: 2359315336852461835, guid: ac2b352608540594894aced2b85e157f, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2359315336852461835, guid: ac2b352608540594894aced2b85e157f, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 6434482059519096708}
     - target: {fileID: 3468227787951850968, guid: ac2b352608540594894aced2b85e157f, type: 3}
       propertyPath: m_Value
       value: 0.094

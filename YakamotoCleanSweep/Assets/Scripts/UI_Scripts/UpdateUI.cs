@@ -38,7 +38,7 @@ public class UpdateUI : MonoBehaviour
     }
     
     public void updateCharacter() {
-        if (PlayerPrefs.GetString("character", "") == "Maid") {
+        if (PlayerPrefs.GetString("character", "") == "maid") {
             foreach (GameObject b in butlers) {
                 b.SetActive(false);
             }

@@ -10,6 +10,11 @@ public class StartMenu : MonoBehaviour
     [SerializeField] private GameObject credits;
     [SerializeField] private GameObject howToPlay;
 
+    [SerializeField] private GameObject characterSelect;
+
+    [SerializeField] private int maidLevel = 1;
+    [SerializeField] private int butlerLevel = 2;
+
     private void Start()
     {
         showMain();
@@ -22,7 +27,27 @@ public class StartMenu : MonoBehaviour
 
     public void startGame()
     {
-        SceneManager.LoadScene(1);
+        Debug.Log(PlayerPrefs.GetString("character", ""));
+        if (PlayerPrefs.GetString("character", "") == "maid")
+        {
+            SceneManager.LoadScene(maidLevel);
+        }
+        else if (PlayerPrefs.GetString("character", "") == "butler")
+        {
+            SceneManager.LoadScene(butlerLevel);
+        }
+        else {
+            this.openCharacterSelect();
+        }
+    }
+
+    private void openCharacterSelect() {
+        main.SetActive(false);
+        characterSelect.SetActive(true);
+    }
+
+    public void setCharacter(string c) {
+        PlayerPrefs.SetString("character", c);
     }
 
     public void showCredits()
