@@ -3856,8 +3856,8 @@ MonoBehaviour:
   credits: {fileID: 2044417591192168953}
   howToPlay: {fileID: 2044417592547280257}
   characterSelect: {fileID: 1382375286}
-  maidLevel: 1
-  butlerLevel: 2
+  maidLevel: 2
+  butlerLevel: 1
 --- !u!1 &2044417590537737884
 GameObject:
   m_ObjectHideFlags: 0
