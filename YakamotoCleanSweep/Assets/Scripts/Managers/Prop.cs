@@ -1,9 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class Prop : MonoBehaviour
 {
+    public static event Action OnAnyPropCleaned;
+
     // Start is called before the first frame update
     [SerializeField] private GameObject dirtyModel;
     [SerializeField] private GameObject cleanModel;
@@ -47,6 +50,7 @@ public class Prop : MonoBehaviour
             dirtyModel.SetActive(false);
             healthBarCanvas.enabled = false;
             isClean = true;
+            OnAnyPropCleaned?.Invoke();
         }
     }
 

@@ -1,10 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class laserraycast : MonoBehaviour
 {
-    
+    public event Action OnHit;
     
     protected LineRenderer laserline;
   
@@ -33,6 +34,8 @@ public class laserraycast : MonoBehaviour
             Debug.Log(hit1.collider.gameObject.name);
             hit1.collider.gameObject.GetComponent<playerhealth>().TakeDamage(1);
             Debug.Log("here3");
+
+            OnHit?.Invoke();
              }
         }
     }

@@ -2,9 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using UnityEngine;
+using System;
 
 public class Turret : MonoBehaviour
 {
+    public event Action OnShoot; // Make the turret class inherit from Ranged or Weapon later
+
     private FOV fov;
 
     [SerializeField]
@@ -57,6 +60,7 @@ public class Turret : MonoBehaviour
     {
         Instantiate(missile, tipOfCannon1.transform.position, tipOfCannon1.transform.rotation.normalized);
         Instantiate(missile, tipOfCannon2.transform.position, tipOfCannon2.transform.rotation.normalized);
+        OnShoot?.Invoke();
     }
     
 

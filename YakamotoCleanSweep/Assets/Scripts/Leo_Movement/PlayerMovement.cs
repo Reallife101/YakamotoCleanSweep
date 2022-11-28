@@ -1,9 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class PlayerMovement : MonoBehaviour
 {
+    public event Action OnJump;
+
     [SerializeField] protected pauseLevel pause;
     [Header("Movement")]
     [SerializeField] private float moveSpeed = 6f; //for debug: shows the current movem speed of the player
@@ -91,7 +94,7 @@ public class PlayerMovement : MonoBehaviour
 
     public bool isCrouching { get; private set; }
     public bool isSprinting { get; private set; }
-    private bool isSliding;
+    public bool isSliding { get; private set; }
     private bool gamePaused;
     AudioSource m_AudioSource;
 
@@ -140,6 +143,7 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetKeyDown(jumpKey) && isGrounded && !gamePaused)
         {
             Jump(groundJumpForce);
+            OnJump?.Invoke();
         }
 
         slopeMoveDirection = Vector3.ProjectOnPlane(moveDirection, slopeHit.normal);
