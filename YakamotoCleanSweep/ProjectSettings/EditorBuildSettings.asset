@@ -32,4 +32,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Ryan Levels/Courtyard2.unity
     guid: 4a69eb0487e16ee41880678c1520596d
+  - enabled: 1
+    path: Assets/Scenes/Fred Levels/Tutorial Level/Fred_Level_2.unity
+    guid: fead6a9671bbc954e90f2b47f8ce8cd8
+  - enabled: 1
+    path: Assets/Scenes/Fred Levels/Broom Tutorial/Fred_Level_1.unity
+    guid: cf77a7d1936f7334c9e6a7c3e6671eaf
   m_configObjects: {}
