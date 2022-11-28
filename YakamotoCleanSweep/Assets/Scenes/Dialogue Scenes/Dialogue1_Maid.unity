@@ -134,6 +134,8 @@ GameObject:
   - component: {fileID: 1474974507}
   - component: {fileID: 1474974506}
   - component: {fileID: 1474974505}
+  - component: {fileID: 1474974508}
+  - component: {fileID: 1474974509}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -207,6 +209,198 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!82 &1474974508
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1474974504}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 85c553c21d0f1c446afda0b2d5c5bd9b, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 0.1
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!82 &1474974509
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1474974504}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: ba5eb8cc2fbb0bd42b92eb0ab9f0a11e, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 0.4
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1001 &553485087665510221
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -389,10 +583,9 @@ PrefabInstance:
     - target: {fileID: 2432943046090878336, guid: fccd1c54e96cbdd4e879b5c0ebf4ba26, type: 3}
       propertyPath: messages.Array.data[0].message
       value: "Ok, this is getting really weird! The whole bathhouse is clean again,
-        and I even got another promotion this time! Since when do you prank someone
-        by giving them a promotion and patting them on the back? Well, I don\u2019t
-        think it\u2019s funny! One of these days, I\u2019m gonna find the maids who
-        have been cleaning and saying it was me!"
+        and I even got promoted again! It seems that somebody's been secretly pretending
+        to be me! Well, I don\u2019t think it\u2019s a funny prank! One of these
+        days, I\u2019m gonna find out who's been cleaning under MY name!"
       objectReference: {fileID: 0}
     - target: {fileID: 2432943046090878336, guid: fccd1c54e96cbdd4e879b5c0ebf4ba26, type: 3}
       propertyPath: messages.Array.data[1].actorid
@@ -400,7 +593,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2432943046090878336, guid: fccd1c54e96cbdd4e879b5c0ebf4ba26, type: 3}
       propertyPath: messages.Array.data[1].message
-      value: Sister? Where are you? You've been gone for a while!
+      value: "Sister? Where are you? Please come home! You\u2019ve been gone for
+        a while!\r"
       objectReference: {fileID: 0}
     - target: {fileID: 2432943046090878336, guid: fccd1c54e96cbdd4e879b5c0ebf4ba26, type: 3}
       propertyPath: messages.Array.data[2].actorid
@@ -408,10 +602,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2432943046090878336, guid: fccd1c54e96cbdd4e879b5c0ebf4ba26, type: 3}
       propertyPath: messages.Array.data[2].message
-      value: "(Thinking) Soji\u2019s here? This is the 3rd time I\u2019ve seen her
-        at SOMA this week! She doesn\u2019t know about our operation, but I can\u2019t
-        keep blowing her off or else she\u2019ll keep coming back! (Sigh) Nobody
-        else is here anyway, so it looks like I have to deal with this myself."
+      value: "Soji\u2019s here again? This is the 3rd time I\u2019ve seen her at
+        SOMA headquarters this week! She doesn\u2019t know about our operation, but
+        I can\u2019t keep blowing her off or else she\u2019ll keep coming back! (Sigh)
+        Nobody else is here anyway, so it looks like I have to deal with this myself."
       objectReference: {fileID: 0}
     - target: {fileID: 2432943046090878336, guid: fccd1c54e96cbdd4e879b5c0ebf4ba26, type: 3}
       propertyPath: messages.Array.data[3].actorid
@@ -435,8 +629,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2432943046090878336, guid: fccd1c54e96cbdd4e879b5c0ebf4ba26, type: 3}
       propertyPath: messages.Array.data[5].message
-      value: "Yes, I know where she is, but first, I need to tell you something about
-        her job. You see, she doesn\u2019t just work for this bathhouse. She\u2019s\u2014"
+      value: "Yes, I do, but first, I need to tell you about her job. You see, she
+        doesn\u2019t just work for this bathhouse. She\u2019s\u2014\r\n"
       objectReference: {fileID: 0}
     - target: {fileID: 2432943046090878336, guid: fccd1c54e96cbdd4e879b5c0ebf4ba26, type: 3}
       propertyPath: messages.Array.data[6].actorid
@@ -478,9 +672,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2432943046090878336, guid: fccd1c54e96cbdd4e879b5c0ebf4ba26, type: 3}
       propertyPath: messages.Array.data[10].message
-      value: "Of course I know! My sister\u2019s been showing me how to play competitive
-        Who Can Clean the Fastest with SOMA, and I wanted to join her! Don\u2019t
-        worry though, I\u2019m not gonna tell anyone outside SOMA! It\u2019s a secret!"
+      value: "Of course I know! I just kept bugging her to teach me all those super
+        cool acrobatic things she does, and tell me where she learned all that. And
+        one day, she just agreed to teach me some SOMA competitive games! Like Sweep
+        to Win or Who Can Clean the Fastest! I\u2019m actually here right now to
+        play again! Don\u2019t worry though, I haven\u2019t told anyone outside SOMA!
+        It\u2019s a secret!\r\n"
       objectReference: {fileID: 0}
     - target: {fileID: 2432943046090878336, guid: fccd1c54e96cbdd4e879b5c0ebf4ba26, type: 3}
       propertyPath: messages.Array.data[11].actorid
@@ -488,9 +685,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2432943046090878336, guid: fccd1c54e96cbdd4e879b5c0ebf4ba26, type: 3}
       propertyPath: messages.Array.data[11].message
-      value: "Competitive What!? Her sister\u2019s been training her in secret, telling
-        her it\u2019s just a game?! She didn\u2019t get clearance for that! Well,
-        at least we\u2019re safe, at least for now."
+      value: "Competitive What!? Her sister's been training her in secret, and telling
+        her that our top-secret traditions are just games?! She didn't get clearance
+        to reveal our ways to non-members! Well, at least we\u2019re safe, at least
+        for now."
       objectReference: {fileID: 0}
     - target: {fileID: 2432943046090878336, guid: fccd1c54e96cbdd4e879b5c0ebf4ba26, type: 3}
       propertyPath: messages.Array.data[12].actorid
@@ -498,9 +696,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2432943046090878336, guid: fccd1c54e96cbdd4e879b5c0ebf4ba26, type: 3}
       propertyPath: messages.Array.data[12].message
-      value: "Well hang on! I get that, but you can\u2019t just join her because
-        you want to! You have to pass tests, get a seal of approval from the lead
-        cleaner\u2014"
+      value: "Well hang on! I get that, but you can\u2019t just join in the middle
+        of a mission! It's imperative that our members have the skills to, uh, PLAY
+        safely, so you have to pass tests, get a seal of approval from the lead cleaner\u2014\r"
       objectReference: {fileID: 0}
     - target: {fileID: 2432943046090878336, guid: fccd1c54e96cbdd4e879b5c0ebf4ba26, type: 3}
       propertyPath: messages.Array.data[13].actorid
@@ -508,7 +706,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2432943046090878336, guid: fccd1c54e96cbdd4e879b5c0ebf4ba26, type: 3}
       propertyPath: messages.Array.data[13].message
-      value: I cleaned the bathhouse, is that good?
+      value: Well, I've been cleaning the bathhouse. Would the lead cleaner approve
+        of THAT work?
       objectReference: {fileID: 0}
     - target: {fileID: 2432943046090878336, guid: fccd1c54e96cbdd4e879b5c0ebf4ba26, type: 3}
       propertyPath: messages.Array.data[14].actorid
@@ -550,9 +749,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2432943046090878336, guid: fccd1c54e96cbdd4e879b5c0ebf4ba26, type: 3}
       propertyPath: messages.Array.data[18].message
-      value: "So that\u2019s why nobody\u2019s here! Wait. So THIS is why I keep
-        getting promotions? People Really do think I\u2019ve been the one cleaning!
-        It\u2019s not a joke!"
+      value: "Wait. So THIS is why I keep getting promoted? Management really does
+        think I\u2019ve been doing all that overtime cleaning! I guess I wasn't pranked
+        after all. Wait! How did Soji even pass as me?! We look nothing alike! Ugh,
+        I'll figure this out later.!"
       objectReference: {fileID: 0}
     - target: {fileID: 2432943046090878336, guid: fccd1c54e96cbdd4e879b5c0ebf4ba26, type: 3}
       propertyPath: messages.Array.data[19].actorid
@@ -585,8 +785,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2432943046090878336, guid: fccd1c54e96cbdd4e879b5c0ebf4ba26, type: 3}
       propertyPath: messages.Array.data[22].message
-      value: "Alright! Your goal is to join the Yakamoto corporation and sanitize
-        every floor! As long as you do your job, you\u2019ll find your sister there!"
+      value: "Alright! Your mission is to enter the Yakamoto corporation and sanitize
+        every floor! By the time you finish the job, you'll find your sister!\r"
       objectReference: {fileID: 0}
     - target: {fileID: 2432943046090878336, guid: fccd1c54e96cbdd4e879b5c0ebf4ba26, type: 3}
       propertyPath: messages.Array.data[23].actorid
@@ -594,7 +794,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2432943046090878336, guid: fccd1c54e96cbdd4e879b5c0ebf4ba26, type: 3}
       propertyPath: messages.Array.data[23].message
-      value: Awesome! Thanks for the mission, I'll get to it right away! Yaaaaaay!
+      value: "Awesome! Thanks for the mission, I'll get to it right away! Yaaaaaay!\r"
       objectReference: {fileID: 0}
     - target: {fileID: 2432943046090878336, guid: fccd1c54e96cbdd4e879b5c0ebf4ba26, type: 3}
       propertyPath: messages.Array.data[24].actorid
@@ -602,10 +802,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2432943046090878336, guid: fccd1c54e96cbdd4e879b5c0ebf4ba26, type: 3}
       propertyPath: messages.Array.data[24].message
-      value: "Good luck, Soji. No maid from SOMA has survived the putrid scent of
-        the Yakamoto Corporation\u2019s gross office building. Even your sister seems
-        to be having trouble with that hideous place, so maybe you can be the one
-        to bring her back."
+      value: Good luck, Soji. No maid from SOMA has yet to conquer the filth that
+        lurks within Yakamoto Corporation's headquarters. Even your talented sister
+        may be no match for the monstrous dumpster within those company walls. But
+        I've seen what you're capable of. Your sister is in good hands.
       objectReference: {fileID: 0}
     - target: {fileID: 2594680535922559093, guid: fccd1c54e96cbdd4e879b5c0ebf4ba26, type: 3}
       propertyPath: m_fontAsset
@@ -699,6 +899,110 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7256745500977204613, guid: fccd1c54e96cbdd4e879b5c0ebf4ba26, type: 3}
+      propertyPath: dialogueClips.Array.size
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 7256745500977204613, guid: fccd1c54e96cbdd4e879b5c0ebf4ba26, type: 3}
+      propertyPath: dialogueClips.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: 72785becf3c24da40b96bdb69d5f51b3, type: 3}
+    - target: {fileID: 7256745500977204613, guid: fccd1c54e96cbdd4e879b5c0ebf4ba26, type: 3}
+      propertyPath: dialogueClips.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: abe359a3f3f0fae4cbd47c250a9cdd16, type: 3}
+    - target: {fileID: 7256745500977204613, guid: fccd1c54e96cbdd4e879b5c0ebf4ba26, type: 3}
+      propertyPath: dialogueClips.Array.data[2]
+      value: 
+      objectReference: {fileID: 8300000, guid: c2e8f55f0aefa424981b0cfb5c39dca0, type: 3}
+    - target: {fileID: 7256745500977204613, guid: fccd1c54e96cbdd4e879b5c0ebf4ba26, type: 3}
+      propertyPath: dialogueClips.Array.data[3]
+      value: 
+      objectReference: {fileID: 8300000, guid: 6e8d3b86efeb593419ed504adda98a04, type: 3}
+    - target: {fileID: 7256745500977204613, guid: fccd1c54e96cbdd4e879b5c0ebf4ba26, type: 3}
+      propertyPath: dialogueClips.Array.data[4]
+      value: 
+      objectReference: {fileID: 8300000, guid: 2b2d27d4e16778841941e043b0444c7c, type: 3}
+    - target: {fileID: 7256745500977204613, guid: fccd1c54e96cbdd4e879b5c0ebf4ba26, type: 3}
+      propertyPath: dialogueClips.Array.data[5]
+      value: 
+      objectReference: {fileID: 8300000, guid: ae810e397838cd94aae8011bbb91eca4, type: 3}
+    - target: {fileID: 7256745500977204613, guid: fccd1c54e96cbdd4e879b5c0ebf4ba26, type: 3}
+      propertyPath: dialogueClips.Array.data[6]
+      value: 
+      objectReference: {fileID: 8300000, guid: 24fec28232de83f459f2eb45d71e3599, type: 3}
+    - target: {fileID: 7256745500977204613, guid: fccd1c54e96cbdd4e879b5c0ebf4ba26, type: 3}
+      propertyPath: dialogueClips.Array.data[7]
+      value: 
+      objectReference: {fileID: 8300000, guid: 8f82e69730ae8804cb0d446a99f55c83, type: 3}
+    - target: {fileID: 7256745500977204613, guid: fccd1c54e96cbdd4e879b5c0ebf4ba26, type: 3}
+      propertyPath: dialogueClips.Array.data[8]
+      value: 
+      objectReference: {fileID: 8300000, guid: e67801d8d74c2304f9bfb51b01b53b78, type: 3}
+    - target: {fileID: 7256745500977204613, guid: fccd1c54e96cbdd4e879b5c0ebf4ba26, type: 3}
+      propertyPath: dialogueClips.Array.data[9]
+      value: 
+      objectReference: {fileID: 8300000, guid: d9756d4b62a0ab8469b88dc1222aeae3, type: 3}
+    - target: {fileID: 7256745500977204613, guid: fccd1c54e96cbdd4e879b5c0ebf4ba26, type: 3}
+      propertyPath: dialogueClips.Array.data[10]
+      value: 
+      objectReference: {fileID: 8300000, guid: 21fa5de001e5dcf429c84ad6e5b4634e, type: 3}
+    - target: {fileID: 7256745500977204613, guid: fccd1c54e96cbdd4e879b5c0ebf4ba26, type: 3}
+      propertyPath: dialogueClips.Array.data[11]
+      value: 
+      objectReference: {fileID: 8300000, guid: c033dbd4b6da16b4badc9ef7d9694667, type: 3}
+    - target: {fileID: 7256745500977204613, guid: fccd1c54e96cbdd4e879b5c0ebf4ba26, type: 3}
+      propertyPath: dialogueClips.Array.data[12]
+      value: 
+      objectReference: {fileID: 8300000, guid: 35d3df6e6aa1a8144b7e103f38987ad5, type: 3}
+    - target: {fileID: 7256745500977204613, guid: fccd1c54e96cbdd4e879b5c0ebf4ba26, type: 3}
+      propertyPath: dialogueClips.Array.data[13]
+      value: 
+      objectReference: {fileID: 8300000, guid: 7ecd04788f220544cbfef65f060e41ee, type: 3}
+    - target: {fileID: 7256745500977204613, guid: fccd1c54e96cbdd4e879b5c0ebf4ba26, type: 3}
+      propertyPath: dialogueClips.Array.data[14]
+      value: 
+      objectReference: {fileID: 8300000, guid: 2ba50350a41528e4590f2dfa1181b43c, type: 3}
+    - target: {fileID: 7256745500977204613, guid: fccd1c54e96cbdd4e879b5c0ebf4ba26, type: 3}
+      propertyPath: dialogueClips.Array.data[15]
+      value: 
+      objectReference: {fileID: 8300000, guid: bc88a0bb13c661a4cb8fa8f53792d6c5, type: 3}
+    - target: {fileID: 7256745500977204613, guid: fccd1c54e96cbdd4e879b5c0ebf4ba26, type: 3}
+      propertyPath: dialogueClips.Array.data[16]
+      value: 
+      objectReference: {fileID: 8300000, guid: 7a39d62e44e3af740a4172d93c1c220e, type: 3}
+    - target: {fileID: 7256745500977204613, guid: fccd1c54e96cbdd4e879b5c0ebf4ba26, type: 3}
+      propertyPath: dialogueClips.Array.data[17]
+      value: 
+      objectReference: {fileID: 8300000, guid: 386e7622de983804e8fb7abb52c39033, type: 3}
+    - target: {fileID: 7256745500977204613, guid: fccd1c54e96cbdd4e879b5c0ebf4ba26, type: 3}
+      propertyPath: dialogueClips.Array.data[18]
+      value: 
+      objectReference: {fileID: 8300000, guid: 3aab36c6ed82c374d8a742b37efc7b44, type: 3}
+    - target: {fileID: 7256745500977204613, guid: fccd1c54e96cbdd4e879b5c0ebf4ba26, type: 3}
+      propertyPath: dialogueClips.Array.data[19]
+      value: 
+      objectReference: {fileID: 8300000, guid: f0877d98b70d4fd48a5a9d152098148a, type: 3}
+    - target: {fileID: 7256745500977204613, guid: fccd1c54e96cbdd4e879b5c0ebf4ba26, type: 3}
+      propertyPath: dialogueClips.Array.data[20]
+      value: 
+      objectReference: {fileID: 8300000, guid: 95cf68d5b9dcf6f488636ed8cc2bc0ae, type: 3}
+    - target: {fileID: 7256745500977204613, guid: fccd1c54e96cbdd4e879b5c0ebf4ba26, type: 3}
+      propertyPath: dialogueClips.Array.data[21]
+      value: 
+      objectReference: {fileID: 8300000, guid: cbfb20c05919c33459388cc91a39e75c, type: 3}
+    - target: {fileID: 7256745500977204613, guid: fccd1c54e96cbdd4e879b5c0ebf4ba26, type: 3}
+      propertyPath: dialogueClips.Array.data[22]
+      value: 
+      objectReference: {fileID: 8300000, guid: b21c401127a7dce4b86b4ec988990976, type: 3}
+    - target: {fileID: 7256745500977204613, guid: fccd1c54e96cbdd4e879b5c0ebf4ba26, type: 3}
+      propertyPath: dialogueClips.Array.data[23]
+      value: 
+      objectReference: {fileID: 8300000, guid: 4ea50d60657fe2648bbee60733542fc0, type: 3}
+    - target: {fileID: 7256745500977204613, guid: fccd1c54e96cbdd4e879b5c0ebf4ba26, type: 3}
+      propertyPath: dialogueClips.Array.data[24]
+      value: 
+      objectReference: {fileID: 8300000, guid: 6e45368bf7a211d47b1248560f30405a, type: 3}
     - target: {fileID: 7567389396170344994, guid: fccd1c54e96cbdd4e879b5c0ebf4ba26, type: 3}
       propertyPath: m_Name
       value: Dialogue UI
