@@ -18,8 +18,8 @@ EditorBuildSettings:
     path: Assets/Scenes/Eric Levels/Eric_Tutorial_1.unity
     guid: fd2973a401e681e4697f0321e9a268e3
   - enabled: 1
-    path: Assets/Scenes/Leo Levels/LobbyModels.unity
-    guid: ccbf663abb4ecf74cbcb72f7976cbc05
+    path: Assets/Scenes/Leo Levels/Leo_Lobby_Level.unity
+    guid: 272061bb5e8649b40961a077248ac5d9
   - enabled: 1
     path: Assets/Scenes/Ryan Levels/Lobby2.unity
     guid: e6700b81f606b3d46abe42ea73a6d715
