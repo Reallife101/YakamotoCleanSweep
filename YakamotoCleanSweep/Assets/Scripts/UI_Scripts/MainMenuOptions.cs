@@ -49,11 +49,11 @@ public class MainMenuOptions : MonoBehaviour
 
     public void swapCharacter() {
         if (characterText.text == "Butler"){
-            PlayerPrefs.SetString("character", "Maid");
+            PlayerPrefs.SetString("character", "maid");
             characterText.text = "Maid";
         }
         else {
-            PlayerPrefs.SetString("character", "Butler");
+            PlayerPrefs.SetString("character", "butler");
             characterText.text = "Butler";
         }
         Debug.Log(PlayerPrefs.GetString("character"));
@@ -62,4 +62,6 @@ public class MainMenuOptions : MonoBehaviour
     public void setSensitivityPref(float sens) {
         PlayerPrefs.SetFloat("sensitivity", sens);
     }
+
+    
 }

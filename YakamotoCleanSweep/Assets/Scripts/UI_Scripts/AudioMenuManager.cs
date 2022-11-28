@@ -11,7 +11,6 @@ public class AudioMenuManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
         if (PlayerPrefs.GetFloat("MasterVolume", -1f) >= 0) {
             UIAudioController.SetMasterVolume(PlayerPrefs.GetFloat("MasterVolume"));
             masterVol.value = PlayerPrefs.GetFloat("MasterVolume");
