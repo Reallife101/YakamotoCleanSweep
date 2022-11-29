@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections;
+using System;
 
 public class Puddle : MonoBehaviour
 {
@@ -18,7 +19,7 @@ public class Puddle : MonoBehaviour
         RaycastHit hit;
         if (Physics.BoxCast(col.bounds.center, col.bounds.extents, transform.up, out hit, Quaternion.identity, transform.localScale.y, playerLayer))
         {
-            hit.rigidbody.AddForce(new Vector3(hit.rigidbody.velocity.x, 0, hit.rigidbody.velocity.z) * slideForce, ForceMode.VelocityChange);
+            hit.rigidbody.AddForce(new Vector3(hit.rigidbody.velocity.x, 0, hit.rigidbody.velocity.z) * slideForce, ForceMode.Force);
         }
     }
 

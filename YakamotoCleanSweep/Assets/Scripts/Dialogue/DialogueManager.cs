@@ -17,11 +17,14 @@ public class DialogueManager : MonoBehaviour
     [SerializeField] TextMeshProUGUI actorName;
     [SerializeField] TextMeshProUGUI messageText;
 
+    [SerializeField] List<AudioClip> dialogueClips;
+
     private Message[] currentMessages;
     private Actor[] currentActors;
     private int nextLevel;
     private int activeMessage = 0;
     public static bool isActive = false;
+    private AudioSource au;
 
     private void Awake()
     {
@@ -39,6 +42,7 @@ public class DialogueManager : MonoBehaviour
         currentActors = actors;
         nextLevel = next;
         activeMessage = 0;
+        au = GetComponent<AudioSource>();
         isActive = true;
         dialogueObject.SetActive(true);
         Debug.Log("Loaded convo");
@@ -49,6 +53,13 @@ public class DialogueManager : MonoBehaviour
     {
         Message messageToDisplay = currentMessages[activeMessage];
         messageText.text = messageToDisplay.message;
+
+        if (activeMessage<dialogueClips.Count)
+        {
+            au.Stop();
+            au.clip = dialogueClips[activeMessage];
+            au.Play();
+        }
 
         Actor actorToDisplay = currentActors[messageToDisplay.actorid];
         actorName.text = actorToDisplay.name;
@@ -71,7 +82,7 @@ public class DialogueManager : MonoBehaviour
             SceneManager.LoadScene(nextLevel);
         }
     }
-    
+
     // Start is called before the first frame update
     void Start()
     {
@@ -82,7 +93,7 @@ public class DialogueManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space) && isActive == true)
+        if ((Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(0)) && isActive == true)
         {
             NextMessage();
         }

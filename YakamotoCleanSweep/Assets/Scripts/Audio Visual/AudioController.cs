@@ -3,11 +3,21 @@ using UnityEngine.Audio;
 
 public class AudioController<T> : MonoBehaviour
 {
-    protected static AudioMixer mixer = Resources.Load("Sounds/AudioMixer") as AudioMixer;
+    private static AudioMixer mixer;
 
     [SerializeField] protected T host = default(T);
     [SerializeField] protected AudioSource source = null;
     [SerializeField] protected AudioClip[] clips = null;
+
+    public static void GetMixer()
+    {
+        mixer = Resources.Load("Sounds/AudioMixer") as AudioMixer;
+    }
+
+    private void Awake()
+    {
+        AudioController<T>.GetMixer();
+    }
 
     public static void SetMasterVolume(float volume)
     {

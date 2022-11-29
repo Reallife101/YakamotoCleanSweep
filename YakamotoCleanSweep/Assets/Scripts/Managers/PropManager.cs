@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class PropManager : MonoBehaviour
 {
+    public static event Action OnAllClean;
 
     private int propsCleanedCount;
 
@@ -35,9 +36,15 @@ public class PropManager : MonoBehaviour
         return propsCleanedCount >= props.Length;
     }
 
+    // Use an event for this instead later
     public void IncreaseCount()
     {
         propsCleanedCount += 1;
+
+        if (CheckCount())
+        {
+            OnAllClean?.Invoke();
+        }
     } 
 
     public int RemainingProps()

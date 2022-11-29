@@ -6,26 +6,28 @@ using UnityEngine.UI;
 
 public class playerhealth : health
 {
+    public event Action OnDamage;
     
     private bool ifinvincible = false;
     [SerializeField] float invinicible_time = 3.0f;
     [SerializeField] private UpdateUI playerHealthUI;
 
     //FOR TESTING ONLY
-    void Update(){
+    /*void Update(){
 
         if (Input.GetKeyDown(KeyCode.P))
         {
            TakeDamage(1);
         }
         
-   }
+   }*/
 
     
 
     public new void TakeDamage(int healthPTS)
     {
         if (!ifinvincible){
+            OnDamage?.Invoke();
             currentHealth -= healthPTS;
             CheckHealth();
             Debug.Log("damage down 1");
